@@ -50,7 +50,7 @@
 //    [[EHETchCommunicationManager getInstance] confirmOrderWithOrderId:358];
 //    [[EHETchCommunicationManager getInstance] cancelOrderWithOrderId:359 withReason:@"您太远了"];
 //    [[EHETchCommunicationManager getInstance] completeOrderWithOrderId:358];
-//    [[EHETchCommunicationManager getInstance] commentCustomerWithCustomerId:270 andTeacherId:135 andRand:3 andComment:@"好坏的"];
+//    [[EHETchCommunicationManager getInstance] commentCustomerWithCustomerId:270 andTeacherId:135 andRand:2 andComment:@"只给了我一百块，车费都不够"];
 //    [[EHETchCommunicationManager getInstance] loadCommentsWithCustomerId:270];
 //    [[EHETchCommunicationManager getInstance] loadOrderDetailWithOrderId:358];
     

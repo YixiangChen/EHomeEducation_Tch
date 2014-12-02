@@ -18,6 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height - 50)];
+    [self.scrollView addSubview:self.tableView];
+    [self.scrollView addSubview:self.imageBackground];
+    [self.view addSubview:self.scrollView];
+    NSLog(@"%@",self.view.subviews);
+    NSLog(@"%@",self.scrollView.subviews);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,6 +49,10 @@
     
     cell.textLabel.text = @"Hey";
     return cell;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    return nil;
 }
 /*
 #pragma mark - Navigation
