@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		798EF90E1A2D9823002A8428 /* EHETchOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */; };
+		798EF90F1A2D9823002A8428 /* EHETchOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */; };
+		798EF9131A2D9866002A8428 /* female_tablecell.png in Resources */ = {isa = PBXBuildFile; fileRef = 798EF9111A2D9866002A8428 /* female_tablecell.png */; };
+		798EF9141A2D9866002A8428 /* male_tablecell.png in Resources */ = {isa = PBXBuildFile; fileRef = 798EF9121A2D9866002A8428 /* male_tablecell.png */; };
+		798EF9181A2DB819002A8428 /* EHECustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798EF9161A2DB819002A8428 /* EHECustomerDetailViewController.m */; };
+		798EF9191A2DB819002A8428 /* EHECustomerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 798EF9171A2DB819002A8428 /* EHECustomerDetailViewController.xib */; };
+		798EF91B1A2DBD09002A8428 /* little_student.png in Resources */ = {isa = PBXBuildFile; fileRef = 798EF91A1A2DBD09002A8428 /* little_student.png */; };
+		798EF91D1A2DBFF0002A8428 /* lightgreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 798EF91C1A2DBFF0002A8428 /* lightgreen.png */; };
+		79B26AB11A2D5699009BDD26 /* EHETchSearchingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26AAF1A2D5699009BDD26 /* EHETchSearchingViewController.m */; };
+		79B26AB21A2D5699009BDD26 /* EHETchSearchingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B26AB01A2D5699009BDD26 /* EHETchSearchingViewController.xib */; };
+		79B26AB61A2D5B55009BDD26 /* EHEOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26AB51A2D5B55009BDD26 /* EHEOrder.m */; };
+		79B26AB91A2D5B56009BDD26 /* EHECustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26AB81A2D5B56009BDD26 /* EHECustomer.m */; };
+		79B26ABC1A2D5B56009BDD26 /* EHEAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26ABB1A2D5B56009BDD26 /* EHEAccount.m */; };
+		79B26AC01A2D73C1009BDD26 /* EHETchBookingManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26ABE1A2D73C1009BDD26 /* EHETchBookingManagerViewController.m */; };
+		79B26AC11A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B26ABF1A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib */; };
+		79B26AC51A2D73F1009BDD26 /* EHETchSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26AC31A2D73F1009BDD26 /* EHETchSettingViewController.m */; };
+		79B26AC61A2D73F1009BDD26 /* EHETchSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B26AC41A2D73F1009BDD26 /* EHETchSettingViewController.xib */; };
+		79B26AC71A2D758D009BDD26 /* FZCATOONJ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79C28E611A2C5F14000788F2 /* FZCATOONJ.ttf */; };
+		79B26AC81A2D758D009BDD26 /* MCuteHKS.otf in Resources */ = {isa = PBXBuildFile; fileRef = 79C28E621A2C5F14000788F2 /* MCuteHKS.otf */; };
+		79B26AC91A2D758D009BDD26 /* MFYueYuan_Noncommercial-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 79C28E631A2C5F14000788F2 /* MFYueYuan_Noncommercial-Regular.otf */; };
+		79B26ACA1A2D758D009BDD26 /* MYoungHKS-Xbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 79C28E641A2C5F14000788F2 /* MYoungHKS-Xbold.otf */; };
+		79C28E311A2C577A000788F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C28E301A2C577A000788F2 /* main.m */; };
+		79C28E341A2C577A000788F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C28E331A2C577A000788F2 /* AppDelegate.m */; };
+		79C28E371A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79C28E351A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodeld */; };
+		79C28E3F1A2C577A000788F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C28E3E1A2C577A000788F2 /* Images.xcassets */; };
+		79C28E421A2C577A000788F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C28E401A2C577A000788F2 /* LaunchScreen.xib */; };
+		79C28E4E1A2C577A000788F2 /* EHomeEducation_TchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C28E4D1A2C577A000788F2 /* EHomeEducation_TchTests.m */; };
+		79C28E5A1A2C5821000788F2 /* EHETchCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C28E591A2C5821000788F2 /* EHETchCoreDataManager.m */; };
+		79C28E5D1A2C5848000788F2 /* EHETchCommunicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C28E5C1A2C5848000788F2 /* EHETchCommunicationManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79C28E481A2C577A000788F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79C28E231A2C577A000788F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79C28E2A1A2C577A000788F2;
+			remoteInfo = EHomeEducation_Tch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		798EF90B1A2D9823002A8428 /* EHETchOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderTableViewCell.h; sourceTree = "<group>"; };
+		798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderTableViewCell.m; sourceTree = "<group>"; };
+		798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderTableViewCell.xib; sourceTree = "<group>"; };
+		798EF9111A2D9866002A8428 /* female_tablecell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female_tablecell.png; sourceTree = "<group>"; };
+		798EF9121A2D9866002A8428 /* male_tablecell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male_tablecell.png; sourceTree = "<group>"; };
+		798EF9151A2DB819002A8428 /* EHECustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHECustomerDetailViewController.h; sourceTree = "<group>"; };
+		798EF9161A2DB819002A8428 /* EHECustomerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHECustomerDetailViewController.m; sourceTree = "<group>"; };
+		798EF9171A2DB819002A8428 /* EHECustomerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHECustomerDetailViewController.xib; sourceTree = "<group>"; };
+		798EF91A1A2DBD09002A8428 /* little_student.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = little_student.png; sourceTree = "<group>"; };
+		798EF91C1A2DBFF0002A8428 /* lightgreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightgreen.png; sourceTree = "<group>"; };
+		79B26AAE1A2D5699009BDD26 /* EHETchSearchingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchSearchingViewController.h; sourceTree = "<group>"; };
+		79B26AAF1A2D5699009BDD26 /* EHETchSearchingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchSearchingViewController.m; sourceTree = "<group>"; };
+		79B26AB01A2D5699009BDD26 /* EHETchSearchingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchSearchingViewController.xib; sourceTree = "<group>"; };
+		79B26AB41A2D5B55009BDD26 /* EHEOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHEOrder.h; sourceTree = "<group>"; };
+		79B26AB51A2D5B55009BDD26 /* EHEOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHEOrder.m; sourceTree = "<group>"; };
+		79B26AB71A2D5B56009BDD26 /* EHECustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHECustomer.h; sourceTree = "<group>"; };
+		79B26AB81A2D5B56009BDD26 /* EHECustomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHECustomer.m; sourceTree = "<group>"; };
+		79B26ABA1A2D5B56009BDD26 /* EHEAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHEAccount.h; sourceTree = "<group>"; };
+		79B26ABB1A2D5B56009BDD26 /* EHEAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHEAccount.m; sourceTree = "<group>"; };
+		79B26ABD1A2D73C1009BDD26 /* EHETchBookingManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchBookingManagerViewController.h; sourceTree = "<group>"; };
+		79B26ABE1A2D73C1009BDD26 /* EHETchBookingManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchBookingManagerViewController.m; sourceTree = "<group>"; };
+		79B26ABF1A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchBookingManagerViewController.xib; sourceTree = "<group>"; };
+		79B26AC21A2D73F1009BDD26 /* EHETchSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchSettingViewController.h; sourceTree = "<group>"; };
+		79B26AC31A2D73F1009BDD26 /* EHETchSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchSettingViewController.m; sourceTree = "<group>"; };
+		79B26AC41A2D73F1009BDD26 /* EHETchSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchSettingViewController.xib; sourceTree = "<group>"; };
+		79C28E2B1A2C577A000788F2 /* EHomeEducation_Tch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EHomeEducation_Tch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79C28E2F1A2C577A000788F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79C28E301A2C577A000788F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		79C28E321A2C577A000788F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		79C28E331A2C577A000788F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		79C28E361A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EHomeEducation_Tch.xcdatamodel; sourceTree = "<group>"; };
+		79C28E3E1A2C577A000788F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		79C28E411A2C577A000788F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		79C28E471A2C577A000788F2 /* EHomeEducation_TchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EHomeEducation_TchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79C28E4C1A2C577A000788F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79C28E4D1A2C577A000788F2 /* EHomeEducation_TchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHomeEducation_TchTests.m; sourceTree = "<group>"; };
+		79C28E581A2C5821000788F2 /* EHETchCoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchCoreDataManager.h; sourceTree = "<group>"; };
+		79C28E591A2C5821000788F2 /* EHETchCoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchCoreDataManager.m; sourceTree = "<group>"; };
+		79C28E5B1A2C5848000788F2 /* EHETchCommunicationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchCommunicationManager.h; sourceTree = "<group>"; };
+		79C28E5C1A2C5848000788F2 /* EHETchCommunicationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchCommunicationManager.m; sourceTree = "<group>"; };
+		79C28E5F1A2C58A0000788F2 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		79C28E611A2C5F14000788F2 /* FZCATOONJ.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FZCATOONJ.ttf; sourceTree = "<group>"; };
+		79C28E621A2C5F14000788F2 /* MCuteHKS.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MCuteHKS.otf; sourceTree = "<group>"; };
+		79C28E631A2C5F14000788F2 /* MFYueYuan_Noncommercial-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFYueYuan_Noncommercial-Regular.otf"; sourceTree = "<group>"; };
+		79C28E641A2C5F14000788F2 /* MYoungHKS-Xbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MYoungHKS-Xbold.otf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		79C28E281A2C577A000788F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79C28E441A2C577A000788F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		798EF90A1A2D97E4002A8428 /* 订单列表 */ = {
+			isa = PBXGroup;
+			children = (
+				79B26AAE1A2D5699009BDD26 /* EHETchSearchingViewController.h */,
+				79B26AAF1A2D5699009BDD26 /* EHETchSearchingViewController.m */,
+				79B26AB01A2D5699009BDD26 /* EHETchSearchingViewController.xib */,
+				79B26ABD1A2D73C1009BDD26 /* EHETchBookingManagerViewController.h */,
+				79B26ABE1A2D73C1009BDD26 /* EHETchBookingManagerViewController.m */,
+				79B26ABF1A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib */,
+				79B26AC21A2D73F1009BDD26 /* EHETchSettingViewController.h */,
+				79B26AC31A2D73F1009BDD26 /* EHETchSettingViewController.m */,
+				79B26AC41A2D73F1009BDD26 /* EHETchSettingViewController.xib */,
+				798EF90B1A2D9823002A8428 /* EHETchOrderTableViewCell.h */,
+				798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */,
+				798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */,
+				798EF9151A2DB819002A8428 /* EHECustomerDetailViewController.h */,
+				798EF9161A2DB819002A8428 /* EHECustomerDetailViewController.m */,
+				798EF9171A2DB819002A8428 /* EHECustomerDetailViewController.xib */,
+			);
+			name = "订单列表";
+			sourceTree = "<group>";
+		};
+		798EF9101A2D9831002A8428 /* 图片 */ = {
+			isa = PBXGroup;
+			children = (
+				798EF91C1A2DBFF0002A8428 /* lightgreen.png */,
+				798EF91A1A2DBD09002A8428 /* little_student.png */,
+				798EF9111A2D9866002A8428 /* female_tablecell.png */,
+				798EF9121A2D9866002A8428 /* male_tablecell.png */,
+			);
+			name = "图片";
+			sourceTree = "<group>";
+		};
+		79B26AAD1A2D5666009BDD26 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				798EF90A1A2D97E4002A8428 /* 订单列表 */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		79B26AB31A2D5791009BDD26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79C28E221A2C577A000788F2 = {
+			isa = PBXGroup;
+			children = (
+				79B26AB31A2D5791009BDD26 /* Frameworks */,
+				79C28E2D1A2C577A000788F2 /* EHomeEducation_Tch */,
+				79C28E4A1A2C577A000788F2 /* EHomeEducation_TchTests */,
+				79C28E2C1A2C577A000788F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		79C28E2C1A2C577A000788F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79C28E2B1A2C577A000788F2 /* EHomeEducation_Tch.app */,
+				79C28E471A2C577A000788F2 /* EHomeEducation_TchTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		79C28E2D1A2C577A000788F2 /* EHomeEducation_Tch */ = {
+			isa = PBXGroup;
+			children = (
+				79B26AAD1A2D5666009BDD26 /* ViewControllers */,
+				79C28E5E1A2C5850000788F2 /* Networking */,
+				79C28E571A2C57D9000788F2 /* CoreData */,
+				79C28E321A2C577A000788F2 /* AppDelegate.h */,
+				79C28E331A2C577A000788F2 /* AppDelegate.m */,
+				79C28E3E1A2C577A000788F2 /* Images.xcassets */,
+				79C28E401A2C577A000788F2 /* LaunchScreen.xib */,
+				79C28E2E1A2C577A000788F2 /* Supporting Files */,
+			);
+			path = EHomeEducation_Tch;
+			sourceTree = "<group>";
+		};
+		79C28E2E1A2C577A000788F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				798EF9101A2D9831002A8428 /* 图片 */,
+				79C28E601A2C5EDF000788F2 /* 字体库 */,
+				79C28E2F1A2C577A000788F2 /* Info.plist */,
+				79C28E301A2C577A000788F2 /* main.m */,
+				79C28E5F1A2C58A0000788F2 /* Defines.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		79C28E4A1A2C577A000788F2 /* EHomeEducation_TchTests */ = {
+			isa = PBXGroup;
+			children = (
+				79C28E4D1A2C577A000788F2 /* EHomeEducation_TchTests.m */,
+				79C28E4B1A2C577A000788F2 /* Supporting Files */,
+			);
+			path = EHomeEducation_TchTests;
+			sourceTree = "<group>";
+		};
+		79C28E4B1A2C577A000788F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				79C28E4C1A2C577A000788F2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		79C28E571A2C57D9000788F2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				79C28E581A2C5821000788F2 /* EHETchCoreDataManager.h */,
+				79C28E591A2C5821000788F2 /* EHETchCoreDataManager.m */,
+				79C28E351A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodeld */,
+				79B26ABA1A2D5B56009BDD26 /* EHEAccount.h */,
+				79B26ABB1A2D5B56009BDD26 /* EHEAccount.m */,
+				79B26AB71A2D5B56009BDD26 /* EHECustomer.h */,
+				79B26AB81A2D5B56009BDD26 /* EHECustomer.m */,
+				79B26AB41A2D5B55009BDD26 /* EHEOrder.h */,
+				79B26AB51A2D5B55009BDD26 /* EHEOrder.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		79C28E5E1A2C5850000788F2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				79C28E5B1A2C5848000788F2 /* EHETchCommunicationManager.h */,
+				79C28E5C1A2C5848000788F2 /* EHETchCommunicationManager.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		79C28E601A2C5EDF000788F2 /* 字体库 */ = {
+			isa = PBXGroup;
+			children = (
+				79C28E611A2C5F14000788F2 /* FZCATOONJ.ttf */,
+				79C28E621A2C5F14000788F2 /* MCuteHKS.otf */,
+				79C28E631A2C5F14000788F2 /* MFYueYuan_Noncommercial-Regular.otf */,
+				79C28E641A2C5F14000788F2 /* MYoungHKS-Xbold.otf */,
+			);
+			name = "字体库";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		79C28E2A1A2C577A000788F2 /* EHomeEducation_Tch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79C28E511A2C577A000788F2 /* Build configuration list for PBXNativeTarget "EHomeEducation_Tch" */;
+			buildPhases = (
+				79C28E271A2C577A000788F2 /* Sources */,
+				79C28E281A2C577A000788F2 /* Frameworks */,
+				79C28E291A2C577A000788F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EHomeEducation_Tch;
+			productName = EHomeEducation_Tch;
+			productReference = 79C28E2B1A2C577A000788F2 /* EHomeEducation_Tch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		79C28E461A2C577A000788F2 /* EHomeEducation_TchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79C28E541A2C577A000788F2 /* Build configuration list for PBXNativeTarget "EHomeEducation_TchTests" */;
+			buildPhases = (
+				79C28E431A2C577A000788F2 /* Sources */,
+				79C28E441A2C577A000788F2 /* Frameworks */,
+				79C28E451A2C577A000788F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79C28E491A2C577A000788F2 /* PBXTargetDependency */,
+			);
+			name = EHomeEducation_TchTests;
+			productName = EHomeEducation_TchTests;
+			productReference = 79C28E471A2C577A000788F2 /* EHomeEducation_TchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		79C28E231A2C577A000788F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = AppChen;
+				TargetAttributes = {
+					79C28E2A1A2C577A000788F2 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					79C28E461A2C577A000788F2 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 79C28E2A1A2C577A000788F2;
+					};
+				};
+			};
+			buildConfigurationList = 79C28E261A2C577A000788F2 /* Build configuration list for PBXProject "EHomeEducation_Tch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 79C28E221A2C577A000788F2;
+			productRefGroup = 79C28E2C1A2C577A000788F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				79C28E2A1A2C577A000788F2 /* EHomeEducation_Tch */,
+				79C28E461A2C577A000788F2 /* EHomeEducation_TchTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		79C28E291A2C577A000788F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79B26AC71A2D758D009BDD26 /* FZCATOONJ.ttf in Resources */,
+				79B26AC81A2D758D009BDD26 /* MCuteHKS.otf in Resources */,
+				798EF9191A2DB819002A8428 /* EHECustomerDetailViewController.xib in Resources */,
+				79B26AC91A2D758D009BDD26 /* MFYueYuan_Noncommercial-Regular.otf in Resources */,
+				79B26ACA1A2D758D009BDD26 /* MYoungHKS-Xbold.otf in Resources */,
+				798EF91D1A2DBFF0002A8428 /* lightgreen.png in Resources */,
+				798EF91B1A2DBD09002A8428 /* little_student.png in Resources */,
+				79B26AC61A2D73F1009BDD26 /* EHETchSettingViewController.xib in Resources */,
+				79C28E421A2C577A000788F2 /* LaunchScreen.xib in Resources */,
+				79C28E3F1A2C577A000788F2 /* Images.xcassets in Resources */,
+				798EF90F1A2D9823002A8428 /* EHETchOrderTableViewCell.xib in Resources */,
+				798EF9131A2D9866002A8428 /* female_tablecell.png in Resources */,
+				79B26AB21A2D5699009BDD26 /* EHETchSearchingViewController.xib in Resources */,
+				79B26AC11A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib in Resources */,
+				798EF9141A2D9866002A8428 /* male_tablecell.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79C28E451A2C577A000788F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79C28E271A2C577A000788F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				798EF9181A2DB819002A8428 /* EHECustomerDetailViewController.m in Sources */,
+				79C28E341A2C577A000788F2 /* AppDelegate.m in Sources */,
+				79B26ABC1A2D5B56009BDD26 /* EHEAccount.m in Sources */,
+				79C28E5A1A2C5821000788F2 /* EHETchCoreDataManager.m in Sources */,
+				79B26AC01A2D73C1009BDD26 /* EHETchBookingManagerViewController.m in Sources */,
+				79C28E311A2C577A000788F2 /* main.m in Sources */,
+				798EF90E1A2D9823002A8428 /* EHETchOrderTableViewCell.m in Sources */,
+				79C28E5D1A2C5848000788F2 /* EHETchCommunicationManager.m in Sources */,
+				79B26AB91A2D5B56009BDD26 /* EHECustomer.m in Sources */,
+				79B26AB11A2D5699009BDD26 /* EHETchSearchingViewController.m in Sources */,
+				79B26AB61A2D5B55009BDD26 /* EHEOrder.m in Sources */,
+				79C28E371A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodeld in Sources */,
+				79B26AC51A2D73F1009BDD26 /* EHETchSettingViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79C28E431A2C577A000788F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79C28E4E1A2C577A000788F2 /* EHomeEducation_TchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79C28E491A2C577A000788F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79C28E2A1A2C577A000788F2 /* EHomeEducation_Tch */;
+			targetProxy = 79C28E481A2C577A000788F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		79C28E401A2C577A000788F2 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79C28E411A2C577A000788F2 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		79C28E4F1A2C577A000788F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		79C28E501A2C577A000788F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		79C28E521A2C577A000788F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EHomeEducation_Tch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		79C28E531A2C577A000788F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EHomeEducation_Tch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		79C28E551A2C577A000788F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EHomeEducation_TchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EHomeEducation_Tch.app/EHomeEducation_Tch";
+			};
+			name = Debug;
+		};
+		79C28E561A2C577A000788F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = EHomeEducation_TchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EHomeEducation_Tch.app/EHomeEducation_Tch";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		79C28E261A2C577A000788F2 /* Build configuration list for PBXProject "EHomeEducation_Tch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79C28E4F1A2C577A000788F2 /* Debug */,
+				79C28E501A2C577A000788F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79C28E511A2C577A000788F2 /* Build configuration list for PBXNativeTarget "EHomeEducation_Tch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79C28E521A2C577A000788F2 /* Debug */,
+				79C28E531A2C577A000788F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79C28E541A2C577A000788F2 /* Build configuration list for PBXNativeTarget "EHomeEducation_TchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79C28E551A2C577A000788F2 /* Debug */,
+				79C28E561A2C577A000788F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		79C28E351A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				79C28E361A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodel */,
+			);
+			currentVersion = 79C28E361A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodel */;
+			path = EHomeEducation_Tch.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 79C28E231A2C577A000788F2 /* Project object */;
+}
