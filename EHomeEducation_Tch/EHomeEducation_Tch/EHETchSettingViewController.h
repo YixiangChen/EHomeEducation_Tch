@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EHETchSettingViewController : UIViewController
-
+@interface EHETchSettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property(strong,nonatomic)UITableView * settingTableView;
 @end
