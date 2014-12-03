@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		52A58E7C1A2ED2B60036E92F /* EHETchBookingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A58E7A1A2ED2B60036E92F /* EHETchBookingCell.m */; };
 		52A58E7D1A2ED2B60036E92F /* EHETchBookingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A58E7B1A2ED2B60036E92F /* EHETchBookingCell.xib */; };
+		52A58E811A2EF47B0036E92F /* EHETchSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A58E7F1A2EF47B0036E92F /* EHETchSettingCell.m */; };
+		52A58E821A2EF47B0036E92F /* EHETchSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A58E801A2EF47B0036E92F /* EHETchSettingCell.xib */; };
 		798EF90E1A2D9823002A8428 /* EHETchOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */; };
 		798EF90F1A2D9823002A8428 /* EHETchOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */; };
 		798EF9131A2D9866002A8428 /* female_tablecell.png in Resources */ = {isa = PBXBuildFile; fileRef = 798EF9111A2D9866002A8428 /* female_tablecell.png */; };
@@ -54,6 +56,9 @@
 		52A58E791A2ED2B60036E92F /* EHETchBookingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchBookingCell.h; sourceTree = "<group>"; };
 		52A58E7A1A2ED2B60036E92F /* EHETchBookingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchBookingCell.m; sourceTree = "<group>"; };
 		52A58E7B1A2ED2B60036E92F /* EHETchBookingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchBookingCell.xib; sourceTree = "<group>"; };
+		52A58E7E1A2EF47B0036E92F /* EHETchSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchSettingCell.h; sourceTree = "<group>"; };
+		52A58E7F1A2EF47B0036E92F /* EHETchSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchSettingCell.m; sourceTree = "<group>"; };
+		52A58E801A2EF47B0036E92F /* EHETchSettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchSettingCell.xib; sourceTree = "<group>"; };
 		798EF90B1A2D9823002A8428 /* EHETchOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderTableViewCell.h; sourceTree = "<group>"; };
 		798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderTableViewCell.m; sourceTree = "<group>"; };
 		798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderTableViewCell.xib; sourceTree = "<group>"; };
@@ -129,9 +134,20 @@
 			name = "订单tableCell";
 			sourceTree = "<group>";
 		};
+		52A58E841A2EF4A80036E92F /* 设置tableCell */ = {
+			isa = PBXGroup;
+			children = (
+				52A58E7E1A2EF47B0036E92F /* EHETchSettingCell.h */,
+				52A58E7F1A2EF47B0036E92F /* EHETchSettingCell.m */,
+				52A58E801A2EF47B0036E92F /* EHETchSettingCell.xib */,
+			);
+			name = "设置tableCell";
+			sourceTree = "<group>";
+		};
 		798EF90A1A2D97E4002A8428 /* 订单列表 */ = {
 			isa = PBXGroup;
 			children = (
+				52A58E841A2EF4A80036E92F /* 设置tableCell */,
 				52A58E781A2ED2920036E92F /* 订单tableCell */,
 				79B26AAE1A2D5699009BDD26 /* EHETchSearchingViewController.h */,
 				79B26AAF1A2D5699009BDD26 /* EHETchSearchingViewController.m */,
@@ -362,6 +378,7 @@
 				79B26AC81A2D758D009BDD26 /* MCuteHKS.otf in Resources */,
 				798EF9191A2DB819002A8428 /* EHECustomerDetailViewController.xib in Resources */,
 				79B26AC91A2D758D009BDD26 /* MFYueYuan_Noncommercial-Regular.otf in Resources */,
+				52A58E821A2EF47B0036E92F /* EHETchSettingCell.xib in Resources */,
 				79B26ACA1A2D758D009BDD26 /* MYoungHKS-Xbold.otf in Resources */,
 				798EF91D1A2DBFF0002A8428 /* lightgreen.png in Resources */,
 				798EF91B1A2DBD09002A8428 /* little_student.png in Resources */,
@@ -404,6 +421,7 @@
 				79B26AB61A2D5B55009BDD26 /* EHEOrder.m in Sources */,
 				79C28E371A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodeld in Sources */,
 				79B26AC51A2D73F1009BDD26 /* EHETchSettingViewController.m in Sources */,
+				52A58E811A2EF47B0036E92F /* EHETchSettingCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

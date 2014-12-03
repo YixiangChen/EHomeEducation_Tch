@@ -10,4 +10,9 @@
 
 @interface EHETchSettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property(strong,nonatomic)UITableView * settingTableView;
+@property(strong,nonatomic)NSArray * personalInfomationArray;
+@property(strong,nonatomic)NSArray * systemSettingArray;
+@property(strong,nonatomic)NSArray * connectAndShareArray;
+@property(strong,nonatomic)NSArray * testArray;
+@property(nonatomic)BOOL check;
 @end
