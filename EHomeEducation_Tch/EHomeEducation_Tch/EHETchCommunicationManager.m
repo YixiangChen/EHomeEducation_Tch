@@ -143,6 +143,13 @@
     NSError *error = nil;
     NSData * responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&error];
     
+    if(error != nil ) {
+        NSLog(@"error = %@", error);
+    }
+    
+    NSMutableString *string = [[NSMutableString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    NSLog(@"response string =  %@", string);
+    
     if(responseData != nil && error == nil){
         
         NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
@@ -167,6 +174,7 @@
             return NO;
         }
     } else {
+        NSLog(@"获取订单信息失败");
         return NO;
     }
     

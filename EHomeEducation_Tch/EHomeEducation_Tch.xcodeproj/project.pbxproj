@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79288E311A2E0F9B00492B02 /* EHETchOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79288E2F1A2E0F9B00492B02 /* EHETchOrderDetailViewController.m */; };
+		79288E321A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79288E301A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib */; };
+		79288E361A2EA3F000492B02 /* EHECustomerImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79288E341A2EA3F000492B02 /* EHECustomerImageCell.m */; };
+		79288E371A2EA3F000492B02 /* EHECustomerImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79288E351A2EA3F000492B02 /* EHECustomerImageCell.xib */; };
+		79288E3B1A2EC97000492B02 /* EHETchOrderHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79288E391A2EC97000492B02 /* EHETchOrderHeaderCell.m */; };
+		79288E3C1A2EC97000492B02 /* EHETchOrderHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79288E3A1A2EC97000492B02 /* EHETchOrderHeaderCell.xib */; };
 		798EF90E1A2D9823002A8428 /* EHETchOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */; };
 		798EF90F1A2D9823002A8428 /* EHETchOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */; };
 		798EF9131A2D9866002A8428 /* female_tablecell.png in Resources */ = {isa = PBXBuildFile; fileRef = 798EF9111A2D9866002A8428 /* female_tablecell.png */; };
 		798EF9141A2D9866002A8428 /* male_tablecell.png in Resources */ = {isa = PBXBuildFile; fileRef = 798EF9121A2D9866002A8428 /* male_tablecell.png */; };
-		798EF9181A2DB819002A8428 /* EHECustomerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798EF9161A2DB819002A8428 /* EHECustomerDetailViewController.m */; };
-		798EF9191A2DB819002A8428 /* EHECustomerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 798EF9171A2DB819002A8428 /* EHECustomerDetailViewController.xib */; };
 		798EF91B1A2DBD09002A8428 /* little_student.png in Resources */ = {isa = PBXBuildFile; fileRef = 798EF91A1A2DBD09002A8428 /* little_student.png */; };
 		798EF91D1A2DBFF0002A8428 /* lightgreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 798EF91C1A2DBFF0002A8428 /* lightgreen.png */; };
+		799D153F1A2ED2EB00E68CBA /* EHETchOrderRegularCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 799D153D1A2ED2EB00E68CBA /* EHETchOrderRegularCell.m */; };
+		799D15401A2ED2EB00E68CBA /* EHETchOrderRegularCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 799D153E1A2ED2EB00E68CBA /* EHETchOrderRegularCell.xib */; };
+		799D15501A2F03CD00E68CBA /* distanceIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 799D154F1A2F03CD00E68CBA /* distanceIcon.png */; };
+		799D15521A2F0AFC00E68CBA /* timeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 799D15511A2F0AFC00E68CBA /* timeIcon.png */; };
 		79B26AB11A2D5699009BDD26 /* EHETchSearchingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26AAF1A2D5699009BDD26 /* EHETchSearchingViewController.m */; };
 		79B26AB21A2D5699009BDD26 /* EHETchSearchingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B26AB01A2D5699009BDD26 /* EHETchSearchingViewController.xib */; };
 		79B26AB61A2D5B55009BDD26 /* EHEOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26AB51A2D5B55009BDD26 /* EHEOrder.m */; };
@@ -49,16 +57,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		79288E2E1A2E0F9B00492B02 /* EHETchOrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderDetailViewController.h; sourceTree = "<group>"; };
+		79288E2F1A2E0F9B00492B02 /* EHETchOrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderDetailViewController.m; sourceTree = "<group>"; };
+		79288E301A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderDetailViewController.xib; sourceTree = "<group>"; };
+		79288E331A2EA3F000492B02 /* EHECustomerImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHECustomerImageCell.h; sourceTree = "<group>"; };
+		79288E341A2EA3F000492B02 /* EHECustomerImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHECustomerImageCell.m; sourceTree = "<group>"; };
+		79288E351A2EA3F000492B02 /* EHECustomerImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHECustomerImageCell.xib; sourceTree = "<group>"; };
+		79288E381A2EC97000492B02 /* EHETchOrderHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderHeaderCell.h; sourceTree = "<group>"; };
+		79288E391A2EC97000492B02 /* EHETchOrderHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderHeaderCell.m; sourceTree = "<group>"; };
+		79288E3A1A2EC97000492B02 /* EHETchOrderHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderHeaderCell.xib; sourceTree = "<group>"; };
 		798EF90B1A2D9823002A8428 /* EHETchOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderTableViewCell.h; sourceTree = "<group>"; };
 		798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderTableViewCell.m; sourceTree = "<group>"; };
 		798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderTableViewCell.xib; sourceTree = "<group>"; };
 		798EF9111A2D9866002A8428 /* female_tablecell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female_tablecell.png; sourceTree = "<group>"; };
 		798EF9121A2D9866002A8428 /* male_tablecell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male_tablecell.png; sourceTree = "<group>"; };
-		798EF9151A2DB819002A8428 /* EHECustomerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHECustomerDetailViewController.h; sourceTree = "<group>"; };
-		798EF9161A2DB819002A8428 /* EHECustomerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHECustomerDetailViewController.m; sourceTree = "<group>"; };
-		798EF9171A2DB819002A8428 /* EHECustomerDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHECustomerDetailViewController.xib; sourceTree = "<group>"; };
 		798EF91A1A2DBD09002A8428 /* little_student.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = little_student.png; sourceTree = "<group>"; };
 		798EF91C1A2DBFF0002A8428 /* lightgreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightgreen.png; sourceTree = "<group>"; };
+		799D153C1A2ED2EB00E68CBA /* EHETchOrderRegularCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderRegularCell.h; sourceTree = "<group>"; };
+		799D153D1A2ED2EB00E68CBA /* EHETchOrderRegularCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderRegularCell.m; sourceTree = "<group>"; };
+		799D153E1A2ED2EB00E68CBA /* EHETchOrderRegularCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderRegularCell.xib; sourceTree = "<group>"; };
+		799D154F1A2F03CD00E68CBA /* distanceIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = distanceIcon.png; sourceTree = "<group>"; };
+		799D15511A2F0AFC00E68CBA /* timeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeIcon.png; sourceTree = "<group>"; };
 		79B26AAE1A2D5699009BDD26 /* EHETchSearchingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchSearchingViewController.h; sourceTree = "<group>"; };
 		79B26AAF1A2D5699009BDD26 /* EHETchSearchingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchSearchingViewController.m; sourceTree = "<group>"; };
 		79B26AB01A2D5699009BDD26 /* EHETchSearchingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchSearchingViewController.xib; sourceTree = "<group>"; };
@@ -129,9 +148,7 @@
 				798EF90B1A2D9823002A8428 /* EHETchOrderTableViewCell.h */,
 				798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */,
 				798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */,
-				798EF9151A2DB819002A8428 /* EHECustomerDetailViewController.h */,
-				798EF9161A2DB819002A8428 /* EHECustomerDetailViewController.m */,
-				798EF9171A2DB819002A8428 /* EHECustomerDetailViewController.xib */,
+				799D15411A2ED43000E68CBA /* 订单详情 */,
 			);
 			name = "订单列表";
 			sourceTree = "<group>";
@@ -139,12 +156,33 @@
 		798EF9101A2D9831002A8428 /* 图片 */ = {
 			isa = PBXGroup;
 			children = (
+				799D15511A2F0AFC00E68CBA /* timeIcon.png */,
+				799D154F1A2F03CD00E68CBA /* distanceIcon.png */,
 				798EF91C1A2DBFF0002A8428 /* lightgreen.png */,
 				798EF91A1A2DBD09002A8428 /* little_student.png */,
 				798EF9111A2D9866002A8428 /* female_tablecell.png */,
 				798EF9121A2D9866002A8428 /* male_tablecell.png */,
 			);
 			name = "图片";
+			sourceTree = "<group>";
+		};
+		799D15411A2ED43000E68CBA /* 订单详情 */ = {
+			isa = PBXGroup;
+			children = (
+				79288E2E1A2E0F9B00492B02 /* EHETchOrderDetailViewController.h */,
+				79288E2F1A2E0F9B00492B02 /* EHETchOrderDetailViewController.m */,
+				79288E301A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib */,
+				79288E331A2EA3F000492B02 /* EHECustomerImageCell.h */,
+				79288E341A2EA3F000492B02 /* EHECustomerImageCell.m */,
+				79288E351A2EA3F000492B02 /* EHECustomerImageCell.xib */,
+				79288E381A2EC97000492B02 /* EHETchOrderHeaderCell.h */,
+				79288E391A2EC97000492B02 /* EHETchOrderHeaderCell.m */,
+				79288E3A1A2EC97000492B02 /* EHETchOrderHeaderCell.xib */,
+				799D153C1A2ED2EB00E68CBA /* EHETchOrderRegularCell.h */,
+				799D153D1A2ED2EB00E68CBA /* EHETchOrderRegularCell.m */,
+				799D153E1A2ED2EB00E68CBA /* EHETchOrderRegularCell.xib */,
+			);
+			name = "订单详情";
 			sourceTree = "<group>";
 		};
 		79B26AAD1A2D5666009BDD26 /* ViewControllers */ = {
@@ -341,20 +379,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79288E371A2EA3F000492B02 /* EHECustomerImageCell.xib in Resources */,
 				79B26AC71A2D758D009BDD26 /* FZCATOONJ.ttf in Resources */,
+				799D15501A2F03CD00E68CBA /* distanceIcon.png in Resources */,
 				79B26AC81A2D758D009BDD26 /* MCuteHKS.otf in Resources */,
-				798EF9191A2DB819002A8428 /* EHECustomerDetailViewController.xib in Resources */,
 				79B26AC91A2D758D009BDD26 /* MFYueYuan_Noncommercial-Regular.otf in Resources */,
 				79B26ACA1A2D758D009BDD26 /* MYoungHKS-Xbold.otf in Resources */,
 				798EF91D1A2DBFF0002A8428 /* lightgreen.png in Resources */,
 				798EF91B1A2DBD09002A8428 /* little_student.png in Resources */,
 				79B26AC61A2D73F1009BDD26 /* EHETchSettingViewController.xib in Resources */,
+				799D15521A2F0AFC00E68CBA /* timeIcon.png in Resources */,
 				79C28E421A2C577A000788F2 /* LaunchScreen.xib in Resources */,
+				79288E3C1A2EC97000492B02 /* EHETchOrderHeaderCell.xib in Resources */,
+				79288E321A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib in Resources */,
 				79C28E3F1A2C577A000788F2 /* Images.xcassets in Resources */,
 				798EF90F1A2D9823002A8428 /* EHETchOrderTableViewCell.xib in Resources */,
 				798EF9131A2D9866002A8428 /* female_tablecell.png in Resources */,
 				79B26AB21A2D5699009BDD26 /* EHETchSearchingViewController.xib in Resources */,
 				79B26AC11A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib in Resources */,
+				799D15401A2ED2EB00E68CBA /* EHETchOrderRegularCell.xib in Resources */,
 				798EF9141A2D9866002A8428 /* male_tablecell.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,15 +416,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				798EF9181A2DB819002A8428 /* EHECustomerDetailViewController.m in Sources */,
 				79C28E341A2C577A000788F2 /* AppDelegate.m in Sources */,
 				79B26ABC1A2D5B56009BDD26 /* EHEAccount.m in Sources */,
+				799D153F1A2ED2EB00E68CBA /* EHETchOrderRegularCell.m in Sources */,
 				79C28E5A1A2C5821000788F2 /* EHETchCoreDataManager.m in Sources */,
 				79B26AC01A2D73C1009BDD26 /* EHETchBookingManagerViewController.m in Sources */,
+				79288E361A2EA3F000492B02 /* EHECustomerImageCell.m in Sources */,
 				79C28E311A2C577A000788F2 /* main.m in Sources */,
 				798EF90E1A2D9823002A8428 /* EHETchOrderTableViewCell.m in Sources */,
 				79C28E5D1A2C5848000788F2 /* EHETchCommunicationManager.m in Sources */,
+				79288E3B1A2EC97000492B02 /* EHETchOrderHeaderCell.m in Sources */,
 				79B26AB91A2D5B56009BDD26 /* EHECustomer.m in Sources */,
+				79288E311A2E0F9B00492B02 /* EHETchOrderDetailViewController.m in Sources */,
 				79B26AB11A2D5699009BDD26 /* EHETchSearchingViewController.m in Sources */,
 				79B26AB61A2D5B55009BDD26 /* EHEOrder.m in Sources */,
 				79C28E371A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodeld in Sources */,

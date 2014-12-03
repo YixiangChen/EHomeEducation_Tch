@@ -4,10 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EHECustomerDetailViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EHETchOrderDetailViewController">
             <connections>
-                <outlet property="imageBackground" destination="bXR-lo-A6G" id="9ad-Vb-G9Q"/>
-                <outlet property="tableView" destination="7XI-Kh-Yh0" id="chG-0Y-JI1"/>
+                <outlet property="tableView" destination="5l0-wt-qQC" id="p4f-4b-nMV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,15 +15,12 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lightgreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="bXR-lo-A6G">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
-                </imageView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7XI-Kh-Yh0">
-                    <rect key="frame" x="0.0" y="150" width="600" height="900"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5l0-wt-qQC">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="440"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="uQS-DZ-s7p"/>
-                        <outlet property="delegate" destination="-1" id="UVk-jP-tkb"/>
+                        <outlet property="dataSource" destination="-1" id="Cuh-ik-inR"/>
+                        <outlet property="delegate" destination="-1" id="4Ym-6f-qdf"/>
                     </connections>
                 </tableView>
             </subviews>
@@ -32,7 +28,4 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
-    <resources>
-        <image name="lightgreen.png" width="320" height="214"/>
-    </resources>
 </document>
