@@ -11,6 +11,14 @@
 		52A58E7D1A2ED2B60036E92F /* EHETchBookingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A58E7B1A2ED2B60036E92F /* EHETchBookingCell.xib */; };
 		52A58E811A2EF47B0036E92F /* EHETchSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A58E7F1A2EF47B0036E92F /* EHETchSettingCell.m */; };
 		52A58E821A2EF47B0036E92F /* EHETchSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A58E801A2EF47B0036E92F /* EHETchSettingCell.xib */; };
+		52AC05381A2F032F00CAE5DA /* EHETchSettingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AC05361A2F032F00CAE5DA /* EHETchSettingDetailViewController.m */; };
+		52AC05391A2F032F00CAE5DA /* EHETchSettingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AC05371A2F032F00CAE5DA /* EHETchSettingDetailViewController.xib */; };
+		52AC053D1A2F06C100CAE5DA /* EHETchPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AC053B1A2F06C100CAE5DA /* EHETchPersonalViewController.m */; };
+		52AC053E1A2F06C100CAE5DA /* EHETchPersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AC053C1A2F06C100CAE5DA /* EHETchPersonalViewController.xib */; };
+		52AC05421A2F078500CAE5DA /* EHETchSettingDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AC05401A2F078500CAE5DA /* EHETchSettingDetailCell.m */; };
+		52AC05431A2F078500CAE5DA /* EHETchSettingDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AC05411A2F078500CAE5DA /* EHETchSettingDetailCell.xib */; };
+		52AC05471A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AC05451A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.m */; };
+		52AC05481A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AC05461A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.xib */; };
 		798EF90E1A2D9823002A8428 /* EHETchOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */; };
 		798EF90F1A2D9823002A8428 /* EHETchOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */; };
 		798EF9131A2D9866002A8428 /* female_tablecell.png in Resources */ = {isa = PBXBuildFile; fileRef = 798EF9111A2D9866002A8428 /* female_tablecell.png */; };
@@ -59,6 +67,18 @@
 		52A58E7E1A2EF47B0036E92F /* EHETchSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchSettingCell.h; sourceTree = "<group>"; };
 		52A58E7F1A2EF47B0036E92F /* EHETchSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchSettingCell.m; sourceTree = "<group>"; };
 		52A58E801A2EF47B0036E92F /* EHETchSettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchSettingCell.xib; sourceTree = "<group>"; };
+		52AC05351A2F032F00CAE5DA /* EHETchSettingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchSettingDetailViewController.h; sourceTree = "<group>"; };
+		52AC05361A2F032F00CAE5DA /* EHETchSettingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchSettingDetailViewController.m; sourceTree = "<group>"; };
+		52AC05371A2F032F00CAE5DA /* EHETchSettingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchSettingDetailViewController.xib; sourceTree = "<group>"; };
+		52AC053A1A2F06C100CAE5DA /* EHETchPersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchPersonalViewController.h; sourceTree = "<group>"; };
+		52AC053B1A2F06C100CAE5DA /* EHETchPersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchPersonalViewController.m; sourceTree = "<group>"; };
+		52AC053C1A2F06C100CAE5DA /* EHETchPersonalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchPersonalViewController.xib; sourceTree = "<group>"; };
+		52AC053F1A2F078500CAE5DA /* EHETchSettingDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchSettingDetailCell.h; sourceTree = "<group>"; };
+		52AC05401A2F078500CAE5DA /* EHETchSettingDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchSettingDetailCell.m; sourceTree = "<group>"; };
+		52AC05411A2F078500CAE5DA /* EHETchSettingDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchSettingDetailCell.xib; sourceTree = "<group>"; };
+		52AC05441A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchSettingDetailCell2.h; sourceTree = "<group>"; };
+		52AC05451A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchSettingDetailCell2.m; sourceTree = "<group>"; };
+		52AC05461A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchSettingDetailCell2.xib; sourceTree = "<group>"; };
 		798EF90B1A2D9823002A8428 /* EHETchOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderTableViewCell.h; sourceTree = "<group>"; };
 		798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderTableViewCell.m; sourceTree = "<group>"; };
 		798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderTableViewCell.xib; sourceTree = "<group>"; };
@@ -140,6 +160,12 @@
 				52A58E7E1A2EF47B0036E92F /* EHETchSettingCell.h */,
 				52A58E7F1A2EF47B0036E92F /* EHETchSettingCell.m */,
 				52A58E801A2EF47B0036E92F /* EHETchSettingCell.xib */,
+				52AC053F1A2F078500CAE5DA /* EHETchSettingDetailCell.h */,
+				52AC05401A2F078500CAE5DA /* EHETchSettingDetailCell.m */,
+				52AC05411A2F078500CAE5DA /* EHETchSettingDetailCell.xib */,
+				52AC05441A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.h */,
+				52AC05451A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.m */,
+				52AC05461A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.xib */,
 			);
 			name = "设置tableCell";
 			sourceTree = "<group>";
@@ -158,12 +184,18 @@
 				79B26AC21A2D73F1009BDD26 /* EHETchSettingViewController.h */,
 				79B26AC31A2D73F1009BDD26 /* EHETchSettingViewController.m */,
 				79B26AC41A2D73F1009BDD26 /* EHETchSettingViewController.xib */,
+				52AC05351A2F032F00CAE5DA /* EHETchSettingDetailViewController.h */,
+				52AC05361A2F032F00CAE5DA /* EHETchSettingDetailViewController.m */,
+				52AC05371A2F032F00CAE5DA /* EHETchSettingDetailViewController.xib */,
 				798EF90B1A2D9823002A8428 /* EHETchOrderTableViewCell.h */,
 				798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */,
 				798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */,
 				798EF9151A2DB819002A8428 /* EHECustomerDetailViewController.h */,
 				798EF9161A2DB819002A8428 /* EHECustomerDetailViewController.m */,
 				798EF9171A2DB819002A8428 /* EHECustomerDetailViewController.xib */,
+				52AC053A1A2F06C100CAE5DA /* EHETchPersonalViewController.h */,
+				52AC053B1A2F06C100CAE5DA /* EHETchPersonalViewController.m */,
+				52AC053C1A2F06C100CAE5DA /* EHETchPersonalViewController.xib */,
 			);
 			name = "订单列表";
 			sourceTree = "<group>";
@@ -377,7 +409,9 @@
 				79B26AC71A2D758D009BDD26 /* FZCATOONJ.ttf in Resources */,
 				79B26AC81A2D758D009BDD26 /* MCuteHKS.otf in Resources */,
 				798EF9191A2DB819002A8428 /* EHECustomerDetailViewController.xib in Resources */,
+				52AC053E1A2F06C100CAE5DA /* EHETchPersonalViewController.xib in Resources */,
 				79B26AC91A2D758D009BDD26 /* MFYueYuan_Noncommercial-Regular.otf in Resources */,
+				52AC05391A2F032F00CAE5DA /* EHETchSettingDetailViewController.xib in Resources */,
 				52A58E821A2EF47B0036E92F /* EHETchSettingCell.xib in Resources */,
 				79B26ACA1A2D758D009BDD26 /* MYoungHKS-Xbold.otf in Resources */,
 				798EF91D1A2DBFF0002A8428 /* lightgreen.png in Resources */,
@@ -385,7 +419,9 @@
 				79B26AC61A2D73F1009BDD26 /* EHETchSettingViewController.xib in Resources */,
 				79C28E421A2C577A000788F2 /* LaunchScreen.xib in Resources */,
 				79C28E3F1A2C577A000788F2 /* Images.xcassets in Resources */,
+				52AC05431A2F078500CAE5DA /* EHETchSettingDetailCell.xib in Resources */,
 				798EF90F1A2D9823002A8428 /* EHETchOrderTableViewCell.xib in Resources */,
+				52AC05481A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.xib in Resources */,
 				798EF9131A2D9866002A8428 /* female_tablecell.png in Resources */,
 				79B26AB21A2D5699009BDD26 /* EHETchSearchingViewController.xib in Resources */,
 				79B26AC11A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib in Resources */,
@@ -411,16 +447,20 @@
 				798EF9181A2DB819002A8428 /* EHECustomerDetailViewController.m in Sources */,
 				79C28E341A2C577A000788F2 /* AppDelegate.m in Sources */,
 				79B26ABC1A2D5B56009BDD26 /* EHEAccount.m in Sources */,
+				52AC05471A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.m in Sources */,
 				79C28E5A1A2C5821000788F2 /* EHETchCoreDataManager.m in Sources */,
 				79B26AC01A2D73C1009BDD26 /* EHETchBookingManagerViewController.m in Sources */,
 				79C28E311A2C577A000788F2 /* main.m in Sources */,
+				52AC05381A2F032F00CAE5DA /* EHETchSettingDetailViewController.m in Sources */,
 				798EF90E1A2D9823002A8428 /* EHETchOrderTableViewCell.m in Sources */,
 				79C28E5D1A2C5848000788F2 /* EHETchCommunicationManager.m in Sources */,
+				52AC053D1A2F06C100CAE5DA /* EHETchPersonalViewController.m in Sources */,
 				79B26AB91A2D5B56009BDD26 /* EHECustomer.m in Sources */,
 				79B26AB11A2D5699009BDD26 /* EHETchSearchingViewController.m in Sources */,
 				79B26AB61A2D5B55009BDD26 /* EHEOrder.m in Sources */,
 				79C28E371A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodeld in Sources */,
 				79B26AC51A2D73F1009BDD26 /* EHETchSettingViewController.m in Sources */,
+				52AC05421A2F078500CAE5DA /* EHETchSettingDetailCell.m in Sources */,
 				52A58E811A2EF47B0036E92F /* EHETchSettingCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,7 @@
 
 #import "EHETchSettingViewController.h"
 #import "EHETchSettingCell.h"
+#import "EHETchPersonalViewController.h"
 @interface EHETchSettingViewController ()
 
 @end
@@ -15,6 +16,7 @@
 @implementation EHETchSettingViewController
 
 - (void)viewDidLoad {
+    self.title=@"设置";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
@@ -87,10 +89,10 @@
             
             cell.settingImageView.image=[UIImage imageNamed:@"male_tablecell"];
             
-            [cell.settingImageView.layer setBorderColor: [[UIColor grayColor] CGColor]];//边框灰色
-            [cell.settingImageView.layer setBorderWidth: 1.0];//宽度为1
-            [cell.settingImageView.layer setCornerRadius:26.0f];//圆角
-            [cell.settingImageView.layer setMasksToBounds:YES];
+            cell.settingImageView.layer.cornerRadius = 26;
+            cell.settingImageView.layer.masksToBounds = YES;
+            [cell.settingImageView.layer setBorderWidth:5];
+            [cell.settingImageView.layer setBorderColor:[UIColor colorWithRed:192.0 / 256.0 green:233 / 256.0 blue:189 / 256.0 alpha:0.8].CGColor];
         }
         else
         {
@@ -116,6 +118,7 @@
     cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
+#pragma mark- TableView Delegate Method
 //对每个分组的说明和描述
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
@@ -136,7 +139,7 @@
 {
     UIView * headerView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 10)];
     headerView.backgroundColor=[UIColor clearColor];
-    UILabel * label=[[UILabel alloc]initWithFrame:CGRectMake(10, 3, 100, 20)];
+    UILabel * label=[[UILabel alloc]initWithFrame:CGRectMake(20, 3, 100, 20)];
     CGRect labelFrame=label.frame;
     if(section==0)
     {
@@ -168,5 +171,17 @@
         }
     }
     return 44.0f;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    if([indexPath section]==0)
+    {
+        if([indexPath row]==0)
+        {
+            EHETchPersonalViewController * personal=[[EHETchPersonalViewController alloc]initWithNibName:nil bundle:nil];
+            [self.navigationController pushViewController:personal animated:YES];
+        }
+    }
 }
 @end

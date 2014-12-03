@@ -39,7 +39,11 @@
 {
     EHETchCoreDataManager * coreData=[EHETchCoreDataManager getInstance];
     self.allOrdersArray=[coreData fetchAllOrders];
-    NSLog(@"%d",[self.allOrdersArray count]);
+    NSLog(@"%@",self.allOrdersArray);
+    for(EHEOrder *orders in self.allOrdersArray)
+    {
+        NSLog(@"orderStatus=%d",orders.orderstatus.intValue);
+    }
     for(EHEOrder * order in self.allOrdersArray)
     {
       if(order.orderstatus.intValue==1)
