@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EHETchBookingManagerViewController : UIViewController
-
+@interface EHETchBookingManagerViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property(nonatomic)BOOL wetherGetOrdersSuccessful;
+@property(strong,nonatomic)NSArray * allOrdersArray;
+@property(strong,nonatomic)UITableView * orderTableView;
+@property(strong,nonatomic)NSMutableArray * certainOrders;
+@property(strong,nonatomic)NSMutableArray * cancledOrders;
+@property(strong,nonatomic)NSMutableArray * unfinsihedOrders;
+@property(strong,nonatomic)NSMutableArray * finishedOrders;
+@property(strong,nonatomic)NSMutableDictionary * ordersDictionary;
 @end
