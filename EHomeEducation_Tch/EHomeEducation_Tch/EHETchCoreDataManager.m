@@ -86,6 +86,30 @@
     return nil;
 }
 
+-(EHEOrder *)fetchOrderWithOrderId:(int)orderId {
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"EHEOrder"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"orderid = %d", orderId];
+    fetchRequest.predicate = predicate;
+    
+    NSSortDescriptor *sortByName = [NSSortDescriptor sortDescriptorWithKey:@"orderid" ascending:NO];
+    NSArray *sorts = [[NSArray alloc] initWithObjects:sortByName, nil];
+    fetchRequest.sortDescriptors = sorts;
+    
+    NSError *error;
+    NSArray *orders = [self.context executeFetchRequest:fetchRequest error:&error];
+    
+    if (error)
+    {
+        return nil;
+    }
+    else if (orders.count > 0)
+    {
+        return orders[0];
+    }
+    return nil;
+}
+
 -(BOOL)removeAllOrdersFromCoreData {
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"EHEOrder" inManagedObjectContext:self.context];
     

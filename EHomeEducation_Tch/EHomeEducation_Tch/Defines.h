@@ -10,6 +10,9 @@
 #define EHomeEducation_Tch_Defines_h
 
 
+// System Version
+#define SYSTEM_VERSION [UIDevice currentDevice].systemVersion.floatValue
+
 // url
 
 #define kURLDomain                  @"http://218.249.130.194:8080/ehomeedu/"

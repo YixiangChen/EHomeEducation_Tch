@@ -15,23 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "79C28E2A1A2C577A000788F2"
-               BuildableName = "EHomeEducation_Tch.app"
-               BlueprintName = "EHomeEducation_Tch"
-               ReferencedContainer = "container:EHomeEducation_Tch.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "79C28E461A2C577A000788F2"
-               BuildableName = "EHomeEducation_TchTests.xctest"
-               BlueprintName = "EHomeEducation_TchTests"
-               ReferencedContainer = "container:EHomeEducation_Tch.xcodeproj">
+               BuildableName = "EHomeEduTeacher.app"
+               BlueprintName = "EHomeEduTeacher"
+               ReferencedContainer = "container:EHomeEduTeacher.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,24 +28,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "79C28E461A2C577A000788F2"
-               BuildableName = "EHomeEducation_TchTests.xctest"
-               BlueprintName = "EHomeEducation_TchTests"
-               ReferencedContainer = "container:EHomeEducation_Tch.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "79C28E2A1A2C577A000788F2"
-            BuildableName = "EHomeEducation_Tch.app"
-            BlueprintName = "EHomeEducation_Tch"
-            ReferencedContainer = "container:EHomeEducation_Tch.xcodeproj">
+            BuildableName = "EHomeEduTeacher.app"
+            BlueprintName = "EHomeEduTeacher"
+            ReferencedContainer = "container:EHomeEduTeacher.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "79C28E2A1A2C577A000788F2"
-            BuildableName = "EHomeEducation_Tch.app"
-            BlueprintName = "EHomeEducation_Tch"
-            ReferencedContainer = "container:EHomeEducation_Tch.xcodeproj">
+            BuildableName = "EHomeEduTeacher.app"
+            BlueprintName = "EHomeEduTeacher"
+            ReferencedContainer = "container:EHomeEduTeacher.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "79C28E2A1A2C577A000788F2"
-            BuildableName = "EHomeEducation_Tch.app"
-            BlueprintName = "EHomeEducation_Tch"
-            ReferencedContainer = "container:EHomeEducation_Tch.xcodeproj">
+            BuildableName = "EHomeEduTeacher.app"
+            BlueprintName = "EHomeEduTeacher"
+            ReferencedContainer = "container:EHomeEduTeacher.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

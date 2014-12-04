@@ -13,6 +13,7 @@
 #import "EHETchSearchingViewController.h"
 #import "EHETchBookingManagerViewController.h"
 #import "EHETchSettingViewController.h"
+#import "EHETchOrderDetailViewController.h"
 
 @interface AppDelegate ()
 
@@ -84,7 +85,35 @@
     
     self.window.rootViewController = self.tab;
     [self.window makeKeyAndVisible];
+    
+    if (SYSTEM_VERSION >= 8.0) {
+        //ios8注册推送
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
+                                                                                             |UIUserNotificationTypeAlert
+                                                                                             |UIUserNotificationTypeSound) categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    }
+    else
+    {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
+    }
 
+    if([launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey]) {
+        NSDictionary * userInfo = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        int orderid = [userInfo[@"orderId"] intValue];
+        [[EHETchCommunicationManager getInstance] loadOrderDetailWithOrderId:orderid];
+        EHEOrder *order = [[EHETchCoreDataManager getInstance] fetchOrderWithOrderId:orderid];
+
+        EHETchOrderDetailViewController *detailViewController = [[EHETchOrderDetailViewController alloc] initWithNibName:nil bundle:nil];
+        detailViewController.order = order;
+        
+        UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] init];
+        [leftBarButtonItem setTitle:@"返回列表"];
+        [leftBarButtonItem setStyle:UIBarButtonItemStyleDone];
+        [leftBarButtonItem setTitleTextAttributes: @{NSForegroundColorAttributeName: [UIColor greenColor]}  forState:UIControlStateNormal];
+        EHETchSearchingViewController *searching = [[[self.tab.viewControllers objectAtIndex:0] viewControllers] objectAtIndex:0];
+        [searching.navigationController pushViewController:detailViewController animated:YES];
+    }
     return YES;
 }
 
@@ -100,6 +129,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -110,6 +140,47 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+#if __IPHONE_8_0 <= __IPHONE_OS_VERSION_MAX_ALLOWED
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+    [application registerForRemoteNotifications];
+}
+#endif
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    //这里需要判断是否登录，必须使用登录后的id，如果第一次使用，那么id没有那就传一个0过去，那么ownerid就是0，然后下次有了用户了，则将对应的deviceToken更新成该用户的。
+    NSLog(@"%@",deviceToken);
+    NSString * deviceTokenStr = deviceToken.description;
+    deviceTokenStr = [deviceTokenStr stringByReplacingOccurrencesOfString:@"<" withString:@""];
+    deviceTokenStr = [deviceTokenStr stringByReplacingOccurrencesOfString:@">" withString:@""];
+    //将deviceToken弄成一个没有<>和空格的连续64位字符串。
+    deviceTokenStr = [deviceTokenStr stringByReplacingOccurrencesOfString:@" " withString:@""];
+    //拿到token之后，发送请求，然后存入服务器。
+    NSURL * url = [NSURL URLWithString:[NSString stringWithFormat:@"%@api/common/devicetokenregister.action",kURLDomain ]];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    NSString * postData = [NSString stringWithFormat:@"info={\"devicetoken\":\"%@\",\"tokentype\":1,\"ownerid\":135,\"multipledevice\":0}",deviceTokenStr];
+    [request setHTTPBody:[postData dataUsingEncoding:NSUTF8StringEncoding]];
+    NSError * error = nil;
+    NSData * data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&error];
+    NSLog(@"data:%@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+    NSLog(@"%@",postData);
+    NSLog(@"error:%@",error);
+}
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    //收到推送通知的方法
+    int orderid = [userInfo[@"orderId"] intValue];
+    [[EHETchCommunicationManager getInstance] loadOrderDetailWithOrderId:orderid];
+    EHEOrder *order = [[EHETchCoreDataManager getInstance] fetchOrderWithOrderId:orderid];
+    EHETchOrderDetailViewController *detailViewController = [[EHETchOrderDetailViewController alloc] initWithNibName:nil bundle:nil];
+    detailViewController.order = order;
+    EHETchSearchingViewController *searching = [[[self.tab.viewControllers objectAtIndex:0] viewControllers] objectAtIndex:0];
+    [searching.navigationController pushViewController:detailViewController animated:YES];
+    
 }
 
 #pragma mark - Core Data stack
