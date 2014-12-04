@@ -9,6 +9,7 @@
 #import "EHETchPersonalViewController.h"
 #import "EHETchSettingDetailCell.h"
 #import "EHETchSettingDetailViewController.h"
+#import "EHETchCommunicationManager.h"
 @interface EHETchPersonalViewController ()
 
 @end
@@ -25,16 +26,53 @@
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
     [self.view addSubview:self.tableView];
     
+    self.teacherInfoDictionary=[[NSMutableDictionary alloc]initWithCapacity:10];
+    
     UIBarButtonItem * sendButtonItem=[[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(sendInfomation)];
     self.navigationItem.rightBarButtonItem=sendButtonItem;
     
     self.image=[UIImage imageNamed:@"male_tablecell"];
     self.gender=@"男";
 }
+/*
+ NSString * postData = [NSString stringWithFormat:@"{\"teacherid\":%@,\"name\":\"%@\",\"birthday\":\"%@\",\"gender\":\"%@\",\"identity\":\"%@\",\"qq\":\"%@\",\"sinaweibo\":\"%@\",\"telephone\":\"%@\",\"degree\":\"%@\",\"timeperiod\":\"%@\",\"objectinfo\":\"%@\",\"subjectinfo\":\"%@\",\"memo\":\"%@\",\"majoraddress\":\"%@\",\"latitude\":%@,\"longitude\":%@}",dict[@"teacherid"],dict[@"name"],dict[@"birthday"],dict[@"gender"],dict[@"identity"],dict[@"qq"],dict[@"sinaweibo"],dict[@"telephone"],dict[@"degree"],dict[@"timeperiod"],dict[@"objectinfo"],dict[@"subjectinfo"],dict[@"memo"],dict[@"majoraddress"],dict[@"latitude"],dict[@"longitude"]];
+ 
+ */
 -(void)sendInfomation
 {
-    
+    EHETchCommunicationManager * communicationManager=[EHETchCommunicationManager getInstance];
+    [self.teacherInfoDictionary setObject:@"135" forKey:@"teacherid"];
+    [self.teacherInfoDictionary setObject:self.name forKey:@"name"];
+    [self.teacherInfoDictionary setObject:self.brithday forKey:@"birthday"];
+    [self.teacherInfoDictionary setObject:self.gender forKey:@"gender"];
+    [self.teacherInfoDictionary setObject:@"1234567890" forKey:@"identity"];
+    [self.teacherInfoDictionary setObject:@"547890432" forKey:@"qq"];
+    [self.teacherInfoDictionary setObject:@"新浪微博" forKey:@"sinaweibo"];
+    [self.teacherInfoDictionary setObject:self.telephoneNumber forKey:@"telephone"];
+    [self.teacherInfoDictionary setObject:@"本科" forKey:@"degree"];
+    [self.teacherInfoDictionary setObject:@"3年" forKey:@"timeperiod"];
+    [self.teacherInfoDictionary setObject:@"高中" forKey:@"objectinfo"];
+    [self.teacherInfoDictionary setObject:@"语文数学" forKey:@"subjectinfo"];
+    [self.teacherInfoDictionary setObject:@"备注" forKey:@"memo"];
+    [self.teacherInfoDictionary setObject:@"北京石景山" forKey:@"majoraddress"];
+    [self.teacherInfoDictionary setObject:@"39.907291" forKey:@"latitude"];
+    [self.teacherInfoDictionary setObject:@"116.188583" forKey:@"longitude"];
+    self.check=[communicationManager completeProfileWithInfodict:self.teacherInfoDictionary];
+    if(self.check)
+    {
+        NSLog(@"补充个人信息成功！");
+    }
+    else
+    {
+        NSLog(@"补充失败");
+    }
 }
+
+-(NSString *)getKey:(NSString *)pra1 andTeacherid:(NSString *)para2
+{
+    return [NSString stringWithFormat:@"%@%@",pra1,para2];
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
     [self.tableView reloadData];

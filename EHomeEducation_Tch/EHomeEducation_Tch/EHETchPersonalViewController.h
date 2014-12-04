@@ -15,5 +15,7 @@
 @property(strong,nonatomic)NSString * gender;
 @property(strong,nonatomic)NSString * brithday;
 @property(strong,nonatomic)UIImage * image;
+@property(strong,nonatomic)NSMutableDictionary * teacherInfoDictionary;
 @property(strong,nonatomic)EHETchSettingDetailViewController * settingDetail;
+@property(nonatomic)BOOL check;
 @end

@@ -90,10 +90,11 @@
             NSLog(@"%@",dict[@"message"]);
             return NO;
         }
-    } else {
+    }
+    else
+    {
         return NO;
     }
-    
 }
 
 -(BOOL)completeProfileWithInfodict:(NSDictionary *)dict {
