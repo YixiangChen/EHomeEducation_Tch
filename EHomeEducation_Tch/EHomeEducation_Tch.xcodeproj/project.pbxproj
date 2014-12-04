@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		79288E311A2E0F9B00492B02 /* EHETchOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79288E2F1A2E0F9B00492B02 /* EHETchOrderDetailViewController.m */; };
-		79288E321A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79288E301A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib */; };
-		79288E361A2EA3F000492B02 /* EHECustomerImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79288E341A2EA3F000492B02 /* EHECustomerImageCell.m */; };
-		79288E371A2EA3F000492B02 /* EHECustomerImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79288E351A2EA3F000492B02 /* EHECustomerImageCell.xib */; };
-		79288E3B1A2EC97000492B02 /* EHETchOrderHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79288E391A2EC97000492B02 /* EHETchOrderHeaderCell.m */; };
-		79288E3C1A2EC97000492B02 /* EHETchOrderHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79288E3A1A2EC97000492B02 /* EHETchOrderHeaderCell.xib */; };
 		52A58E7C1A2ED2B60036E92F /* EHETchBookingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A58E7A1A2ED2B60036E92F /* EHETchBookingCell.m */; };
 		52A58E7D1A2ED2B60036E92F /* EHETchBookingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A58E7B1A2ED2B60036E92F /* EHETchBookingCell.xib */; };
 		52A58E811A2EF47B0036E92F /* EHETchSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A58E7F1A2EF47B0036E92F /* EHETchSettingCell.m */; };
@@ -25,6 +19,13 @@
 		52AC05431A2F078500CAE5DA /* EHETchSettingDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AC05411A2F078500CAE5DA /* EHETchSettingDetailCell.xib */; };
 		52AC05471A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AC05451A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.m */; };
 		52AC05481A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AC05461A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.xib */; };
+		79288E311A2E0F9B00492B02 /* EHETchOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79288E2F1A2E0F9B00492B02 /* EHETchOrderDetailViewController.m */; };
+		79288E321A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79288E301A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib */; };
+		79288E361A2EA3F000492B02 /* EHECustomerImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79288E341A2EA3F000492B02 /* EHECustomerImageCell.m */; };
+		79288E371A2EA3F000492B02 /* EHECustomerImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79288E351A2EA3F000492B02 /* EHECustomerImageCell.xib */; };
+		79288E3B1A2EC97000492B02 /* EHETchOrderHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79288E391A2EC97000492B02 /* EHETchOrderHeaderCell.m */; };
+		79288E3C1A2EC97000492B02 /* EHETchOrderHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79288E3A1A2EC97000492B02 /* EHETchOrderHeaderCell.xib */; };
+		795E4D981A30053D00C6EF55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 795E4D971A30053D00C6EF55 /* AppDelegate.m */; };
 		798EF90E1A2D9823002A8428 /* EHETchOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */; };
 		798EF90F1A2D9823002A8428 /* EHETchOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */; };
 		798EF9131A2D9866002A8428 /* female_tablecell.png in Resources */ = {isa = PBXBuildFile; fileRef = 798EF9111A2D9866002A8428 /* female_tablecell.png */; };
@@ -39,7 +40,6 @@
 		79B26AB21A2D5699009BDD26 /* EHETchSearchingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B26AB01A2D5699009BDD26 /* EHETchSearchingViewController.xib */; };
 		79B26AB61A2D5B55009BDD26 /* EHEOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26AB51A2D5B55009BDD26 /* EHEOrder.m */; };
 		79B26AB91A2D5B56009BDD26 /* EHECustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26AB81A2D5B56009BDD26 /* EHECustomer.m */; };
-		79B26ABC1A2D5B56009BDD26 /* EHEAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26ABB1A2D5B56009BDD26 /* EHEAccount.m */; };
 		79B26AC01A2D73C1009BDD26 /* EHETchBookingManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26ABE1A2D73C1009BDD26 /* EHETchBookingManagerViewController.m */; };
 		79B26AC11A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B26ABF1A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib */; };
 		79B26AC51A2D73F1009BDD26 /* EHETchSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26AC31A2D73F1009BDD26 /* EHETchSettingViewController.m */; };
@@ -49,7 +49,6 @@
 		79B26AC91A2D758D009BDD26 /* MFYueYuan_Noncommercial-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 79C28E631A2C5F14000788F2 /* MFYueYuan_Noncommercial-Regular.otf */; };
 		79B26ACA1A2D758D009BDD26 /* MYoungHKS-Xbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 79C28E641A2C5F14000788F2 /* MYoungHKS-Xbold.otf */; };
 		79C28E311A2C577A000788F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C28E301A2C577A000788F2 /* main.m */; };
-		79C28E341A2C577A000788F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C28E331A2C577A000788F2 /* AppDelegate.m */; };
 		79C28E371A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79C28E351A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodeld */; };
 		79C28E3F1A2C577A000788F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79C28E3E1A2C577A000788F2 /* Images.xcassets */; };
 		79C28E421A2C577A000788F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79C28E401A2C577A000788F2 /* LaunchScreen.xib */; };
@@ -69,15 +68,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		79288E2E1A2E0F9B00492B02 /* EHETchOrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderDetailViewController.h; sourceTree = "<group>"; };
-		79288E2F1A2E0F9B00492B02 /* EHETchOrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderDetailViewController.m; sourceTree = "<group>"; };
-		79288E301A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderDetailViewController.xib; sourceTree = "<group>"; };
-		79288E331A2EA3F000492B02 /* EHECustomerImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHECustomerImageCell.h; sourceTree = "<group>"; };
-		79288E341A2EA3F000492B02 /* EHECustomerImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHECustomerImageCell.m; sourceTree = "<group>"; };
-		79288E351A2EA3F000492B02 /* EHECustomerImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHECustomerImageCell.xib; sourceTree = "<group>"; };
-		79288E381A2EC97000492B02 /* EHETchOrderHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderHeaderCell.h; sourceTree = "<group>"; };
-		79288E391A2EC97000492B02 /* EHETchOrderHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderHeaderCell.m; sourceTree = "<group>"; };
-		79288E3A1A2EC97000492B02 /* EHETchOrderHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderHeaderCell.xib; sourceTree = "<group>"; };
 		52A58E791A2ED2B60036E92F /* EHETchBookingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchBookingCell.h; sourceTree = "<group>"; };
 		52A58E7A1A2ED2B60036E92F /* EHETchBookingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchBookingCell.m; sourceTree = "<group>"; };
 		52A58E7B1A2ED2B60036E92F /* EHETchBookingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchBookingCell.xib; sourceTree = "<group>"; };
@@ -96,6 +86,17 @@
 		52AC05441A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchSettingDetailCell2.h; sourceTree = "<group>"; };
 		52AC05451A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchSettingDetailCell2.m; sourceTree = "<group>"; };
 		52AC05461A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchSettingDetailCell2.xib; sourceTree = "<group>"; };
+		79288E2E1A2E0F9B00492B02 /* EHETchOrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderDetailViewController.h; sourceTree = "<group>"; };
+		79288E2F1A2E0F9B00492B02 /* EHETchOrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderDetailViewController.m; sourceTree = "<group>"; };
+		79288E301A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderDetailViewController.xib; sourceTree = "<group>"; };
+		79288E331A2EA3F000492B02 /* EHECustomerImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHECustomerImageCell.h; sourceTree = "<group>"; };
+		79288E341A2EA3F000492B02 /* EHECustomerImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHECustomerImageCell.m; sourceTree = "<group>"; };
+		79288E351A2EA3F000492B02 /* EHECustomerImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHECustomerImageCell.xib; sourceTree = "<group>"; };
+		79288E381A2EC97000492B02 /* EHETchOrderHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderHeaderCell.h; sourceTree = "<group>"; };
+		79288E391A2EC97000492B02 /* EHETchOrderHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderHeaderCell.m; sourceTree = "<group>"; };
+		79288E3A1A2EC97000492B02 /* EHETchOrderHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderHeaderCell.xib; sourceTree = "<group>"; };
+		795E4D961A30053D00C6EF55 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		795E4D971A30053D00C6EF55 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		798EF90B1A2D9823002A8428 /* EHETchOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderTableViewCell.h; sourceTree = "<group>"; };
 		798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderTableViewCell.m; sourceTree = "<group>"; };
 		798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderTableViewCell.xib; sourceTree = "<group>"; };
@@ -115,8 +116,6 @@
 		79B26AB51A2D5B55009BDD26 /* EHEOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHEOrder.m; sourceTree = "<group>"; };
 		79B26AB71A2D5B56009BDD26 /* EHECustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHECustomer.h; sourceTree = "<group>"; };
 		79B26AB81A2D5B56009BDD26 /* EHECustomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHECustomer.m; sourceTree = "<group>"; };
-		79B26ABA1A2D5B56009BDD26 /* EHEAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHEAccount.h; sourceTree = "<group>"; };
-		79B26ABB1A2D5B56009BDD26 /* EHEAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHEAccount.m; sourceTree = "<group>"; };
 		79B26ABD1A2D73C1009BDD26 /* EHETchBookingManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchBookingManagerViewController.h; sourceTree = "<group>"; };
 		79B26ABE1A2D73C1009BDD26 /* EHETchBookingManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchBookingManagerViewController.m; sourceTree = "<group>"; };
 		79B26ABF1A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchBookingManagerViewController.xib; sourceTree = "<group>"; };
@@ -126,8 +125,6 @@
 		79C28E2B1A2C577A000788F2 /* EHomeEducation_Tch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EHomeEducation_Tch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C28E2F1A2C577A000788F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79C28E301A2C577A000788F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		79C28E321A2C577A000788F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		79C28E331A2C577A000788F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		79C28E361A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EHomeEducation_Tch.xcdatamodel; sourceTree = "<group>"; };
 		79C28E3E1A2C577A000788F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		79C28E411A2C577A000788F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -210,9 +207,6 @@
 				798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */,
 				798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */,
 				799D15411A2ED43000E68CBA /* 订单详情 */,
-				798EF9151A2DB819002A8428 /* EHECustomerDetailViewController.h */,
-				798EF9161A2DB819002A8428 /* EHECustomerDetailViewController.m */,
-				798EF9171A2DB819002A8428 /* EHECustomerDetailViewController.xib */,
 				52AC053A1A2F06C100CAE5DA /* EHETchPersonalViewController.h */,
 				52AC053B1A2F06C100CAE5DA /* EHETchPersonalViewController.m */,
 				52AC053C1A2F06C100CAE5DA /* EHETchPersonalViewController.xib */,
@@ -289,11 +283,11 @@
 		79C28E2D1A2C577A000788F2 /* EHomeEducation_Tch */ = {
 			isa = PBXGroup;
 			children = (
+				795E4D961A30053D00C6EF55 /* AppDelegate.h */,
+				795E4D971A30053D00C6EF55 /* AppDelegate.m */,
 				79B26AAD1A2D5666009BDD26 /* ViewControllers */,
 				79C28E5E1A2C5850000788F2 /* Networking */,
 				79C28E571A2C57D9000788F2 /* CoreData */,
-				79C28E321A2C577A000788F2 /* AppDelegate.h */,
-				79C28E331A2C577A000788F2 /* AppDelegate.m */,
 				79C28E3E1A2C577A000788F2 /* Images.xcassets */,
 				79C28E401A2C577A000788F2 /* LaunchScreen.xib */,
 				79C28E2E1A2C577A000788F2 /* Supporting Files */,
@@ -336,8 +330,6 @@
 				79C28E581A2C5821000788F2 /* EHETchCoreDataManager.h */,
 				79C28E591A2C5821000788F2 /* EHETchCoreDataManager.m */,
 				79C28E351A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodeld */,
-				79B26ABA1A2D5B56009BDD26 /* EHEAccount.h */,
-				79B26ABB1A2D5B56009BDD26 /* EHEAccount.m */,
 				79B26AB71A2D5B56009BDD26 /* EHECustomer.h */,
 				79B26AB81A2D5B56009BDD26 /* EHECustomer.m */,
 				79B26AB41A2D5B55009BDD26 /* EHEOrder.h */,
@@ -451,7 +443,6 @@
 				79B26AC71A2D758D009BDD26 /* FZCATOONJ.ttf in Resources */,
 				799D15501A2F03CD00E68CBA /* distanceIcon.png in Resources */,
 				79B26AC81A2D758D009BDD26 /* MCuteHKS.otf in Resources */,
-				798EF9191A2DB819002A8428 /* EHECustomerDetailViewController.xib in Resources */,
 				52AC053E1A2F06C100CAE5DA /* EHETchPersonalViewController.xib in Resources */,
 				79B26AC91A2D758D009BDD26 /* MFYueYuan_Noncommercial-Regular.otf in Resources */,
 				52AC05391A2F032F00CAE5DA /* EHETchSettingDetailViewController.xib in Resources */,
@@ -490,13 +481,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79C28E341A2C577A000788F2 /* AppDelegate.m in Sources */,
-				79B26ABC1A2D5B56009BDD26 /* EHEAccount.m in Sources */,
+				795E4D981A30053D00C6EF55 /* AppDelegate.m in Sources */,
 				799D153F1A2ED2EB00E68CBA /* EHETchOrderRegularCell.m in Sources */,
 				52A58E7C1A2ED2B60036E92F /* EHETchBookingCell.m in Sources */,
-				798EF9181A2DB819002A8428 /* EHECustomerDetailViewController.m in Sources */,
-				79C28E341A2C577A000788F2 /* AppDelegate.m in Sources */,
-				79B26ABC1A2D5B56009BDD26 /* EHEAccount.m in Sources */,
 				52AC05471A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.m in Sources */,
 				79C28E5A1A2C5821000788F2 /* EHETchCoreDataManager.m in Sources */,
 				79B26AC01A2D73C1009BDD26 /* EHETchBookingManagerViewController.m in Sources */,
