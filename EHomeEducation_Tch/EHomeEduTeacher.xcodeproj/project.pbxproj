@@ -26,6 +26,8 @@
 		79288E3B1A2EC97000492B02 /* EHETchOrderHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79288E391A2EC97000492B02 /* EHETchOrderHeaderCell.m */; };
 		79288E3C1A2EC97000492B02 /* EHETchOrderHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79288E3A1A2EC97000492B02 /* EHETchOrderHeaderCell.xib */; };
 		795E4D981A30053D00C6EF55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 795E4D971A30053D00C6EF55 /* AppDelegate.m */; };
+		798E60531A31AFEF00776EC1 /* EHECustomerDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798E60511A31AFEF00776EC1 /* EHECustomerDetailTableViewController.m */; };
+		798E60541A31AFEF00776EC1 /* EHECustomerDetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 798E60521A31AFEF00776EC1 /* EHECustomerDetailTableViewController.xib */; };
 		798EF90E1A2D9823002A8428 /* EHETchOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */; };
 		798EF90F1A2D9823002A8428 /* EHETchOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */; };
 		798EF9131A2D9866002A8428 /* female_tablecell.png in Resources */ = {isa = PBXBuildFile; fileRef = 798EF9111A2D9866002A8428 /* female_tablecell.png */; };
@@ -97,6 +99,9 @@
 		79288E3A1A2EC97000492B02 /* EHETchOrderHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderHeaderCell.xib; sourceTree = "<group>"; };
 		795E4D961A30053D00C6EF55 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		795E4D971A30053D00C6EF55 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		798E60501A31AFEF00776EC1 /* EHECustomerDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHECustomerDetailTableViewController.h; sourceTree = "<group>"; };
+		798E60511A31AFEF00776EC1 /* EHECustomerDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHECustomerDetailTableViewController.m; sourceTree = "<group>"; };
+		798E60521A31AFEF00776EC1 /* EHECustomerDetailTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHECustomerDetailTableViewController.xib; sourceTree = "<group>"; };
 		798EF90B1A2D9823002A8428 /* EHETchOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderTableViewCell.h; sourceTree = "<group>"; };
 		798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderTableViewCell.m; sourceTree = "<group>"; };
 		798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderTableViewCell.xib; sourceTree = "<group>"; };
@@ -242,6 +247,9 @@
 				799D153C1A2ED2EB00E68CBA /* EHETchOrderRegularCell.h */,
 				799D153D1A2ED2EB00E68CBA /* EHETchOrderRegularCell.m */,
 				799D153E1A2ED2EB00E68CBA /* EHETchOrderRegularCell.xib */,
+				798E60501A31AFEF00776EC1 /* EHECustomerDetailTableViewController.h */,
+				798E60511A31AFEF00776EC1 /* EHECustomerDetailTableViewController.m */,
+				798E60521A31AFEF00776EC1 /* EHECustomerDetailTableViewController.xib */,
 			);
 			name = "订单详情";
 			sourceTree = "<group>";
@@ -462,6 +470,7 @@
 				798EF9131A2D9866002A8428 /* female_tablecell.png in Resources */,
 				79B26AB21A2D5699009BDD26 /* EHETchSearchingViewController.xib in Resources */,
 				79B26AC11A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib in Resources */,
+				798E60541A31AFEF00776EC1 /* EHECustomerDetailTableViewController.xib in Resources */,
 				799D15401A2ED2EB00E68CBA /* EHETchOrderRegularCell.xib in Resources */,
 				798EF9141A2D9866002A8428 /* male_tablecell.png in Resources */,
 			);
@@ -498,6 +507,7 @@
 				79288E311A2E0F9B00492B02 /* EHETchOrderDetailViewController.m in Sources */,
 				79B26AB11A2D5699009BDD26 /* EHETchSearchingViewController.m in Sources */,
 				79B26AB61A2D5B55009BDD26 /* EHEOrder.m in Sources */,
+				798E60531A31AFEF00776EC1 /* EHECustomerDetailTableViewController.m in Sources */,
 				79C28E371A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodeld in Sources */,
 				79B26AC51A2D73F1009BDD26 /* EHETchSettingViewController.m in Sources */,
 				52AC05421A2F078500CAE5DA /* EHETchSettingDetailCell.m in Sources */,

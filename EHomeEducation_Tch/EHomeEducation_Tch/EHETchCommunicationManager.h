@@ -45,4 +45,7 @@
 //查看用户评价
 -(BOOL) loadCommentsWithCustomerId:(int) customerId;
 
+//获取用户资料
+-(BOOL) loadCustomerDetailWithCustomerI:(int) customerId;
+
 @end

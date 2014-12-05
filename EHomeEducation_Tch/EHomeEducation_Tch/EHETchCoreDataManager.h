@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "EHEOrder.h"
+#import "EHECustomer.h"
 
 @interface EHETchCoreDataManager : NSObject
 @property(strong, nonatomic) NSManagedObjectContext *context;
@@ -26,5 +27,11 @@
 
 //删除所有订单信息
 - (BOOL) removeAllOrdersFromCoreData;
+
+//保存用户信息
+-(BOOL) saveCustomerInfos:(NSDictionary *) dictCustomer;
+
+//通过用户ID获取用户具体信息
+-(EHECustomer *) fetchCustomerWithCustomerId:(int) customerId;
 
 @end

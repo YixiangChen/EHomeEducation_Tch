@@ -8,6 +8,7 @@
 #import "Defines.h"
 #import "EHETchSearchingViewController.h"
 #import "EHETchOrderDetailViewController.h"
+#import "EHETchCommunicationManager.h"
 
 @interface EHETchSearchingViewController ()
 
@@ -44,6 +45,10 @@
     
     self.coreDataManager = [EHETchCoreDataManager getInstance];
     self.allOrders = [[NSArray alloc] initWithArray:[self.coreDataManager fetchAllOrders]];
+    
+    for (EHEOrder *order in self.allOrders) {
+        NSLog(@"%@ order ----------", order);
+    }
     
     [self setExtraCellLineHidden:self.tableView];
     [self setupFilterView];
@@ -261,6 +266,9 @@
     EHEOrder * order = [self.allOrders objectAtIndex:indexPath.row];
     
     detailViewController.order = order;
+    
+    [[EHETchCommunicationManager getInstance] loadCustomerDetailWithCustomerI:[order.customerid intValue]];
+    detailViewController.customer = [[EHETchCoreDataManager getInstance] fetchCustomerWithCustomerId:[order.customerid intValue]];
     // Pass the selected object to the new view controller.
     
     // Push the view controller.

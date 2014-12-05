@@ -13,5 +13,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageViewBackground;
 @property (strong, nonatomic) IBOutlet UIImageView *imageViewCustomerIcon;
 @property (strong, nonatomic) IBOutlet UILabel *lblName;
+@property (strong, nonatomic) IBOutlet UILabel *lblEvaluation;
 
 @end

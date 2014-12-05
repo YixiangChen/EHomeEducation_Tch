@@ -26,7 +26,7 @@
     [self.lblItemContent setFont:[UIFont fontWithName:kMengNaFont size:11]];
     if (index == 2) {
         self.lblItem.text = @"辅导科目";
-        self.lblItemContent.text = order.subjectinfo;
+        self.lblItemContent.text = [NSString stringWithFormat:@"%@  %@", order.objectinfo, order.subjectinfo];
     }
     
     if (index == 3) {

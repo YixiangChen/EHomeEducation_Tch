@@ -9,13 +9,14 @@
 #import "EHETchOrderHeaderCell.h"
 #import "Defines.h"
 #import <CoreLocation/CoreLocation.h>
+#import "EHECustomerDetailTableViewController.h"
 
 @implementation EHETchOrderHeaderCell
 
 - (void)awakeFromNib {
     // Initialization code
     [self.btnMoreInfos setBackgroundColor:kLightGreenForMainColor];
-    [self.btnMoreInfos setTitle:@"TA是谁？" forState:UIControlStateNormal];
+    [self.btnMoreInfos setTitle:@"联系TA" forState:UIControlStateNormal];
     [self.btnMoreInfos.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:15]];
     [self.btnMoreInfos.titleLabel setTextColor:[UIColor whiteColor]];
     [self.btnMoreInfos addTarget:self action:@selector(showMoreInfo) forControlEvents:UIControlEventTouchUpInside];
@@ -34,7 +35,10 @@
 }
 
 -(void) showMoreInfo {
-    NSLog(@"Showing more info");
+    EHECustomerDetailTableViewController *customerDetailTable = [[EHECustomerDetailTableViewController alloc] initWithNibName:nil bundle:nil];
+    customerDetailTable.customer = self.orderDetailViewController.customer;
+    [self.orderDetailViewController.navigationController pushViewController:customerDetailTable animated:YES];
+    
 }
 
 -(void)setContent:(EHEOrder *)order {

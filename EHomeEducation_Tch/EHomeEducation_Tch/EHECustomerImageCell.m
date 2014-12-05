@@ -18,6 +18,7 @@
     self.imageViewCustomerIcon.clipsToBounds=YES;
     
     [self.lblName setFont:[UIFont fontWithName:kFangZhengKaTongFont size:18]];
+    [self.lblEvaluation setFont:[UIFont fontWithName:kFangZhengKaTongFont size:18]];
     
 }
 

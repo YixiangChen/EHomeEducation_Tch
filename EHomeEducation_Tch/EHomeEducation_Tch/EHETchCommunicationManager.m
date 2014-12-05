@@ -382,6 +382,38 @@
     }
 }
 
+-(BOOL)loadCustomerDetailWithCustomerI:(int)customerId {
+    NSString * postData = [NSString stringWithFormat:@"{\"customerid\":\"%d\"}",customerId];
+    NSString *stringForURL = [NSString stringWithFormat:@"%@%@",kURLDomain,kURLFindCustomerDetail];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:stringForURL]];
+    NSString * data = [NSString stringWithFormat:@"info=%@",postData];
+    
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[data dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSError *error = nil;
+    NSData * responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&error];
+    NSMutableString * string = [[NSMutableString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@",string);
+    
+    if(responseData != nil && error == nil){
+        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&error];
+        NSLog(@"dict ------ %@",dict);
+        NSDictionary *dictCustomerInfo = dict[@"customerinfo"];
+        if([dict[@"code"] intValue] == 0 && dict != nil){
+            NSLog(@"-----------------获取用户详情成功----------------");
+            NSLog(@"%@",dictCustomerInfo);
+            return [[EHETchCoreDataManager getInstance] saveCustomerInfos:dictCustomerInfo];
+            
+        }else{
+            NSLog(@"%@",dict[@"message"]);
+            return  NO;
+        }
+    }else {
+        return NO;
+    }
+}
+
 //-(void)loadDataWithTeacherID:(int) teacherId {
 //    
 //    NSString * postData = [NSString stringWithFormat:@"{\"teacherid\":\"%d\"}",teacherId];

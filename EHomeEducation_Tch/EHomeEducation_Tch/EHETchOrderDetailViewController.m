@@ -33,6 +33,8 @@
     
     [self configureTabbar];
     
+    NSLog(@"customer %@",self.customer);
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,6 +71,7 @@
             cell = (EHECustomerImageCell *)[[NSBundle mainBundle] loadNibNamed:@"EHECustomerImageCell" owner:self options:nil][0] ;
         }
 
+        cell.lblEvaluation.text = [NSString stringWithFormat:@"评价: %@",self.customer.rank];
         cell.lblName.text = self.order.customername;
         return  cell;
     }
@@ -78,6 +81,7 @@
         if (cell == nil) {
             cell = (EHETchOrderHeaderCell *) [[NSBundle mainBundle] loadNibNamed:@"EHETchOrderHeaderCell" owner:self options:nil][0];
         }
+        cell.orderDetailViewController = self;
         [cell setContent:self.order];
         return cell;
     }
