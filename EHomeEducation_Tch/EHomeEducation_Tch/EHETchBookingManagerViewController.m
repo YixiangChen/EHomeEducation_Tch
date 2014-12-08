@@ -5,12 +5,13 @@
 //  Created by Yixiang Chen on 12/2/14.
 //  Copyright (c) 2014 AppChen. All rights reserved.
 //
-
+#import "Defines.h"
 #import "EHETchBookingManagerViewController.h"
 #import "EHETchCoreDataManager.h"
 #import "EHETchCommunicationManager.h"
 #import "EHEOrder.h"
 #import "EHETchBookingCell.h"
+
 @interface EHETchBookingManagerViewController ()
 
 @end
@@ -20,54 +21,56 @@
 - (void)viewDidLoad {
     self.title=@"我的订单";
     [super viewDidLoad];
-    self.certainOrders=[[NSMutableArray alloc]initWithCapacity:[self.allOrdersArray count]];
-    self.cancledOrders=[[NSMutableArray alloc]initWithCapacity:[self.allOrdersArray count]];
-    self.unfinsihedOrders=[[NSMutableArray alloc]initWithCapacity:[self.allOrdersArray count]];
-    self.finishedOrders=[[NSMutableArray alloc]initWithCapacity:[self.allOrdersArray count]];
-    self.ordersDictionary=[[NSMutableDictionary alloc]initWithCapacity:4];
-    [self loadOrders];
     
+    self.ordersDictionary=[[NSMutableDictionary alloc]initWithCapacity:4];
+    [self fetchOrders];
     self.orderTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height-120) style:UITableViewStyleGrouped];
     self.orderTableView.dataSource=self;
     self.orderTableView.delegate=self;
-    self.orderTableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
+    self.orderTableView.separatorStyle= UITableViewCellSeparatorStyleSingleLine;
+    self.orderTableView.backgroundColor = [UIColor clearColor];
+    self.orderTableView.sectionFooterHeight = 0.0;
     [self.view addSubview:self.orderTableView];
-
-    // Do any additional setup after loading the view from its nib.
+    [self.orderTableView addHeaderWithTarget:self action:@selector(headerRefreshing)];
+    
+    
 }
--(void)loadOrders
+
+-(void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.orderTableView headerBeginRefreshing];
+}
+-(void)fetchOrders
 {
     EHETchCoreDataManager * coreData=[EHETchCoreDataManager getInstance];
-    self.allOrdersArray=[coreData fetchAllOrders];
-    NSLog(@"%@",self.allOrdersArray);
-    for(EHEOrder *orders in self.allOrdersArray)
-    {
-        NSLog(@"orderStatus=%d",orders.orderstatus.intValue);
-    }
-    for(EHEOrder * order in self.allOrdersArray)
-    {
-      if(order.orderstatus.intValue==1)
-      {
-          [self.certainOrders addObject:order];
-      }
-      else if(order.orderstatus.intValue==2||order.orderstatus.intValue==3)
-      {
-          [self.cancledOrders addObject:order];
-      }
-      else if(order.orderstatus.intValue==4||order.orderstatus.intValue==5)
-      {
-          [self.unfinsihedOrders addObject:order];
-      }
-      else if(order.orderstatus.intValue==6)
-      {
-          [self.finishedOrders addObject:order];
-      }
-    }
-    
-    [self.ordersDictionary setObject:self.certainOrders forKey:@"已确定的订单"];
-    [self.ordersDictionary setObject:self.cancledOrders forKey:@"已取消的订单"];
+
+    self.confirmedOrders = [[NSMutableArray alloc] initWithArray:[coreData fetchOrdersWithStatus:1]];
+    self.canceledOrders = [[NSMutableArray alloc] init];
+    [self.canceledOrders addObjectsFromArray:[coreData fetchOrdersWithStatus:2]];
+    [self.canceledOrders addObjectsFromArray:[coreData fetchOrdersWithStatus:3]];
+    self.unfinsihedOrders = [[NSMutableArray alloc] init];
+    [self.unfinsihedOrders addObjectsFromArray:[coreData fetchOrdersWithStatus:4]];
+    [self.unfinsihedOrders addObjectsFromArray:[coreData fetchOrdersWithStatus:5]];
+    self.finishedOrders = [[NSMutableArray alloc] initWithArray:[coreData fetchOrdersWithStatus:6]];
+    [self.ordersDictionary removeAllObjects];
+    [self.ordersDictionary setObject:self.confirmedOrders forKey:@"已确定的订单"];
+    [self.ordersDictionary setObject:self.canceledOrders forKey:@"已取消的订单"];
     [self.ordersDictionary setObject:self.unfinsihedOrders forKey:@"未完成的订单"];
     [self.ordersDictionary setObject:self.finishedOrders forKey:@"已完成的订单"];
+}
+
+-(void) headerRefreshing {
+    bool refreshSuccess;
+    refreshSuccess = [[EHETchCommunicationManager getInstance] loadOrdersWithTeacherId:135 andOrderStatus:-1];
+    [self fetchOrders];
+    [self.orderTableView reloadData];
+    [self.orderTableView headerEndRefreshing];
+    if (refreshSuccess) {
+        NSLog(@"更新成功");
+    }else {
+        NSLog(@"更新失败");
+    }
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -121,24 +124,47 @@
 {
     return 65.0f;
 }
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
+
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 25.0)];
+    customView.backgroundColor = kLightGreenForMainColor;
+    
+    UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.opaque = NO;
+    headerLabel.textColor = [UIColor whiteColor];
+    headerLabel.font = [UIFont fontWithName:kFangZhengKaTongFont size:17];
+    headerLabel.frame = CGRectMake(10.0, 0.0, 300.0, 20.0);
+    
     NSArray * allKeys=[self.ordersDictionary allKeys];
     NSArray * orders=[self.ordersDictionary objectForKey:[allKeys objectAtIndex:section]];
     NSString * groupHeaderString=[NSString stringWithFormat:@"%@",[allKeys objectAtIndex:section]];
     if([orders count]==0)
     {
-        return [NSString stringWithFormat:@"%@(数量为空)",groupHeaderString];
+        headerLabel.text = [NSString stringWithFormat:@"%@(数量为空)",groupHeaderString];
     }
     else
     {
-    return groupHeaderString;
-
+        headerLabel.text = groupHeaderString;
+        
     }
+
+    [customView addSubview:headerLabel];
+    return customView;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 22;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];;
 }
+
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [[UIView alloc] initWithFrame:CGRectZero];
+}
+
 
 @end

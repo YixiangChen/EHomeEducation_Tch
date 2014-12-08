@@ -2,6 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="EHECustomer" representedClassName="EHECustomer" syncable="YES">
         <attribute name="customerid" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="majoraddress" optional="YES" attributeType="String" syncable="YES"/>
@@ -36,7 +37,7 @@
         <attribute name="timeperiod" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="EHECustomer" positionX="-63" positionY="-18" width="128" height="285"/>
+        <element name="EHECustomer" positionX="-63" positionY="-18" width="128" height="300"/>
         <element name="EHEOrder" positionX="-36" positionY="117" width="128" height="270"/>
     </elements>
 </model>

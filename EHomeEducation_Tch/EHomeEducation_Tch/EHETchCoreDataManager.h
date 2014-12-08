@@ -22,6 +22,9 @@
 //获取所有订单列表
 -(NSArray *) fetchAllOrders;
 
+//通过指定状态获取指定订单
+-(NSArray *) fetchOrdersWithStatus:(int) status;
+
 //获取订单详细信息
 - (EHEOrder *) fetchOrderWithOrderId:(int)orderId;
 
@@ -33,5 +36,11 @@
 
 //通过用户ID获取用户具体信息
 -(EHECustomer *) fetchCustomerWithCustomerId:(int) customerId;
+
+//更新订单状态;
+-(BOOL) updateOrderStatusWithOrderId: (int)orderId andOrderStatus: (int) orderStatus;
+
+//删除指定id的订单
+-(BOOL) removeOrderWithOrderId:(int) orderId;
 
 @end

@@ -28,6 +28,7 @@
 		795E4D981A30053D00C6EF55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 795E4D971A30053D00C6EF55 /* AppDelegate.m */; };
 		798E60531A31AFEF00776EC1 /* EHECustomerDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 798E60511A31AFEF00776EC1 /* EHECustomerDetailTableViewController.m */; };
 		798E60541A31AFEF00776EC1 /* EHECustomerDetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 798E60521A31AFEF00776EC1 /* EHECustomerDetailTableViewController.xib */; };
+		798E60571A31D22000776EC1 /* EHECustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 798E60561A31D22000776EC1 /* EHECustomer.m */; };
 		798EF90E1A2D9823002A8428 /* EHETchOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */; };
 		798EF90F1A2D9823002A8428 /* EHETchOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */; };
 		798EF9131A2D9866002A8428 /* female_tablecell.png in Resources */ = {isa = PBXBuildFile; fileRef = 798EF9111A2D9866002A8428 /* female_tablecell.png */; };
@@ -41,7 +42,6 @@
 		79B26AB11A2D5699009BDD26 /* EHETchSearchingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26AAF1A2D5699009BDD26 /* EHETchSearchingViewController.m */; };
 		79B26AB21A2D5699009BDD26 /* EHETchSearchingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B26AB01A2D5699009BDD26 /* EHETchSearchingViewController.xib */; };
 		79B26AB61A2D5B55009BDD26 /* EHEOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26AB51A2D5B55009BDD26 /* EHEOrder.m */; };
-		79B26AB91A2D5B56009BDD26 /* EHECustomer.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26AB81A2D5B56009BDD26 /* EHECustomer.m */; };
 		79B26AC01A2D73C1009BDD26 /* EHETchBookingManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26ABE1A2D73C1009BDD26 /* EHETchBookingManagerViewController.m */; };
 		79B26AC11A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79B26ABF1A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib */; };
 		79B26AC51A2D73F1009BDD26 /* EHETchSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79B26AC31A2D73F1009BDD26 /* EHETchSettingViewController.m */; };
@@ -57,6 +57,26 @@
 		79C28E4E1A2C577A000788F2 /* EHomeEducation_TchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C28E4D1A2C577A000788F2 /* EHomeEducation_TchTests.m */; };
 		79C28E5A1A2C5821000788F2 /* EHETchCoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C28E591A2C5821000788F2 /* EHETchCoreDataManager.m */; };
 		79C28E5D1A2C5848000788F2 /* EHETchCommunicationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 79C28E5C1A2C5848000788F2 /* EHETchCommunicationManager.m */; };
+		79CF67E21A32EE6B00CD1CF0 /* FPPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF67DD1A32EE6B00CD1CF0 /* FPPopoverController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		79CF67E31A32EE6B00CD1CF0 /* FPPopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF67DF1A32EE6B00CD1CF0 /* FPPopoverView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		79CF67E41A32EE6B00CD1CF0 /* FPTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF67E11A32EE6B00CD1CF0 /* FPTouchView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		79CF67E81A32EFCC00CD1CF0 /* EHETchFilterByDistanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF67E61A32EFCC00CD1CF0 /* EHETchFilterByDistanceViewController.m */; };
+		79CF67E91A32EFCC00CD1CF0 /* EHETchFilterByDistanceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79CF67E71A32EFCC00CD1CF0 /* EHETchFilterByDistanceViewController.xib */; };
+		79CF67EE1A32F03500CD1CF0 /* EHETchFilterBySubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF67EC1A32F03500CD1CF0 /* EHETchFilterBySubjectViewController.m */; };
+		79CF67EF1A32F03500CD1CF0 /* EHETchFilterBySubjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79CF67ED1A32F03500CD1CF0 /* EHETchFilterBySubjectViewController.xib */; };
+		79CF67F31A32F05000CD1CF0 /* EHETchFilterByGradeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF67F11A32F05000CD1CF0 /* EHETchFilterByGradeViewController.m */; };
+		79CF67F41A32F05000CD1CF0 /* EHETchFilterByGradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79CF67F21A32F05000CD1CF0 /* EHETchFilterByGradeViewController.xib */; };
+		79CF67F81A32F09200CD1CF0 /* EHETchFilterByEvaluationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF67F61A32F09200CD1CF0 /* EHETchFilterByEvaluationViewController.m */; };
+		79CF67F91A32F09200CD1CF0 /* EHETchFilterByEvaluationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79CF67F71A32F09200CD1CF0 /* EHETchFilterByEvaluationViewController.xib */; };
+		79CF67FB1A32FF2B00CD1CF0 /* checkMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 79CF67FA1A32FF2B00CD1CF0 /* checkMark.png */; };
+		79CF680E1A34249300CD1CF0 /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF68001A34249300CD1CF0 /* MJRefreshBaseView.m */; };
+		79CF680F1A34249300CD1CF0 /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF68021A34249300CD1CF0 /* MJRefreshConst.m */; };
+		79CF68101A34249300CD1CF0 /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF68041A34249300CD1CF0 /* MJRefreshFooterView.m */; };
+		79CF68111A34249300CD1CF0 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF68061A34249300CD1CF0 /* MJRefreshHeaderView.m */; };
+		79CF68121A34249300CD1CF0 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF68081A34249300CD1CF0 /* UIScrollView+MJExtension.m */; };
+		79CF68131A34249300CD1CF0 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF680A1A34249300CD1CF0 /* UIScrollView+MJRefresh.m */; };
+		79CF68141A34249300CD1CF0 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 79CF680C1A34249300CD1CF0 /* UIView+MJExtension.m */; };
+		79CF68161A354C6F00CD1CF0 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 79CF68151A354C6F00CD1CF0 /* MJRefresh.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +122,8 @@
 		798E60501A31AFEF00776EC1 /* EHECustomerDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHECustomerDetailTableViewController.h; sourceTree = "<group>"; };
 		798E60511A31AFEF00776EC1 /* EHECustomerDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHECustomerDetailTableViewController.m; sourceTree = "<group>"; };
 		798E60521A31AFEF00776EC1 /* EHECustomerDetailTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHECustomerDetailTableViewController.xib; sourceTree = "<group>"; };
+		798E60551A31D22000776EC1 /* EHECustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHECustomer.h; sourceTree = "<group>"; };
+		798E60561A31D22000776EC1 /* EHECustomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHECustomer.m; sourceTree = "<group>"; };
 		798EF90B1A2D9823002A8428 /* EHETchOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderTableViewCell.h; sourceTree = "<group>"; };
 		798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderTableViewCell.m; sourceTree = "<group>"; };
 		798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderTableViewCell.xib; sourceTree = "<group>"; };
@@ -119,8 +141,6 @@
 		79B26AB01A2D5699009BDD26 /* EHETchSearchingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchSearchingViewController.xib; sourceTree = "<group>"; };
 		79B26AB41A2D5B55009BDD26 /* EHEOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHEOrder.h; sourceTree = "<group>"; };
 		79B26AB51A2D5B55009BDD26 /* EHEOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHEOrder.m; sourceTree = "<group>"; };
-		79B26AB71A2D5B56009BDD26 /* EHECustomer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHECustomer.h; sourceTree = "<group>"; };
-		79B26AB81A2D5B56009BDD26 /* EHECustomer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHECustomer.m; sourceTree = "<group>"; };
 		79B26ABD1A2D73C1009BDD26 /* EHETchBookingManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchBookingManagerViewController.h; sourceTree = "<group>"; };
 		79B26ABE1A2D73C1009BDD26 /* EHETchBookingManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchBookingManagerViewController.m; sourceTree = "<group>"; };
 		79B26ABF1A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchBookingManagerViewController.xib; sourceTree = "<group>"; };
@@ -145,6 +165,41 @@
 		79C28E621A2C5F14000788F2 /* MCuteHKS.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MCuteHKS.otf; sourceTree = "<group>"; };
 		79C28E631A2C5F14000788F2 /* MFYueYuan_Noncommercial-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MFYueYuan_Noncommercial-Regular.otf"; sourceTree = "<group>"; };
 		79C28E641A2C5F14000788F2 /* MYoungHKS-Xbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MYoungHKS-Xbold.otf"; sourceTree = "<group>"; };
+		79CF67DC1A32EE6B00CD1CF0 /* FPPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverController.h; sourceTree = "<group>"; };
+		79CF67DD1A32EE6B00CD1CF0 /* FPPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverController.m; sourceTree = "<group>"; };
+		79CF67DE1A32EE6B00CD1CF0 /* FPPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPPopoverView.h; sourceTree = "<group>"; };
+		79CF67DF1A32EE6B00CD1CF0 /* FPPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPPopoverView.m; sourceTree = "<group>"; };
+		79CF67E01A32EE6B00CD1CF0 /* FPTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPTouchView.h; sourceTree = "<group>"; };
+		79CF67E11A32EE6B00CD1CF0 /* FPTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPTouchView.m; sourceTree = "<group>"; };
+		79CF67E51A32EFCC00CD1CF0 /* EHETchFilterByDistanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchFilterByDistanceViewController.h; sourceTree = "<group>"; };
+		79CF67E61A32EFCC00CD1CF0 /* EHETchFilterByDistanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchFilterByDistanceViewController.m; sourceTree = "<group>"; };
+		79CF67E71A32EFCC00CD1CF0 /* EHETchFilterByDistanceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchFilterByDistanceViewController.xib; sourceTree = "<group>"; };
+		79CF67EB1A32F03500CD1CF0 /* EHETchFilterBySubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchFilterBySubjectViewController.h; sourceTree = "<group>"; };
+		79CF67EC1A32F03500CD1CF0 /* EHETchFilterBySubjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchFilterBySubjectViewController.m; sourceTree = "<group>"; };
+		79CF67ED1A32F03500CD1CF0 /* EHETchFilterBySubjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchFilterBySubjectViewController.xib; sourceTree = "<group>"; };
+		79CF67F01A32F05000CD1CF0 /* EHETchFilterByGradeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchFilterByGradeViewController.h; sourceTree = "<group>"; };
+		79CF67F11A32F05000CD1CF0 /* EHETchFilterByGradeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchFilterByGradeViewController.m; sourceTree = "<group>"; };
+		79CF67F21A32F05000CD1CF0 /* EHETchFilterByGradeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchFilterByGradeViewController.xib; sourceTree = "<group>"; };
+		79CF67F51A32F09200CD1CF0 /* EHETchFilterByEvaluationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchFilterByEvaluationViewController.h; sourceTree = "<group>"; };
+		79CF67F61A32F09200CD1CF0 /* EHETchFilterByEvaluationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchFilterByEvaluationViewController.m; sourceTree = "<group>"; };
+		79CF67F71A32F09200CD1CF0 /* EHETchFilterByEvaluationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchFilterByEvaluationViewController.xib; sourceTree = "<group>"; };
+		79CF67FA1A32FF2B00CD1CF0 /* checkMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkMark.png; sourceTree = "<group>"; };
+		79CF67FE1A34249300CD1CF0 /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
+		79CF67FF1A34249300CD1CF0 /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
+		79CF68001A34249300CD1CF0 /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
+		79CF68011A34249300CD1CF0 /* MJRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshConst.h; sourceTree = "<group>"; };
+		79CF68021A34249300CD1CF0 /* MJRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshConst.m; sourceTree = "<group>"; };
+		79CF68031A34249300CD1CF0 /* MJRefreshFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshFooterView.h; sourceTree = "<group>"; };
+		79CF68041A34249300CD1CF0 /* MJRefreshFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshFooterView.m; sourceTree = "<group>"; };
+		79CF68051A34249300CD1CF0 /* MJRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshHeaderView.h; sourceTree = "<group>"; };
+		79CF68061A34249300CD1CF0 /* MJRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshHeaderView.m; sourceTree = "<group>"; };
+		79CF68071A34249300CD1CF0 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		79CF68081A34249300CD1CF0 /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
+		79CF68091A34249300CD1CF0 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		79CF680A1A34249300CD1CF0 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		79CF680B1A34249300CD1CF0 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
+		79CF680C1A34249300CD1CF0 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		79CF68151A354C6F00CD1CF0 /* MJRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MJRefresh.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,17 +220,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		52A58E781A2ED2920036E92F /* 订单tableCell */ = {
+		52A58E781A2ED2920036E92F /* CellForBooking */ = {
 			isa = PBXGroup;
 			children = (
 				52A58E791A2ED2B60036E92F /* EHETchBookingCell.h */,
 				52A58E7A1A2ED2B60036E92F /* EHETchBookingCell.m */,
 				52A58E7B1A2ED2B60036E92F /* EHETchBookingCell.xib */,
 			);
-			name = "订单tableCell";
+			name = CellForBooking;
 			sourceTree = "<group>";
 		};
-		52A58E841A2EF4A80036E92F /* 设置tableCell */ = {
+		52A58E841A2EF4A80036E92F /* CellForSetting */ = {
 			isa = PBXGroup;
 			children = (
 				52A58E7E1A2EF47B0036E92F /* EHETchSettingCell.h */,
@@ -188,40 +243,28 @@
 				52AC05451A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.m */,
 				52AC05461A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.xib */,
 			);
-			name = "设置tableCell";
+			name = CellForSetting;
 			sourceTree = "<group>";
 		};
-		798EF90A1A2D97E4002A8428 /* 订单列表 */ = {
+		798EF90A1A2D97E4002A8428 /* OrderList */ = {
 			isa = PBXGroup;
 			children = (
-				52A58E841A2EF4A80036E92F /* 设置tableCell */,
-				52A58E781A2ED2920036E92F /* 订单tableCell */,
 				79B26AAE1A2D5699009BDD26 /* EHETchSearchingViewController.h */,
 				79B26AAF1A2D5699009BDD26 /* EHETchSearchingViewController.m */,
 				79B26AB01A2D5699009BDD26 /* EHETchSearchingViewController.xib */,
-				79B26ABD1A2D73C1009BDD26 /* EHETchBookingManagerViewController.h */,
-				79B26ABE1A2D73C1009BDD26 /* EHETchBookingManagerViewController.m */,
-				79B26ABF1A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib */,
-				79B26AC21A2D73F1009BDD26 /* EHETchSettingViewController.h */,
-				79B26AC31A2D73F1009BDD26 /* EHETchSettingViewController.m */,
-				79B26AC41A2D73F1009BDD26 /* EHETchSettingViewController.xib */,
-				52AC05351A2F032F00CAE5DA /* EHETchSettingDetailViewController.h */,
-				52AC05361A2F032F00CAE5DA /* EHETchSettingDetailViewController.m */,
-				52AC05371A2F032F00CAE5DA /* EHETchSettingDetailViewController.xib */,
 				798EF90B1A2D9823002A8428 /* EHETchOrderTableViewCell.h */,
 				798EF90C1A2D9823002A8428 /* EHETchOrderTableViewCell.m */,
 				798EF90D1A2D9823002A8428 /* EHETchOrderTableViewCell.xib */,
-				799D15411A2ED43000E68CBA /* 订单详情 */,
-				52AC053A1A2F06C100CAE5DA /* EHETchPersonalViewController.h */,
-				52AC053B1A2F06C100CAE5DA /* EHETchPersonalViewController.m */,
-				52AC053C1A2F06C100CAE5DA /* EHETchPersonalViewController.xib */,
+				799D15411A2ED43000E68CBA /* OrderDetail */,
+				79CF67EA1A32EFD700CD1CF0 /* OrderFilter */,
 			);
-			name = "订单列表";
+			name = OrderList;
 			sourceTree = "<group>";
 		};
 		798EF9101A2D9831002A8428 /* 图片 */ = {
 			isa = PBXGroup;
 			children = (
+				79CF67FA1A32FF2B00CD1CF0 /* checkMark.png */,
 				799D15511A2F0AFC00E68CBA /* timeIcon.png */,
 				799D154F1A2F03CD00E68CBA /* distanceIcon.png */,
 				798EF91C1A2DBFF0002A8428 /* lightgreen.png */,
@@ -232,7 +275,7 @@
 			name = "图片";
 			sourceTree = "<group>";
 		};
-		799D15411A2ED43000E68CBA /* 订单详情 */ = {
+		799D15411A2ED43000E68CBA /* OrderDetail */ = {
 			isa = PBXGroup;
 			children = (
 				79288E2E1A2E0F9B00492B02 /* EHETchOrderDetailViewController.h */,
@@ -251,13 +294,15 @@
 				798E60511A31AFEF00776EC1 /* EHECustomerDetailTableViewController.m */,
 				798E60521A31AFEF00776EC1 /* EHECustomerDetailTableViewController.xib */,
 			);
-			name = "订单详情";
+			name = OrderDetail;
 			sourceTree = "<group>";
 		};
 		79B26AAD1A2D5666009BDD26 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				798EF90A1A2D97E4002A8428 /* 订单列表 */,
+				79CF681C1A359AC000CD1CF0 /* Booking */,
+				79CF681B1A359A8500CD1CF0 /* Setting */,
+				798EF90A1A2D97E4002A8428 /* OrderList */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -265,14 +310,16 @@
 		79B26AB31A2D5791009BDD26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				79CF67FC1A34249300CD1CF0 /* MJRefresh */,
+				79CF67DB1A32EE5200CD1CF0 /* FPPopoverController */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		79C28E221A2C577A000788F2 = {
 			isa = PBXGroup;
 			children = (
-				79B26AB31A2D5791009BDD26 /* Frameworks */,
 				79C28E2D1A2C577A000788F2 /* EHomeEducation_Tch */,
 				79C28E4A1A2C577A000788F2 /* EHomeEducation_TchTests */,
 				79C28E2C1A2C577A000788F2 /* Products */,
@@ -293,6 +340,7 @@
 			children = (
 				795E4D961A30053D00C6EF55 /* AppDelegate.h */,
 				795E4D971A30053D00C6EF55 /* AppDelegate.m */,
+				79B26AB31A2D5791009BDD26 /* Frameworks */,
 				79B26AAD1A2D5666009BDD26 /* ViewControllers */,
 				79C28E5E1A2C5850000788F2 /* Networking */,
 				79C28E571A2C57D9000788F2 /* CoreData */,
@@ -338,8 +386,8 @@
 				79C28E581A2C5821000788F2 /* EHETchCoreDataManager.h */,
 				79C28E591A2C5821000788F2 /* EHETchCoreDataManager.m */,
 				79C28E351A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodeld */,
-				79B26AB71A2D5B56009BDD26 /* EHECustomer.h */,
-				79B26AB81A2D5B56009BDD26 /* EHECustomer.m */,
+				798E60551A31D22000776EC1 /* EHECustomer.h */,
+				798E60561A31D22000776EC1 /* EHECustomer.m */,
 				79B26AB41A2D5B55009BDD26 /* EHEOrder.h */,
 				79B26AB51A2D5B55009BDD26 /* EHEOrder.m */,
 			);
@@ -364,6 +412,89 @@
 				79C28E641A2C5F14000788F2 /* MYoungHKS-Xbold.otf */,
 			);
 			name = "字体库";
+			sourceTree = "<group>";
+		};
+		79CF67DB1A32EE5200CD1CF0 /* FPPopoverController */ = {
+			isa = PBXGroup;
+			children = (
+				79CF67DC1A32EE6B00CD1CF0 /* FPPopoverController.h */,
+				79CF67DD1A32EE6B00CD1CF0 /* FPPopoverController.m */,
+				79CF67DE1A32EE6B00CD1CF0 /* FPPopoverView.h */,
+				79CF67DF1A32EE6B00CD1CF0 /* FPPopoverView.m */,
+				79CF67E01A32EE6B00CD1CF0 /* FPTouchView.h */,
+				79CF67E11A32EE6B00CD1CF0 /* FPTouchView.m */,
+			);
+			name = FPPopoverController;
+			sourceTree = "<group>";
+		};
+		79CF67EA1A32EFD700CD1CF0 /* OrderFilter */ = {
+			isa = PBXGroup;
+			children = (
+				79CF67E51A32EFCC00CD1CF0 /* EHETchFilterByDistanceViewController.h */,
+				79CF67E61A32EFCC00CD1CF0 /* EHETchFilterByDistanceViewController.m */,
+				79CF67E71A32EFCC00CD1CF0 /* EHETchFilterByDistanceViewController.xib */,
+				79CF67EB1A32F03500CD1CF0 /* EHETchFilterBySubjectViewController.h */,
+				79CF67EC1A32F03500CD1CF0 /* EHETchFilterBySubjectViewController.m */,
+				79CF67ED1A32F03500CD1CF0 /* EHETchFilterBySubjectViewController.xib */,
+				79CF67F01A32F05000CD1CF0 /* EHETchFilterByGradeViewController.h */,
+				79CF67F11A32F05000CD1CF0 /* EHETchFilterByGradeViewController.m */,
+				79CF67F21A32F05000CD1CF0 /* EHETchFilterByGradeViewController.xib */,
+				79CF67F51A32F09200CD1CF0 /* EHETchFilterByEvaluationViewController.h */,
+				79CF67F61A32F09200CD1CF0 /* EHETchFilterByEvaluationViewController.m */,
+				79CF67F71A32F09200CD1CF0 /* EHETchFilterByEvaluationViewController.xib */,
+			);
+			name = OrderFilter;
+			sourceTree = "<group>";
+		};
+		79CF67FC1A34249300CD1CF0 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				79CF68151A354C6F00CD1CF0 /* MJRefresh.bundle */,
+				79CF67FE1A34249300CD1CF0 /* MJRefresh.h */,
+				79CF67FF1A34249300CD1CF0 /* MJRefreshBaseView.h */,
+				79CF68001A34249300CD1CF0 /* MJRefreshBaseView.m */,
+				79CF68011A34249300CD1CF0 /* MJRefreshConst.h */,
+				79CF68021A34249300CD1CF0 /* MJRefreshConst.m */,
+				79CF68031A34249300CD1CF0 /* MJRefreshFooterView.h */,
+				79CF68041A34249300CD1CF0 /* MJRefreshFooterView.m */,
+				79CF68051A34249300CD1CF0 /* MJRefreshHeaderView.h */,
+				79CF68061A34249300CD1CF0 /* MJRefreshHeaderView.m */,
+				79CF68071A34249300CD1CF0 /* UIScrollView+MJExtension.h */,
+				79CF68081A34249300CD1CF0 /* UIScrollView+MJExtension.m */,
+				79CF68091A34249300CD1CF0 /* UIScrollView+MJRefresh.h */,
+				79CF680A1A34249300CD1CF0 /* UIScrollView+MJRefresh.m */,
+				79CF680B1A34249300CD1CF0 /* UIView+MJExtension.h */,
+				79CF680C1A34249300CD1CF0 /* UIView+MJExtension.m */,
+			);
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		79CF681B1A359A8500CD1CF0 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				79B26AC21A2D73F1009BDD26 /* EHETchSettingViewController.h */,
+				79B26AC31A2D73F1009BDD26 /* EHETchSettingViewController.m */,
+				79B26AC41A2D73F1009BDD26 /* EHETchSettingViewController.xib */,
+				52AC05351A2F032F00CAE5DA /* EHETchSettingDetailViewController.h */,
+				52AC05361A2F032F00CAE5DA /* EHETchSettingDetailViewController.m */,
+				52AC05371A2F032F00CAE5DA /* EHETchSettingDetailViewController.xib */,
+				52AC053A1A2F06C100CAE5DA /* EHETchPersonalViewController.h */,
+				52AC053B1A2F06C100CAE5DA /* EHETchPersonalViewController.m */,
+				52AC053C1A2F06C100CAE5DA /* EHETchPersonalViewController.xib */,
+				52A58E841A2EF4A80036E92F /* CellForSetting */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+		79CF681C1A359AC000CD1CF0 /* Booking */ = {
+			isa = PBXGroup;
+			children = (
+				79B26ABD1A2D73C1009BDD26 /* EHETchBookingManagerViewController.h */,
+				79B26ABE1A2D73C1009BDD26 /* EHETchBookingManagerViewController.m */,
+				79B26ABF1A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib */,
+				52A58E781A2ED2920036E92F /* CellForBooking */,
+			);
+			name = Booking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,12 +579,14 @@
 			files = (
 				79288E371A2EA3F000492B02 /* EHECustomerImageCell.xib in Resources */,
 				52A58E7D1A2ED2B60036E92F /* EHETchBookingCell.xib in Resources */,
+				79CF67F41A32F05000CD1CF0 /* EHETchFilterByGradeViewController.xib in Resources */,
 				79B26AC71A2D758D009BDD26 /* FZCATOONJ.ttf in Resources */,
 				799D15501A2F03CD00E68CBA /* distanceIcon.png in Resources */,
 				79B26AC81A2D758D009BDD26 /* MCuteHKS.otf in Resources */,
 				52AC053E1A2F06C100CAE5DA /* EHETchPersonalViewController.xib in Resources */,
 				79B26AC91A2D758D009BDD26 /* MFYueYuan_Noncommercial-Regular.otf in Resources */,
 				52AC05391A2F032F00CAE5DA /* EHETchSettingDetailViewController.xib in Resources */,
+				79CF67FB1A32FF2B00CD1CF0 /* checkMark.png in Resources */,
 				52A58E821A2EF47B0036E92F /* EHETchSettingCell.xib in Resources */,
 				79B26ACA1A2D758D009BDD26 /* MYoungHKS-Xbold.otf in Resources */,
 				798EF91D1A2DBFF0002A8428 /* lightgreen.png in Resources */,
@@ -463,7 +596,9 @@
 				79C28E421A2C577A000788F2 /* LaunchScreen.xib in Resources */,
 				79288E3C1A2EC97000492B02 /* EHETchOrderHeaderCell.xib in Resources */,
 				79288E321A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib in Resources */,
+				79CF67E91A32EFCC00CD1CF0 /* EHETchFilterByDistanceViewController.xib in Resources */,
 				79C28E3F1A2C577A000788F2 /* Images.xcassets in Resources */,
+				79CF67F91A32F09200CD1CF0 /* EHETchFilterByEvaluationViewController.xib in Resources */,
 				52AC05431A2F078500CAE5DA /* EHETchSettingDetailCell.xib in Resources */,
 				798EF90F1A2D9823002A8428 /* EHETchOrderTableViewCell.xib in Resources */,
 				52AC05481A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.xib in Resources */,
@@ -471,8 +606,10 @@
 				79B26AB21A2D5699009BDD26 /* EHETchSearchingViewController.xib in Resources */,
 				79B26AC11A2D73C1009BDD26 /* EHETchBookingManagerViewController.xib in Resources */,
 				798E60541A31AFEF00776EC1 /* EHECustomerDetailTableViewController.xib in Resources */,
+				79CF68161A354C6F00CD1CF0 /* MJRefresh.bundle in Resources */,
 				799D15401A2ED2EB00E68CBA /* EHETchOrderRegularCell.xib in Resources */,
 				798EF9141A2D9866002A8428 /* male_tablecell.png in Resources */,
+				79CF67EF1A32F03500CD1CF0 /* EHETchFilterBySubjectViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,27 +627,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79CF68101A34249300CD1CF0 /* MJRefreshFooterView.m in Sources */,
 				795E4D981A30053D00C6EF55 /* AppDelegate.m in Sources */,
 				799D153F1A2ED2EB00E68CBA /* EHETchOrderRegularCell.m in Sources */,
 				52A58E7C1A2ED2B60036E92F /* EHETchBookingCell.m in Sources */,
+				79CF67EE1A32F03500CD1CF0 /* EHETchFilterBySubjectViewController.m in Sources */,
 				52AC05471A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.m in Sources */,
 				79C28E5A1A2C5821000788F2 /* EHETchCoreDataManager.m in Sources */,
 				79B26AC01A2D73C1009BDD26 /* EHETchBookingManagerViewController.m in Sources */,
+				79CF67F81A32F09200CD1CF0 /* EHETchFilterByEvaluationViewController.m in Sources */,
+				79CF67E41A32EE6B00CD1CF0 /* FPTouchView.m in Sources */,
+				79CF67E31A32EE6B00CD1CF0 /* FPPopoverView.m in Sources */,
 				79288E361A2EA3F000492B02 /* EHECustomerImageCell.m in Sources */,
 				79C28E311A2C577A000788F2 /* main.m in Sources */,
 				52AC05381A2F032F00CAE5DA /* EHETchSettingDetailViewController.m in Sources */,
 				798EF90E1A2D9823002A8428 /* EHETchOrderTableViewCell.m in Sources */,
+				798E60571A31D22000776EC1 /* EHECustomer.m in Sources */,
 				79C28E5D1A2C5848000788F2 /* EHETchCommunicationManager.m in Sources */,
 				79288E3B1A2EC97000492B02 /* EHETchOrderHeaderCell.m in Sources */,
+				79CF68131A34249300CD1CF0 /* UIScrollView+MJRefresh.m in Sources */,
+				79CF67E81A32EFCC00CD1CF0 /* EHETchFilterByDistanceViewController.m in Sources */,
+				79CF680E1A34249300CD1CF0 /* MJRefreshBaseView.m in Sources */,
+				79CF68121A34249300CD1CF0 /* UIScrollView+MJExtension.m in Sources */,
+				79CF680F1A34249300CD1CF0 /* MJRefreshConst.m in Sources */,
+				79CF67E21A32EE6B00CD1CF0 /* FPPopoverController.m in Sources */,
 				52AC053D1A2F06C100CAE5DA /* EHETchPersonalViewController.m in Sources */,
-				79B26AB91A2D5B56009BDD26 /* EHECustomer.m in Sources */,
 				79288E311A2E0F9B00492B02 /* EHETchOrderDetailViewController.m in Sources */,
+				79CF68111A34249300CD1CF0 /* MJRefreshHeaderView.m in Sources */,
 				79B26AB11A2D5699009BDD26 /* EHETchSearchingViewController.m in Sources */,
 				79B26AB61A2D5B55009BDD26 /* EHEOrder.m in Sources */,
 				798E60531A31AFEF00776EC1 /* EHECustomerDetailTableViewController.m in Sources */,
 				79C28E371A2C577A000788F2 /* EHomeEducation_Tch.xcdatamodeld in Sources */,
+				79CF68141A34249300CD1CF0 /* UIView+MJExtension.m in Sources */,
 				79B26AC51A2D73F1009BDD26 /* EHETchSettingViewController.m in Sources */,
 				52AC05421A2F078500CAE5DA /* EHETchSettingDetailCell.m in Sources */,
+				79CF67F31A32F05000CD1CF0 /* EHETchFilterByGradeViewController.m in Sources */,
 				52A58E811A2EF47B0036E92F /* EHETchSettingCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

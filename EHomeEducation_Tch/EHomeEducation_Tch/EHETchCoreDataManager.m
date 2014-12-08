@@ -46,7 +46,6 @@
     order.orderid = [NSNumber numberWithInt:[[dictOrder objectForKey:@"orderid"] intValue]];
     order.latitude = [NSNumber numberWithFloat:[[dictOrder objectForKey:@"latitude"] floatValue]] ;
     order.longitude = [NSNumber numberWithFloat:[[dictOrder objectForKey:@"longitude"] floatValue]];
-    order.orderstatus = [dictOrder objectForKey:@"orderstatus"];
     order.serviceaddress = [dictOrder objectForKey:@"serviceaddress"];
     order.orderdate = [dictOrder objectForKey:@"orderdate"];
     order.teachername = [dictOrder objectForKey:@"teachername"];
@@ -65,11 +64,14 @@
         NSLog(@"saving encounted problem");
     return NO;
     }
-    }
+    }else{
     NSLog(@"order already exist");
     return YES;
+    }
 }
-
+-(BOOL) updateOrderStatusWithOrderId: (int)orderId andOrderStatus: (int) orderStatus {
+    return YES;
+}
 -(NSArray *)fetchAllOrders {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"EHEOrder"];
     NSPredicate * predicate = nil;
@@ -114,6 +116,17 @@
         return orders[0];
     }
     return nil;
+}
+
+-(NSArray *)fetchOrdersWithStatus:(int)status {
+    NSArray *arrayAllOrders = [self fetchAllOrders];
+    NSMutableArray * arrayWithStatus = [[NSMutableArray alloc] init];
+    for (EHEOrder * order in arrayAllOrders){
+        if (order.orderstatus.intValue == status) {
+            [arrayWithStatus addObject:order];
+        }
+    }
+    return arrayWithStatus;
 }
 
 -(BOOL)removeAllOrdersFromCoreData {
@@ -182,6 +195,7 @@
         customer.rank3 = [NSNumber numberWithInt:[[[dictCustomer objectForKey:@"rank"] objectForKey:@"rank3"] intValue]];
         customer.rank4 = [NSNumber numberWithInt:[[[dictCustomer objectForKey:@"rank"] objectForKey:@"rank4"] intValue]];
         customer.rank5 = [NSNumber numberWithInt:[[[dictCustomer objectForKey:@"rank"] objectForKey:@"rank5"] intValue]];
+        customer.gender = [dictCustomer objectForKey:@"gender"];
         
         int rank = [[[dictCustomer objectForKey:@"rank"] objectForKey:@"rank1"] intValue]*1 + [[[dictCustomer objectForKey:@"rank"] objectForKey:@"rank2"] intValue]*2 + [[[dictCustomer objectForKey:@"rank"] objectForKey:@"rank3"] intValue]*3 + [[[dictCustomer objectForKey:@"rank"] objectForKey:@"rank4"] intValue]*4 + [[[dictCustomer objectForKey:@"rank"] objectForKey:@"rank5"] intValue]*5;
         customer.rank = [NSNumber numberWithInt:rank/5];
@@ -198,5 +212,21 @@
     return YES;
     
 
+}
+
+-(BOOL)removeOrderWithOrderId:(int)orderId {
+    EHEOrder *order = [self fetchOrderWithOrderId:orderId];
+    if (order != nil) {
+        [self.context deleteObject:order];
+        NSError * error;
+        [self.context save:&error];
+        if (error == nil) {
+            NSLog(@"成功删除ID为%d的订单",orderId);
+            return YES;
+        }else {
+            return NO;
+        }
+    }
+    return NO;
 }
 @end

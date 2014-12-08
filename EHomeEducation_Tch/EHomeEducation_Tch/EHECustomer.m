@@ -1,8 +1,8 @@
 //
 //  EHECustomer.m
-//  EHomeEducation_Tch
+//  EHomeEduTeacher
 //
-//  Created by Yixiang Chen on 12/2/14.
+//  Created by Yixiang Chen on 12/5/14.
 //  Copyright (c) 2014 AppChen. All rights reserved.
 //
 
@@ -14,18 +14,19 @@
 @dynamic customerid;
 @dynamic latitude;
 @dynamic longitude;
-@dynamic name;
 @dynamic majoraddress;
-@dynamic usericon;
-@dynamic telephone;
 @dynamic memo;
+@dynamic name;
 @dynamic qq;
-@dynamic sinaweibo;
 @dynamic rank;
 @dynamic rank1;
 @dynamic rank2;
 @dynamic rank3;
 @dynamic rank4;
 @dynamic rank5;
+@dynamic sinaweibo;
+@dynamic telephone;
+@dynamic usericon;
+@dynamic gender;
 
 @end

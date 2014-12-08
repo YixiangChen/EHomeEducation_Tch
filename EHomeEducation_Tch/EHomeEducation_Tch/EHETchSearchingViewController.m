@@ -9,6 +9,13 @@
 #import "EHETchSearchingViewController.h"
 #import "EHETchOrderDetailViewController.h"
 #import "EHETchCommunicationManager.h"
+#import "EHETchBookingManagerViewController.h"
+
+#import "FPPopoverView.h"
+#import "FPPopoverController.h"
+#import "FPTouchView.h"
+
+#import "MJRefresh.h"
 
 @interface EHETchSearchingViewController ()
 
@@ -19,39 +26,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    /*
-    self.mapSearching = [[EHEStdMapSearchingViewController alloc] initWithNibName:nil bundle:nil];
-    
-    self.segmentedControl = [[UISegmentedControl alloc]initWithItems:[[NSArray alloc]initWithObjects:@"列表",@"地图",nil]];
-    self.segmentedControl.frame = CGRectMake(40.0, 20.0,240.0, 30.0);
-    self.segmentedControl.tintColor = [UIColor colorWithRed:192.0 / 256.0 green:233 / 256.0 blue:189 / 256.0 alpha:0.8];
-    self.segmentedControl.selectedSegmentIndex = 0;//默认选中的按钮索引
-    
-    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:12],NSFontAttributeName,[UIColor redColor], NSForegroundColorAttributeName, nil];
-    [self.segmentedControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
-    NSDictionary *highlightedAttributes = [NSDictionary dictionaryWithObject:[UIColor redColor] forKey:NSForegroundColorAttributeName];
-    
-    [self.segmentedControl setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
-    
-    [self.segmentedControl addTarget:self action:@selector(selectedSegmentChanged:)forControlEvents:UIControlEventValueChanged];
-    self.navigationItem.titleView = self.segmentedControl;
-    */
     
     self.coreDataManager = [EHETchCoreDataManager getInstance];
-    self.allOrders = [[NSArray alloc] initWithArray:[self.coreDataManager fetchAllOrders]];
+    self.allOrders = [[NSMutableArray alloc] initWithArray:[self.coreDataManager fetchOrdersWithStatus:0]];
     
-    for (EHEOrder *order in self.allOrders) {
-        NSLog(@"%@ order ----------", order);
-    }
-    
+    [self.tableView addHeaderWithTarget:self action:@selector(headerRefreshing)];
     [self setExtraCellLineHidden:self.tableView];
     [self setupFilterView];
+}
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self.tableView headerBeginRefreshing];
+}
+-(void) headerRefreshing {
+    bool refreshSuccess;
+    refreshSuccess = [[EHETchCommunicationManager getInstance] loadOrdersWithTeacherId:135 andOrderStatus:-1];
+    [self.allOrders removeAllObjects];
+    self.allOrders = [[NSMutableArray alloc] initWithArray:[self.coreDataManager fetchOrdersWithStatus:0]];
+    for (EHEOrder *order in self.allOrders) {
+        NSLog(@"orderid= %@, orderstatus = %@",order.orderid, order.orderstatus);
+    }
+    [self.tableView reloadData];
+    [self.tableView headerEndRefreshing];
+    if (refreshSuccess) {
+        NSLog(@"更新成功");
+    }else {
+        NSLog(@"更新失败");
+    }
+    
 }
 
 -(void) setupFilterView {
@@ -84,7 +86,6 @@
     [filterRankBtn addTarget:self action:@selector(popFilterView:) forControlEvents:UIControlEventTouchUpInside];
     [filterRankBtn setTag:3];
     
-    //self.filterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 255, 20)];
     [self.filterView addSubview:filterDistanceBtn];
     [self.filterView addSubview:filterSubjectBtn];
     [self.filterView addSubview:filterGradeBtn];
@@ -108,52 +109,54 @@
 }
 
 -(void) popFilterView:(id) sender {
-    NSLog(@"Tapping filter");
     
-//    UIButton *btn = (UIButton *)sender;
-//    
-//    if (btn.tag == 0) {
-//        if (self.filterByDistanceController == nil) {
-//            self.filterByDistanceController= [[EHEStdFilterByDistanceViewController alloc] initWithNibName:nil bundle:nil];
-//        }
-//        FPPopoverController *popover = [[FPPopoverController alloc] initWithViewController:self.filterByDistanceController];
-//        popover.contentSize = CGSizeMake(180, 95);
-//        self.filterByDistanceController.popController = popover;
-//        [popover presentPopoverFromView:btn];
-//        
-//    }
-//    if (btn.tag == 1) {
-//        if (self.filterByGenderController == nil) {
-//            self.filterByGenderController= [[EHEStdFilterByGenderViewController alloc] initWithNibName:nil bundle:nil];
-//        }
-//        FPPopoverController *popover = [[FPPopoverController alloc] initWithViewController:self.filterByGenderController];
-//        popover.contentSize = CGSizeMake(200, 200);
-//        self.filterByGenderController.popController = popover;
-//        [popover presentPopoverFromView:btn];
-//        
-//    }
-//    
-//    if (btn.tag == 2) {
-//        if (self.filterBySubjectsController == nil) {
-//            self.filterBySubjectsController= [[EHEStdFilterBySubjectsViewController alloc] initWithNibName:nil bundle:nil];
-//        }
-//        FPPopoverController *popover = [[FPPopoverController alloc] initWithViewController:self.filterBySubjectsController];
-//        popover.contentSize = CGSizeMake(260, 350);
-//        self.filterBySubjectsController.popController = popover;
-//        [popover presentPopoverFromView:btn];
-//        
-//    }
-//    
-//    if (btn.tag == 3) {
-//        if (self.filterByAgeController == nil) {
-//            self.filterByAgeController= [[EHEStdFilterByAgeViewController alloc] initWithNibName:nil bundle:nil];
-//        }
-//        FPPopoverController *popover = [[FPPopoverController alloc] initWithViewController:self.filterByAgeController];
-//        popover.contentSize = CGSizeMake(230, 100);
-//        self.filterByAgeController.popController = popover;
-//        [popover presentPopoverFromView:btn];
-//        
-//    }
+    UIButton *btn = (UIButton *)sender;
+    
+    if (btn.tag == 0) {
+        if (self.filterByDistanceController == nil) {
+            self.filterByDistanceController= [[EHETchFilterByDistanceViewController alloc] initWithNibName:nil bundle:nil];
+        }
+        FPPopoverController *popover = [[FPPopoverController alloc] initWithViewController:self.filterByDistanceController];
+        popover.contentSize = CGSizeMake(220, 95);
+        self.filterByDistanceController.popController = popover;
+        [popover presentPopoverFromView:btn];
+        
+    }
+    
+    if (btn.tag == 1) {
+        if (self.filterBySubjectsController == nil) {
+            self.filterBySubjectsController= [[EHETchFilterBySubjectViewController alloc] initWithNibName:nil bundle:nil];
+        }
+        FPPopoverController *popover = [[FPPopoverController alloc] initWithViewController:self.filterBySubjectsController];
+        popover.contentSize = CGSizeMake(230, 230);
+        self.filterBySubjectsController.popController = popover;
+        [popover presentPopoverFromView:btn];
+        
+    }
+    
+    if (btn.tag == 2) {
+        if (self.filterByGradeController == nil) {
+            self.filterByGradeController= [[EHETchFilterByGradeViewController alloc] initWithNibName:nil bundle:nil];
+        }
+        FPPopoverController *popover = [[FPPopoverController alloc] initWithViewController:self.filterByGradeController];
+        popover.contentSize = CGSizeMake(140, 200);
+        self.filterByGradeController.popController = popover;
+        [popover presentPopoverFromView:btn];
+        
+    }
+    
+    if (btn.tag == 3) {
+        if (self.filterByEvaluationController == nil) {
+            self.filterByEvaluationController= [[EHETchFilterByEvaluationViewController alloc] initWithNibName:nil bundle:nil];
+        }
+        FPPopoverController *popover = [[FPPopoverController alloc] initWithViewController:self.filterByEvaluationController];
+        popover.contentSize = CGSizeMake(150, 300);
+        self.filterByEvaluationController.popController = popover;
+        [popover presentPopoverFromView:btn];
+        
+    }
+    
+
     
     
 }
@@ -269,9 +272,7 @@
     
     [[EHETchCommunicationManager getInstance] loadCustomerDetailWithCustomerI:[order.customerid intValue]];
     detailViewController.customer = [[EHETchCoreDataManager getInstance] fetchCustomerWithCustomerId:[order.customerid intValue]];
-    // Pass the selected object to the new view controller.
     
-    // Push the view controller.
     UIBarButtonItem *leftBarButtonItem = [[UIBarButtonItem alloc] init];
     [leftBarButtonItem setTitle:@"返回列表"];
     [leftBarButtonItem setStyle:UIBarButtonItemStyleDone];
@@ -293,7 +294,17 @@
  // Pass the selected object to the new view controller.
  }
  */
+-(void)updateOrderStatusForOrder:(EHEOrder *)order {
 
+    NSArray *tempArray = [[NSArray alloc] initWithArray:self.allOrders];
+    for (EHEOrder * oldOrder in tempArray) {
+        if (oldOrder.orderid.intValue ==  order.orderid.intValue) {
+            [self.allOrders removeObject:oldOrder];
+        }
+    }
+    
+    [self.tableView reloadData];
+}
 
 
 @end

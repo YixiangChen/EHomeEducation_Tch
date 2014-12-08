@@ -198,6 +198,7 @@
         if([dict[@"code"] intValue] == 0){
             NSLog(@"-----------------获取订单详情成功----------------");
             NSLog(@"%@",dictOrderInfo);
+            [[EHETchCoreDataManager getInstance] removeOrderWithOrderId:[[dictOrderInfo objectForKey:@"orderid"] intValue]];
             return [[EHETchCoreDataManager getInstance] saveOrders:dictOrderInfo];
 
             }else{
@@ -264,8 +265,9 @@
         
         if([dict[@"code"] intValue] == 0 && dict[@"code"] != nil){
             
-            NSLog(@"成功取消订单 订单状态改为");
+            NSLog(@"成功取消订单号为%d 订单状态改为",orderId);
             NSLog(@"%@",dict[@"orderstatus"]);
+            NSLog(@"%@",dict[@"message"]);
             return YES;
             
         }else{
@@ -412,6 +414,49 @@
     }else {
         return NO;
     }
+}
+
+-(void)loadCustomerIconForCustomer:(EHECustomer *)customer completionBlock:(void (^)(NSString *))completionBlock {
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://218.249.130.194:8080/ehomeedu%@",customer.usericon]];
+    
+    if (url == nil)
+    {
+        NSLog(@"图片URL 为空");
+        return;
+    }
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+     {
+         if (error)
+         {
+             NSLog(@"发送请求发生错误 %@",error);
+         }
+         else
+         {
+             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+             if (httpResponse.statusCode == 200)
+             {
+                 UIImage *image = [[UIImage alloc] initWithData:data];
+                 NSData * image_data = UIImagePNGRepresentation(image);
+                 
+                 // save image to cache directory
+                 [[NSUserDefaults standardUserDefaults] setObject:image_data forKey:[NSString stringWithFormat:@"image_for_customer_%@",customer.customerid]];
+                 [[NSUserDefaults standardUserDefaults] synchronize];
+                 
+                 completionBlock(kConnectionSuccess);
+             }
+             else
+             {
+                 NSLog(@"Communication status code not 200 --> %ld", (long)httpResponse.statusCode);
+                 completionBlock(kConnectionFailure);
+             }
+         }
+     }];
+
 }
 
 //-(void)loadDataWithTeacherID:(int) teacherId {

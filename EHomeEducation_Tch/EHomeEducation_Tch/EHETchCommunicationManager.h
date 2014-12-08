@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "EHETchCoreDataManager.h"
 #import "EHEOrder.h"
+#import <UIKit/UIKit.h>
 
 
 @interface EHETchCommunicationManager : NSObject
@@ -47,5 +48,9 @@
 
 //获取用户资料
 -(BOOL) loadCustomerDetailWithCustomerI:(int) customerId;
+
+//获取用户头像
+-(void) loadCustomerIconForCustomer:(EHECustomer *) customer completionBlock:(void(^)(NSString*))completionBlock;
+
 
 @end

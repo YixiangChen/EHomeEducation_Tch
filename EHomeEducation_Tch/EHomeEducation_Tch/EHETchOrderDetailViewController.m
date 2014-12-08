@@ -73,6 +73,38 @@
 
         cell.lblEvaluation.text = [NSString stringWithFormat:@"评价: %@",self.customer.rank];
         cell.lblName.text = self.order.customername;
+        
+        cell.imageViewCustomerIcon.image = nil;
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *imageName = [NSString stringWithFormat:@"image_for_customer_%d",[self.customer.customerid intValue]];
+        NSData *data = [defaults objectForKey:imageName];
+        UIImage * imageForCustomer = [[UIImage alloc] initWithData:data];
+        
+        if (imageForCustomer == nil)
+        {
+            if ([self.customer.gender isEqualToString:@"男"]) {
+                imageForCustomer = [UIImage imageNamed:@"male_tablecell"];
+            }else {
+                imageForCustomer = [UIImage imageNamed:@"female_tablecell"];
+            }
+            cell.imageViewCustomerIcon.image = imageForCustomer;
+            
+            [[EHETchCommunicationManager getInstance] loadCustomerIconForCustomer:self.customer completionBlock:^(NSString * status)
+             {
+                 if ([status isEqualToString:kConnectionSuccess])
+                 {
+                     NSData * image_data = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"image_for_customer_%@",self.customer.customerid]];
+                     UIImage *image = [[UIImage alloc] initWithData:image_data];
+                     cell.imageViewCustomerIcon.image = image;
+                 }
+             }];
+        }
+        else
+        {
+            cell.imageViewCustomerIcon.image = imageForCustomer;
+        }
+
         return  cell;
     }
     
@@ -184,7 +216,7 @@
         NSLog(@"取消成功");
         [self.cancel_btn setBackgroundColor:[UIColor lightGrayColor]];
     } else {
-        NSLog(@"取消成功");
+        NSLog(@"取消失败");
     }
 }
 
@@ -196,6 +228,7 @@
         NSLog(@"确认失败");
     }
 }
+
 
 
 

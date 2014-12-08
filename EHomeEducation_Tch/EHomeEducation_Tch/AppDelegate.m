@@ -46,7 +46,6 @@
 //    [dict setObject:@"39.957074" forKey:@"latitude"];
 //    [dict setObject:@"116.278766" forKey:@"longitude"];
 //    [[EHETchCommunicationManager getInstance] completeProfileWithInfodict:dict];
-    [[EHETchCoreDataManager getInstance] removeAllOrdersFromCoreData];
     [[EHETchCommunicationManager getInstance] loadOrdersWithTeacherId:135 andOrderStatus:-1];
 //    [[EHETchCommunicationManager getInstance] confirmOrderWithOrderId:358];
 //    [[EHETchCommunicationManager getInstance] cancelOrderWithOrderId:359 withReason:@"您太远了"];
