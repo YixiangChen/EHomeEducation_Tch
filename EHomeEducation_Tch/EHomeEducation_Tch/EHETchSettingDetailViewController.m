@@ -21,11 +21,12 @@
     [super viewDidLoad];
     //对type的值进行判断，来显示设置类型
     //type=0:选择头像;type=1:选择姓名;type=2:选择性别;type=3:选择联系电话;type=4:选择出生日期
-    if([self.type isEqualToString:@"1"]||[self.type isEqualToString:@"3"]||[self.type isEqualToString:@"4"])
+    NSLog(@"type=%@",self.type);
+    if([self.type isEqualToString:@"1"]||[self.type isEqualToString:@"2"]||[self.type isEqualToString:@"4"]||[self.type isEqualToString:@"6"]||[self.type isEqualToString:@"5"]||[self.type isEqualToString:@"7"]||[self.type isEqualToString:@"8"]||[self.type isEqualToString:@"9"]||[self.type isEqualToString:@"10"]||[self.type isEqualToString:@"11"])
     {
         self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(-15, 0, self.view.frame.size.width+15, 150) style:UITableViewStylePlain];
     }
-    else if([self.type isEqualToString:@"2"])
+    else if([self.type isEqualToString:@"3"])
     {
         self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(-15, 0, self.view.frame.size.width+15, 188) style:UITableViewStylePlain];
         self.sexArray=[[NSArray alloc]initWithObjects:@"男",@"女", nil];
@@ -70,22 +71,47 @@
     {
         self.personView.name=nameText.text;
     }
-    else if([self.type isEqualToString:@"3"])
+    else if([self.type isEqualToString:@"2"])
     {
         self.personView.telephoneNumber=nameText.text;
     }
-    else if([self.type isEqualToString:@"2"])
+    else if([self.type isEqualToString:@"3"])
     {
         self.personView.gender=[self.sexArray objectAtIndex:self.currentIndexPath];
     }
-    else if([self.type isEqualToString:@"4"])
+    else if([self.type isEqualToString:@"5"])
     {
         self.personView.brithday=nameText.text;
+    }
+    else if([self.type isEqualToString:@"6"])
+    {
+        self.personView.identifier=nameText.text;
+    }
+    else if([self.type isEqualToString:@"7"])
+    {
+        self.personView.qqNumber=nameText.text;
+    }
+    else if([self.type isEqualToString:@"8"])
+    {
+        self.personView.degree=nameText.text;
+    }
+    else if([self.type isEqualToString:@"9"])
+    {
+        self.personView.timeperiod=nameText.text;
+    }
+    else if([self.type isEqualToString:@"10"])
+    {
+        self.personView.objectInfo=nameText.text;
+    }
+    else if([self.type isEqualToString:@"11"])
+    {
+        self.personView.subjectInfo=nameText.text;
     }
     else if([self.type isEqualToString:@"0"])
     {
         self.personView.image=self.image;
     }
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -101,7 +127,8 @@
 #pragma mark- TableView DataSource Method
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if([self.type isEqualToString:@"1"]||[self.type isEqualToString:@"3"]||[self.type isEqualToString:@"4"])
+    if([self.type isEqualToString:@"1"]||[self.type isEqualToString:@"2"]||[self.type isEqualToString:@"4"]||[self.type isEqualToString:@"5"]||[self.type isEqualToString:@"6"]
+       ||[self.type isEqualToString:@"7"]||[self.type isEqualToString:@"8"]||[self.type isEqualToString:@"9"]||[self.type isEqualToString:@"10"]||[self.type isEqualToString:@"11"])
     {
         return 1;
     }
@@ -130,7 +157,7 @@
         [cell.detailTextField becomeFirstResponder];
         cell.userInteractionEnabled=NO;
     }
-    else if([self.type isEqualToString:@"2"])
+    else if([self.type isEqualToString:@"3"])
     {
         cell.detailTextsLabel.text=[self.sexArray objectAtIndex:[indexPath row]];
         cell.detailTextField.hidden=YES;
@@ -144,7 +171,7 @@
         }
         //cell.userInteractionEnabled=NO;
     }
-    else if([self.type isEqualToString:@"3"])
+    else if([self.type isEqualToString:@"2"])
     {
         cell.detailTextsLabel.text=@"电话";
         cell.detailTextField.keyboardType=UIKeyboardTypeNumberPad;
@@ -152,12 +179,59 @@
         [cell.detailTextField becomeFirstResponder];
         cell.userInteractionEnabled=NO;
     }
-    else if([self.type isEqualToString:@"4"])
+    else if([self.type isEqualToString:@"5"])
     {
         cell.detailTextsLabel.text=@"日期";
         cell.detailTextField.inputView=self.datePicker;
         //cell.detailTextField.tag=1;
         cell.detailTextField.text=self.birthDate;
+        [cell.detailTextField becomeFirstResponder];
+        cell.userInteractionEnabled=NO;
+    }
+    else if([self.type isEqualToString:@"6"])
+    {
+        cell.detailTextsLabel.text=@"身份证号";
+        cell.detailTextField.keyboardType=UIKeyboardTypeNumberPad;
+        CGRect textFrame= cell.detailTextField.frame;
+        textFrame.origin.x+=30;
+        cell.detailTextField.frame=textFrame;
+        [cell.detailTextField becomeFirstResponder];
+        cell.userInteractionEnabled=NO;
+    }
+    else if([self.type isEqualToString:@"7"])
+    {
+        cell.detailTextsLabel.text=@"qq号";
+        cell.detailTextField.keyboardType=UIKeyboardTypeNumberPad;
+        [cell.detailTextField becomeFirstResponder];
+        cell.userInteractionEnabled=NO;
+    }
+    else if([self.type isEqualToString:@"8"])
+    {
+        cell.detailTextsLabel.text=@"学位";
+        [cell.detailTextField becomeFirstResponder];
+        cell.userInteractionEnabled=NO;
+    }
+    else if([self.type isEqualToString:@"9"])
+    {
+        cell.detailTextsLabel.text=@"教龄";
+        [cell.detailTextField becomeFirstResponder];
+        cell.userInteractionEnabled=NO;
+    }
+    else if([self.type isEqualToString:@"10"])
+    {
+        cell.detailTextsLabel.text=@"教授对象";
+        CGRect textFrame= cell.detailTextField.frame;
+        textFrame.origin.x+=30;
+        cell.detailTextField.frame=textFrame;
+        [cell.detailTextField becomeFirstResponder];
+        cell.userInteractionEnabled=NO;
+    }
+    else if([self.type isEqualToString:@"11"])
+    {
+        cell.detailTextsLabel.text=@"教学科目";
+        CGRect textFrame= cell.detailTextField.frame;
+        textFrame.origin.x+=30;
+        cell.detailTextField.frame=textFrame;
         [cell.detailTextField becomeFirstResponder];
         cell.userInteractionEnabled=NO;
     }
@@ -191,7 +265,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    if([self.type isEqualToString:@"2"])
+    if([self.type isEqualToString:@"3"])
     {
         self.currentIndexPath=[indexPath row];
         [self.navigationController popViewControllerAnimated:YES];

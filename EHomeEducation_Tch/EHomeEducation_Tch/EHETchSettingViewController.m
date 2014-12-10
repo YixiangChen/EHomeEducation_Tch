@@ -9,14 +9,16 @@
 #import "EHETchSettingViewController.h"
 #import "EHETchSettingCell.h"
 #import "EHETchPersonalViewController.h"
+#import <ShareSDK/ShareSDK.h>
+#import "EHETchLoginViewController.h"
+#import "Defines.h"
 @interface EHETchSettingViewController ()
-
+@property(strong,nonatomic)UILabel * titleLabel;
 @end
 
 @implementation EHETchSettingViewController
 
 - (void)viewDidLoad {
-    self.title=@"设置";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
@@ -34,8 +36,48 @@
     self.check=NO;
     self.testArray=[[NSArray alloc]initWithObjects:@"",@"",@"男",@"18500813409",@"1989-11-24", nil];
     
+    self.navigationItem.hidesBackButton=YES;
+    self.navigationItem.leftBarButtonItem=nil;
+    
 }
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+    NSString * userName=[userDefaults objectForKey:@"userName"];
+    NSString * password=[userDefaults objectForKey:@"passWord"];
+    if(userName==nil||password==nil)
+    {
+        EHETchLoginViewController * loginViewController=[[EHETchLoginViewController alloc]initWithNibName:nil bundle:nil];
+        [[self navigationController] setNavigationBarHidden:YES animated:YES];//隐藏导航栏
+        [self.navigationController pushViewController:loginViewController animated:NO];
+        
+    }
+    else
+    {
+        NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+        NSString * teacherid=[userDefaults objectForKey:@"teacherid"];
+        NSNumber * teacheridNumber=[[NSNumber alloc]initWithInt:teacherid.intValue];
+        NSLog(@"teacherNumber=%@",teacheridNumber);
+        self.teacherName=[userDefaults objectForKey:@"name"];
+       [[self navigationController] setNavigationBarHidden:NO animated:YES];//显示导航栏
+    }
+    [self.settingTableView reloadData];
 
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 5, 100, 30)];
+    [self.titleLabel setText:@"设置"];
+    [self.titleLabel setTextColor:kGreenForTabbaritem];
+    [self.titleLabel setBackgroundColor:[UIColor clearColor]];
+    [self.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:22]];
+    [self.navigationController.navigationBar addSubview:self.titleLabel];
+}
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.titleLabel removeFromSuperview];
+}
+-(NSString *)getKey:(NSString *)para1 andTeacherid:(NSNumber*)para2
+{
+    return [NSString stringWithFormat:@"%@%@",para1,para2];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -60,6 +102,23 @@
         return [self.connectAndShareArray count];
     }
 }
+#pragma mark- LXActionSheet Delegate Method
+
+- (void)didClickOnButtonIndex:(NSInteger *)buttonIndex
+{
+    if((int)buttonIndex==0)
+    {
+        NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+        [userDefaults removeObjectForKey:@"userName"];
+        [userDefaults removeObjectForKey:@"passWord"];
+        [userDefaults removeObjectForKey:@"name"];
+        [userDefaults synchronize];
+        
+        EHETchLoginViewController * loginViewController=[[EHETchLoginViewController alloc]initWithNibName:nil bundle:nil];
+        [[self navigationController] setNavigationBarHidden:YES animated:YES];//隐藏导航栏
+        [self.navigationController pushViewController:loginViewController animated:NO];
+    }
+}
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString * Identifier=@"Identifier";
@@ -70,7 +129,6 @@
     }
     NSInteger section=[indexPath section];
     NSInteger row=[indexPath row];
-    NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
     //第一个分组
     if(section==0)
     {
@@ -85,7 +143,7 @@
                 self.check=YES;
                 cell.contentLabel.alpha=0.0f;
             }
-            cell.nameLabel.text=@"易中天";
+            cell.nameLabel.text=self.teacherName;
             
             cell.settingImageView.image=[UIImage imageNamed:@"male_tablecell"];
             
@@ -182,6 +240,47 @@
             EHETchPersonalViewController * personal=[[EHETchPersonalViewController alloc]initWithNibName:nil bundle:nil];
             [self.navigationController pushViewController:personal animated:YES];
         }
+    }
+    if([indexPath section]==1)
+    {
+      if([indexPath row]==1)
+      {
+          LXActionSheet * actionSheet = [[LXActionSheet alloc]initWithTitle:@"确定要退出E家教吗" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"退出登录" otherButtonTitles:nil];
+          [actionSheet showInView:self.view];
+      }
+    }
+    if([indexPath section]==2)
+    {
+      if([indexPath row]==0)
+      {
+          NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ShareSDK"  ofType:@"jpg"];
+          
+          //构造分享内容
+          id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
+                                             defaultContent:@"默认分享内容，没内容时显示"
+                                                      image:[ShareSDK imageWithPath:imagePath]
+                                                      title:@"ShareSDK"
+                                                        url:@"http://www.sharesdk.cn"
+                                                description:@"这是一条测试信息"
+                                                  mediaType:SSPublishContentMediaTypeNews];
+          //创建分享信息后，分享成功与否的返回
+          [ShareSDK showShareActionSheet:nil
+                               shareList:nil
+                                 content:publishContent
+                           statusBarTips:YES
+                             authOptions:nil
+                            shareOptions: nil
+                                  result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                      if (state == SSResponseStateSuccess)
+                                      {
+                                          NSLog(@"分享成功");
+                                      }
+                                      else if (state == SSResponseStateFail)
+                                      {
+                                          NSLog(NSLocalizedString(@"TEXT_SHARE_FAI", @"发布失败!error code == %d, error code == %@"), [error errorCode], [error errorDescription]);
+                                      }
+                                  }];
+      }
     }
 }
 @end

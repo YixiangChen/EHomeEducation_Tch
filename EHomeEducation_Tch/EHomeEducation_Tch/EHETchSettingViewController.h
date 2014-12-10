@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface EHETchSettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+#import "LXActionSheet.h"
+@interface EHETchSettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,LXActionSheetDelegate>
 @property(strong,nonatomic)UITableView * settingTableView;
 @property(strong,nonatomic)NSArray * personalInfomationArray;
 @property(strong,nonatomic)NSArray * systemSettingArray;
 @property(strong,nonatomic)NSArray * connectAndShareArray;
 @property(strong,nonatomic)NSArray * testArray;
+@property(strong,nonatomic)NSString * teacherName;
 @property(nonatomic)BOOL check;
 @end

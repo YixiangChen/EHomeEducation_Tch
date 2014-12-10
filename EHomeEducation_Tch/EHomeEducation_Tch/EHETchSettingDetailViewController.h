@@ -22,6 +22,15 @@
 @property(strong,nonatomic)NSString * telephoneNumber;
 @property(strong,nonatomic)NSString * birthDate;
 @property(strong,nonatomic)NSString * address;
+
+@property(strong,nonatomic)NSString * identifier;
+@property(strong,nonatomic)NSString * sinaWeibo;
+@property(strong,nonatomic)NSString * qqNumber;
+@property(strong,nonatomic)NSString * degree;
+@property(strong,nonatomic)NSString * subjectInfo;
+@property(strong,nonatomic)NSString * timeperiod;
+@property(strong,nonatomic)NSString * objectInfo;
+
 -(IBAction)dataPickerValueChanged:(id)sender;
 
 @end

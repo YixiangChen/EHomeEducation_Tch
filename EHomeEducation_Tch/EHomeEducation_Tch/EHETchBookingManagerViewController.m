@@ -32,8 +32,6 @@
     self.orderTableView.sectionFooterHeight = 0.0;
     [self.view addSubview:self.orderTableView];
     [self.orderTableView addHeaderWithTarget:self action:@selector(headerRefreshing)];
-    
-    
 }
 
 -(void) viewDidAppear:(BOOL)animated {
@@ -124,7 +122,6 @@
 {
     return 65.0f;
 }
-
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 25.0)];

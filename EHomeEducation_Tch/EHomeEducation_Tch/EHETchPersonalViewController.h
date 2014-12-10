@@ -15,5 +15,13 @@
 @property(strong,nonatomic)NSString * gender;
 @property(strong,nonatomic)NSString * brithday;
 @property(strong,nonatomic)UIImage * image;
+@property(strong,nonatomic)NSString * identifier;
+@property(strong,nonatomic)NSString * sinaWeibo;
+@property(strong,nonatomic)NSString * qqNumber;
+@property(strong,nonatomic)NSString * degree;
+@property(strong,nonatomic)NSString * subjectInfo;
+@property(strong,nonatomic)NSString * timeperiod;
+@property(strong,nonatomic)NSString * objectInfo;
+
 @property(strong,nonatomic)EHETchSettingDetailViewController * settingDetail;
 @end

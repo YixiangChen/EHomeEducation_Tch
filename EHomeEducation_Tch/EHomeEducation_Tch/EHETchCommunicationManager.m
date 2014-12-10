@@ -82,6 +82,13 @@
             
             NSLog(@"登录成功");
             NSLog(@"%@", dict[@"teacherinfo"]);
+            NSString * teacherid=[[dict objectForKey:@"teacherinfo"] objectForKey:@"teacherid"];
+            NSString * teacherName=[[dict objectForKey:@"teacherinfo"] objectForKey:@"name"];
+            NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+            [userDefaults setObject:teacherid forKey:@"teacherid"];
+            NSLog(@"teacherName=%@",teacherName);
+            [userDefaults setObject:teacherName forKey:@"name"];
+            [userDefaults synchronize];
             return YES;
             
         }else{
