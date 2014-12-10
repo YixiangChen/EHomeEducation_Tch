@@ -32,13 +32,11 @@
     UIBarButtonItem * rightButton=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(sendInfomation)];
     self.navigationItem.rightBarButtonItem=rightButton;
     
-    self.image=[UIImage imageNamed:@"male_tablecell"];
-    [self fetchInfomationFromUserDefault];
+    //[self fetchInfomationFromUserDefault];
     
     self.navigationItem.hidesBackButton=YES;
     self.navigationItem.leftBarButtonItem=nil;
 }
-
 
 -(void)sendInfomation
 {
@@ -46,6 +44,7 @@
     NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
     NSString * teacherid=[userDefaults objectForKey:@"teacherid"];
     NSNumber * teacheridNumber=[NSNumber numberWithInt:teacherid.intValue];
+    
     [teacherInfoDic setObject:teacheridNumber forKey:@"teacherid"];
     [teacherInfoDic setObject:self.name forKey:@"name"];
     [teacherInfoDic setObject:self.brithday forKey:@"birthday"];
@@ -132,6 +131,7 @@
     NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
     NSString * teacherid=[userDefaults objectForKey:@"teacherid"];
     NSNumber * teacheridNumber=[NSNumber numberWithInt:teacherid.intValue];
+    NSData * teacherIconData=[userDefaults objectForKey:@"teacherIconImage"];
     
     self.name=[userDefaults objectForKey:[self getKey:@"name" andTeacherid:teacheridNumber]];
     self.brithday=[userDefaults objectForKey:[self getKey:@"birthday" andTeacherid:teacheridNumber]];
@@ -143,6 +143,9 @@
     self.timeperiod=[userDefaults objectForKey:[self getKey:@"timeperiod" andTeacherid:teacheridNumber]];
     self.objectInfo=[userDefaults objectForKey:[self getKey:@"objectInfo" andTeacherid:teacheridNumber]];
     self.subjectInfo=[userDefaults objectForKey:[self getKey:@"subjectInfo" andTeacherid:teacheridNumber]];
+    self.image=[UIImage imageWithData:teacherIconData];
+    NSLog(@"self.image=%@",self.image);
+    [self.tableView reloadData];
     
 }
 -(NSString *)getKey:(NSString *)para1 andTeacherid:(NSNumber*)para2
@@ -151,7 +154,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated
 {
-    [self.tableView reloadData];
+    //[self.tableView reloadData];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -175,6 +178,8 @@
     [self.titleLabel setBackgroundColor:[UIColor clearColor]];
     [self.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:22]];
     [self.navigationController.navigationBar addSubview:self.titleLabel];
+    
+    [self fetchInfomationFromUserDefault];
 }
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];

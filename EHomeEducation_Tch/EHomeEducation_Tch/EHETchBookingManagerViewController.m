@@ -11,7 +11,7 @@
 #import "EHETchCommunicationManager.h"
 #import "EHEOrder.h"
 #import "EHETchBookingCell.h"
-
+#import "EHETchBookingDetailViewController.h"
 @interface EHETchBookingManagerViewController ()
 
 @end
@@ -24,7 +24,7 @@
     
     self.ordersDictionary=[[NSMutableDictionary alloc]initWithCapacity:4];
     [self fetchOrders];
-    self.orderTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height-120) style:UITableViewStyleGrouped];
+    self.orderTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height) style:UITableViewStyleGrouped];
     self.orderTableView.dataSource=self;
     self.orderTableView.delegate=self;
     self.orderTableView.separatorStyle= UITableViewCellSeparatorStyleSingleLine;
@@ -144,7 +144,6 @@
     else
     {
         headerLabel.text = groupHeaderString;
-        
     }
 
     [customView addSubview:headerLabel];
@@ -156,7 +155,22 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];;
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    EHETchBookingDetailViewController * bookingDetail=[[EHETchBookingDetailViewController alloc]initWithNibName:nil bundle:nil];
+    NSArray * allKeys=[self.ordersDictionary allKeys];
+    NSArray * orders=[self.ordersDictionary objectForKey:[allKeys objectAtIndex:[indexPath section]]];
+    if(orders.count==0)
+    {
+    
+    }
+    else
+    {
+    EHEOrder * order=[orders objectAtIndex:[indexPath row]];
+    bookingDetail.order=order;
+    [[EHETchCommunicationManager getInstance] loadCustomerDetailWithCustomerI:[order.customerid intValue]];
+    bookingDetail.customer = [[EHETchCoreDataManager getInstance] fetchCustomerWithCustomerId:[order.customerid intValue]];
+    [self.navigationController pushViewController:bookingDetail animated:YES];
+    }
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {

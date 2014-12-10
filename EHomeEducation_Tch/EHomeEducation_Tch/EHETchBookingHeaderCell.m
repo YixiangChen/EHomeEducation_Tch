@@ -1,17 +1,16 @@
 //
-//  EHETchOrderHeaderCell.m
-//  EHomeEducation_Tch
+//  EHETchBookingHeaderCell.m
+//  EHomeEduTeacher
 //
-//  Created by Yixiang Chen on 12/3/14.
-//  Copyright (c) 2014 AppChen. All rights reserved.
+//  Created by MacBook Pro on 14-12-10.
+//  Copyright (c) 2014年 AppChen. All rights reserved.
 //
 
-#import "EHETchOrderHeaderCell.h"
+#import "EHETchBookingHeaderCell.h"
 #import "Defines.h"
 #import <CoreLocation/CoreLocation.h>
 #import "EHECustomerDetailTableViewController.h"
-
-@implementation EHETchOrderHeaderCell
+@implementation EHETchBookingHeaderCell
 
 - (void)awakeFromNib {
     // Initialization code
@@ -25,23 +24,23 @@
     [layer setCornerRadius:5.0];
     [layer setBorderWidth:1.5];
     [layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
-
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
 -(void) showMoreInfo {
     EHECustomerDetailTableViewController *customerDetailTable = [[EHECustomerDetailTableViewController alloc] initWithNibName:nil bundle:nil];
-    customerDetailTable.customer = self.orderDetailViewController.customer;
-    [self.orderDetailViewController.navigationController pushViewController:customerDetailTable animated:YES];
+    customerDetailTable.customer = self.bookingDetailViewController.customer;
+    [self.bookingDetailViewController.navigationController pushViewController:customerDetailTable animated:YES];
 }
 
 -(void)setContent:(EHEOrder *)order {
-    self.lblDistance.text = [EHETchOrderHeaderCell calculateDistanceFromOriginLatitude:40.00 andOriginLong:117 ToDestinationLatitude:[order.latitude floatValue] andDesLong:[order.longitude floatValue]];
+    self.lblDistance.text = [EHETchBookingHeaderCell calculateDistanceFromOriginLatitude:40.00 andOriginLong:117 ToDestinationLatitude:[order.latitude floatValue] andDesLong:[order.longitude floatValue]];
     
     [self.lblDistance setFont:[UIFont fontWithName:kMengNaFont size:11]];
     
@@ -50,7 +49,7 @@
     NSDate *date = [dateFormatter dateFromString:order.orderdate];
     NSLog(@"date = %@", date);
     
-    self.lblOrderdate.text = [EHETchOrderHeaderCell compareCurrentTime:date];
+    self.lblOrderdate.text = [EHETchBookingHeaderCell compareCurrentTime:date];
     [self.lblOrderdate setFont:[UIFont fontWithName:kMengNaFont size:11]];
 }
 

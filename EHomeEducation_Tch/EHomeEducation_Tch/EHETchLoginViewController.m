@@ -106,6 +106,12 @@
     if(ifLogin)
     {
         [self saveUserNameAndPassword];
+        //登陆成功后，获取教师头像并且存到本地：
+        NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+        NSString * teacherIcon=[userDefaults objectForKey:@"teacherIcon"];
+        
+        [communicationManager loadTeacherIconForTeacher:teacherIcon completionBlock:^(NSString * icon) {
+        }];
         [self.navigationController popViewControllerAnimated:NO];
     }
     else

@@ -10,6 +10,8 @@
 #import "EHETchSettingDetailCell2.h"
 #import "EHETchPersonalViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "EHETchCommunicationManager.h"
+#import "Defines.h"
 @interface EHETchSettingDetailViewController ()
 
 @end
@@ -325,6 +327,40 @@
             _image = info[UIImagePickerControllerEditedImage];
         }
         //可以根据实际图片大小来调整imageView组件的高宽比。
+        //然后将选取的照片发送到服务器：
+        EHETchCommunicationManager *commucationManager=[EHETchCommunicationManager getInstance];
+        NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+        NSString * teacherid=[userDefaults objectForKey:@"teacherid"];
+        BOOL ifUpLoadTeacherIcon=[commucationManager uploadTeacherIconWithTeacherid:teacherid andImage:_image];
+        NSLog(@"%u",ifUpLoadTeacherIcon);
+            NSLog(@"上传成功！");
+        
+        UIView * blackView=[[UIView alloc]init];
+        blackView.center=self.view.center;
+        blackView.backgroundColor=[UIColor blackColor];
+        blackView.alpha=0.0f;
+        blackView.frame=CGRectMake(120,180, 80, 80);
+        blackView.layer.cornerRadius=20.0f;
+        [self.view addSubview:blackView];
+        
+        UILabel * label1=[[UILabel alloc]initWithFrame:CGRectMake(11, 25, 130, 30)];
+        label1.textColor=[UIColor whiteColor];
+        label1.backgroundColor=[UIColor clearColor];
+        label1.text=@"发送成功";
+        label1.font=[UIFont fontWithName:kFangZhengKaTongFont size:15.0f];
+        [blackView addSubview:label1];
+        
+        [UIView animateWithDuration:1.0 animations:^{
+            blackView.alpha=0.8f;
+        }];
+        [UIView animateWithDuration:2.5 animations:^{
+            blackView.alpha=0.0f;
+        }];
+        
+        
+            NSData * teacherImageData=UIImagePNGRepresentation(_image);
+            [userDefaults setObject:teacherImageData forKey:@"teacherIconImage"];
+            [userDefaults synchronize];
         self.studentImageView.image = _image;
         [self.studentImageView.layer setCornerRadius:50];
     }else if(picker.sourceType == UIImagePickerControllerSourceTypeCamera){
@@ -352,6 +388,5 @@
     NSLog(@"cancel");
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 @end

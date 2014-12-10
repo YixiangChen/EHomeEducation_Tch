@@ -52,5 +52,8 @@
 //获取用户头像
 -(void) loadCustomerIconForCustomer:(EHECustomer *) customer completionBlock:(void(^)(NSString*))completionBlock;
 
-
+//获取教师头像
+-(void) loadTeacherIconForTeacher:(NSString *) teacherIcon completionBlock:(void(^)(NSString*))completionBlock;
+//上传教师头像
+-(BOOL)uploadTeacherIconWithTeacherid:(NSString *)teacherid andImage:(UIImage *) myImage;
 @end

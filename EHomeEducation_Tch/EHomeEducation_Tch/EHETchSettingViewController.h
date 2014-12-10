@@ -15,5 +15,6 @@
 @property(strong,nonatomic)NSArray * connectAndShareArray;
 @property(strong,nonatomic)NSArray * testArray;
 @property(strong,nonatomic)NSString * teacherName;
+@property(strong,nonatomic)UIImage * teacherImage;
 @property(nonatomic)BOOL check;
 @end

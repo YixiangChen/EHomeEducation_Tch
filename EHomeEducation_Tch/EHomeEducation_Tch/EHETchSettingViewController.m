@@ -40,6 +40,7 @@
     self.navigationItem.leftBarButtonItem=nil;
     
 }
+
 -(void)viewWillAppear:(BOOL)animated
 {
     NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
@@ -60,6 +61,10 @@
         NSLog(@"teacherNumber=%@",teacheridNumber);
         self.teacherName=[userDefaults objectForKey:@"name"];
        [[self navigationController] setNavigationBarHidden:NO animated:YES];//显示导航栏
+        
+        NSData * teacherIconData=[userDefaults objectForKey:@"teacherIconImage"];
+        self.teacherImage=[UIImage imageWithData:teacherIconData];
+        
     }
     [self.settingTableView reloadData];
 
@@ -70,6 +75,7 @@
     [self.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:22]];
     [self.navigationController.navigationBar addSubview:self.titleLabel];
 }
+
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.titleLabel removeFromSuperview];
@@ -145,7 +151,7 @@
             }
             cell.nameLabel.text=self.teacherName;
             
-            cell.settingImageView.image=[UIImage imageNamed:@"male_tablecell"];
+            cell.settingImageView.image=self.teacherImage;
             
             cell.settingImageView.layer.cornerRadius = 26;
             cell.settingImageView.layer.masksToBounds = YES;

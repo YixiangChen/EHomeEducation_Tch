@@ -7,7 +7,7 @@
 //
 #import "Defines.h"
 #import "EHETchCommunicationManager.h"
-
+#import "AFHTTPRequestOperation.h"
 @implementation EHETchCommunicationManager
 
 + (EHETchCommunicationManager *) getInstance
@@ -84,10 +84,13 @@
             NSLog(@"%@", dict[@"teacherinfo"]);
             NSString * teacherid=[[dict objectForKey:@"teacherinfo"] objectForKey:@"teacherid"];
             NSString * teacherName=[[dict objectForKey:@"teacherinfo"] objectForKey:@"name"];
+            NSString * teacherIcon=[[dict objectForKey:@"teacherinfo"] objectForKey:@"teachericon"];
+            
             NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
             [userDefaults setObject:teacherid forKey:@"teacherid"];
             NSLog(@"teacherName=%@",teacherName);
             [userDefaults setObject:teacherName forKey:@"name"];
+            [userDefaults setObject:teacherIcon forKey:@"teacherIcon"];
             [userDefaults synchronize];
             return YES;
             
@@ -463,9 +466,74 @@
              }
          }
      }];
-
 }
 
+-(void) loadTeacherIconForTeacher:(NSString *) teacherIcon completionBlock:(void(^)(NSString*))completionBlock
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://218.249.130.194:8080/ehomeedu%@",teacherIcon]];
+    
+    if (url == nil)
+    {
+        NSLog(@"图片URL 为空");
+        return;
+    }
+    
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+     {
+         if (error)
+         {
+             NSLog(@"发送请求发生错误 %@",error);
+         }
+         else
+         {
+             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+             if (httpResponse.statusCode == 200)
+             {
+                 UIImage *image = [[UIImage alloc] initWithData:data];
+                 NSData * image_data = UIImagePNGRepresentation(image);
+                 
+                 // save image to cache directory
+                 [[NSUserDefaults standardUserDefaults] setObject:image_data forKey:@"teacherIconImage"];
+                 [[NSUserDefaults standardUserDefaults] synchronize];
+                 
+                 completionBlock(kConnectionSuccess);
+             }
+             else
+             {
+                 NSLog(@"Communication status code not 200 --> %ld", (long)httpResponse.statusCode);
+                 completionBlock(kConnectionFailure);
+             }
+         }
+     }];
+}
+-(BOOL)uploadTeacherIconWithTeacherid:(NSString *)teacherid andImage:(UIImage*) myImage
+{
+    __block BOOL check;
+    NSString * path = @"http://218.249.130.194:8080/ehomeedu/api/teacher/teachericonupload.action";
+    AFHTTPRequestSerializer * serializer = [[AFHTTPRequestSerializer alloc]init];
+
+    NSMutableURLRequest * request = [serializer multipartFormRequestWithMethod:@"POST" URLString:path parameters:@{@"teacherid":teacherid} constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:UIImageJPEGRepresentation(myImage, 0.3) name:@"teachericon" fileName:@"png-0001.jpg" mimeType:@"image/jpeg"];
+        
+    } error:nil];
+    AFHTTPRequestOperation * operation = [[AFHTTPRequestOperation alloc]initWithRequest:request];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        //上传成功，
+        NSLog(@"success;%@",[[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding]);
+        check=YES;
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        //上传失败，
+        NSLog(@"error:%@",error);
+        check=NO;
+    }];
+    NSLog(@"hahhaah-----------------");
+    [operation start];//开始上传
+    return check;
+}
 //-(void)loadDataWithTeacherID:(int) teacherId {
 //    
 //    NSString * postData = [NSString stringWithFormat:@"{\"teacherid\":\"%d\"}",teacherId];

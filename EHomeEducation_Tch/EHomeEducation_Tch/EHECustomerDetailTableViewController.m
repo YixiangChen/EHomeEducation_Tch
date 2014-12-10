@@ -31,6 +31,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.tabBarController.tabBar setHidden:YES];
+}
+
 - (void)setExtraCellLineHidden: (UITableView *)tableView{
     
     UIView *view =[ [UIView alloc]init];
