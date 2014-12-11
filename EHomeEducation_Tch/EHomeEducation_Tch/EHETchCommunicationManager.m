@@ -178,6 +178,7 @@
             NSLog(@"成功获取订单列表");
             NSArray *orderList = dict[@"ordersinfo"];
             if (orderList.count > 0) {
+                [[EHETchCoreDataManager getInstance] removeAllOrdersFromCoreData];
                 for (NSDictionary *dictOrder in orderList) {
                     NSLog(@"订单id为 ＝＝ %d",[dictOrder[@"orderid"] intValue]);
                     [[EHETchCommunicationManager getInstance] loadOrderDetailWithOrderId:[dictOrder[@"orderid"] intValue]];

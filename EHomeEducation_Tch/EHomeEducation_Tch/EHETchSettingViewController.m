@@ -107,6 +107,9 @@
         [userDefaults removeObjectForKey:@"teacherid"];
         [userDefaults synchronize];
         
+        EHETchCoreDataManager * coreData=[EHETchCoreDataManager getInstance];
+        [coreData removeAllOrdersFromCoreData];
+        
         EHETchLoginViewController * loginViewController=[[EHETchLoginViewController alloc]initWithNibName:nil bundle:nil];
         [self presentViewController:loginViewController animated:NO completion:nil];
     }

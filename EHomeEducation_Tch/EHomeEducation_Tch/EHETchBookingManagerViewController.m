@@ -22,7 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.ordersDictionary=[[NSMutableDictionary alloc]initWithCapacity:4];
     [self fetchOrders];
     self.orderTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height) style:UITableViewStyleGrouped];
     self.orderTableView.dataSource=self;
@@ -31,11 +30,22 @@
     self.orderTableView.backgroundColor = [UIColor clearColor];
     self.orderTableView.sectionFooterHeight = 0.0;
     [self.view addSubview:self.orderTableView];
+    
+    
+    
     [self.orderTableView addHeaderWithTarget:self action:@selector(headerRefreshing)];
 }
 
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    //实例化所有订单数组：
+    self.confirmedOrders=[[NSMutableArray alloc]initWithCapacity:10];
+    self.canceledOrders=[[NSMutableArray alloc]initWithCapacity:10];
+    self.unfinsihedOrders=[[NSMutableArray alloc]initWithCapacity:10];
+    self.finishedOrders=[[NSMutableArray alloc]initWithCapacity:10];
+    self.ordersDictionary=[[NSMutableDictionary alloc]initWithCapacity:4];
+    
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
     [self.orderTableView headerBeginRefreshing];
 }
@@ -58,19 +68,52 @@
 {
     EHETchCoreDataManager * coreData=[EHETchCoreDataManager getInstance];
 
-    self.confirmedOrders = [[NSMutableArray alloc] initWithArray:[coreData fetchOrdersWithStatus:1]];
-    self.canceledOrders = [[NSMutableArray alloc] init];
-    [self.canceledOrders addObjectsFromArray:[coreData fetchOrdersWithStatus:2]];
-    [self.canceledOrders addObjectsFromArray:[coreData fetchOrdersWithStatus:3]];
-    self.unfinsihedOrders = [[NSMutableArray alloc] init];
-    [self.unfinsihedOrders addObjectsFromArray:[coreData fetchOrdersWithStatus:4]];
-    [self.unfinsihedOrders addObjectsFromArray:[coreData fetchOrdersWithStatus:5]];
-    self.finishedOrders = [[NSMutableArray alloc] initWithArray:[coreData fetchOrdersWithStatus:6]];
+    [self.confirmedOrders removeAllObjects];
+    [self.canceledOrders removeAllObjects];
+    [self.unfinsihedOrders removeAllObjects];
+    [self.finishedOrders removeAllObjects];
+    
+    NSArray * confirmed=[coreData fetchOrdersWithStatus:1];
+    for(EHEOrder *order in confirmed)
+    {
+        [self.confirmedOrders addObject:order];
+    }
+    NSArray * cancled1=[coreData fetchOrdersWithStatus:2];
+    for(EHEOrder * order in cancled1)
+    {
+        [self.canceledOrders addObject:order];
+    }
+    
+    NSArray * cancled2=[coreData fetchOrdersWithStatus:3];
+    for(EHEOrder * order in cancled2)
+    {
+        [self.canceledOrders addObject:order];
+    }
+    
+    NSArray * unfinished1=[coreData fetchOrdersWithStatus:4];
+    for(EHEOrder * order in unfinished1)
+    {
+        [self.unfinsihedOrders addObject:order];
+    }
+    
+    NSArray * unfinished2=[coreData fetchOrdersWithStatus:5];
+    for(EHEOrder * order in unfinished2)
+    {
+        [self.unfinsihedOrders addObject:order];
+    }
+    
+    NSArray * finished=[coreData fetchOrdersWithStatus:6];
+    for(EHEOrder * order in finished)
+    {
+        [self.finishedOrders addObject:order];
+    }
+    
     [self.ordersDictionary removeAllObjects];
     [self.ordersDictionary setObject:self.confirmedOrders forKey:@"已确定的订单"];
     [self.ordersDictionary setObject:self.canceledOrders forKey:@"已取消的订单"];
     [self.ordersDictionary setObject:self.unfinsihedOrders forKey:@"未完成的订单"];
     [self.ordersDictionary setObject:self.finishedOrders forKey:@"已完成的订单"];
+    
 }
 
 -(void) headerRefreshing {
@@ -124,7 +167,10 @@
     NSArray * orders=[self.ordersDictionary objectForKey:[allKeys objectAtIndex:[indexPath section]]];
     if([orders count]==0)
     {
-    
+     cell.studentNameLabel.text=@"";
+        cell.orderDataLabel.text=@"";
+        cell.subjectLabel.text=@"";
+        cell.accessoryType=UITableViewCellAccessoryNone;
     }
     else
     {
