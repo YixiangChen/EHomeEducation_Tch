@@ -13,13 +13,13 @@
 #import "EHETchCommunicationManager.h"
 #import "Defines.h"
 @interface EHETchSettingDetailViewController ()
-
+@property(strong,nonatomic)UIButton * leftBarButton;
+@property(strong,nonatomic)UILabel * titleLabel;
 @end
 
 @implementation EHETchSettingDetailViewController
 
 - (void)viewDidLoad {
-    self.title=@"详细设置";
     [super viewDidLoad];
     //对type的值进行判断，来显示设置类型
     //type=0:选择头像;type=1:选择姓名;type=2:选择性别;type=3:选择联系电话;type=4:选择出生日期
@@ -60,15 +60,16 @@
         self.tableView.bounces=NO;
         [self.view addSubview:self.tableView];
     }
-    
     NSLog(@"studentName=%@",self.name);
-    
+    self.navigationItem.hidesBackButton=YES;
+    self.navigationItem.leftBarButtonItem=nil;
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     UITextField * nameText=(UITextField *)[self.tableView viewWithTag:1];
     NSLog(@"personInfo=%@",self.personView);
+    self.personView.type=@"1";
     if([self.type isEqualToString:@"1"])
     {
         self.personView.name=nameText.text;
@@ -113,7 +114,35 @@
     {
         self.personView.image=self.image;
     }
+    [self.leftBarButton removeFromSuperview];
+    [self.titleLabel removeFromSuperview];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.leftBarButton = [[UIButton alloc] initWithFrame:CGRectMake(3, 8, 80, 30)];
+    [self.leftBarButton setTitle:@"<个人信息" forState:UIControlStateNormal];
+    [self.leftBarButton.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:15]];
+    [self.leftBarButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.leftBarButton setBackgroundColor:kGreenForTabbaritem];
+    [self.leftBarButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
     
+    CALayer * leftBarButtonLayer =  [self.leftBarButton layer];
+    [leftBarButtonLayer setMasksToBounds:YES];
+    [leftBarButtonLayer setCornerRadius:5.0];
+    [leftBarButtonLayer setBorderWidth:0.5];
+    [leftBarButtonLayer setBorderColor:[[UIColor grayColor] CGColor]];
+    [self.navigationController.navigationBar addSubview:self.leftBarButton];
+    
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 5, 100, 30)];
+    [self.titleLabel setText:@"详细资料"];
+    [self.titleLabel setTextColor:kGreenForTabbaritem];
+    [self.titleLabel setBackgroundColor:[UIColor clearColor]];
+    [self.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:22]];
+    [self.navigationController.navigationBar addSubview:self.titleLabel];
+}
+-(void)backButtonPressed
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

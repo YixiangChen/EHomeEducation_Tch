@@ -37,8 +37,6 @@
 
 -(BOOL)saveOrders:(NSDictionary *)dictOrder {
     
-    if ([self fetchOrderWithOrderId:[[dictOrder objectForKey:@"orderid"] intValue]] == nil) {
-        NSLog(@"order does not exist");
     EHEOrder *order = [NSEntityDescription insertNewObjectForEntityForName:@"EHEOrder" inManagedObjectContext:self.context];
     order.customerid = [NSNumber numberWithInt:[[dictOrder objectForKey:@"customerid"] intValue ]];
     order.customername = [dictOrder objectForKey:@"customername"];
@@ -64,10 +62,7 @@
         NSLog(@"saving encounted problem");
     return NO;
     }
-    }else{
-    NSLog(@"order already exist");
-    return YES;
-    }
+
 }
 -(BOOL) updateOrderStatusWithOrderId: (int)orderId andOrderStatus: (int) orderStatus {
     return YES;

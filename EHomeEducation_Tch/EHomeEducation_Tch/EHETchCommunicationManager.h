@@ -56,4 +56,6 @@
 -(void) loadTeacherIconForTeacher:(NSString *) teacherIcon completionBlock:(void(^)(NSString*))completionBlock;
 //上传教师头像
 -(BOOL)uploadTeacherIconWithTeacherid:(NSString *)teacherid andImage:(UIImage *) myImage;
+//从服务器删除订单
+-(BOOL) removeOrderFromServerWithOrderId:(int) orderId;
 @end

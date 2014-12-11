@@ -9,7 +9,8 @@
 #import "EHECustomerDetailTableViewController.h"
 
 @interface EHECustomerDetailTableViewController ()
-
+@property(strong,nonatomic)UIButton * leftBarButton;
+@property(strong,nonatomic)UILabel * titleLabel;
 @end
 
 @implementation EHECustomerDetailTableViewController
@@ -24,8 +25,37 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self setExtraCellLineHidden:self.tableView];
     [self.tableView setBackgroundColor:[UIColor lightGrayColor] ];
+    
+    self.navigationItem.hidesBackButton=YES;
+    self.navigationItem.leftBarButtonItem=nil;
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.leftBarButton = [[UIButton alloc] initWithFrame:CGRectMake(3, 8, 80, 30)];
+    [self.leftBarButton setTitle:@"<订单详情" forState:UIControlStateNormal];
+    [self.leftBarButton.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:15]];
+    [self.leftBarButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.leftBarButton setBackgroundColor:kGreenForTabbaritem];
+    [self.leftBarButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    CALayer * leftBarButtonLayer =  [self.leftBarButton layer];
+    [leftBarButtonLayer setMasksToBounds:YES];
+    [leftBarButtonLayer setCornerRadius:5.0];
+    [leftBarButtonLayer setBorderWidth:0.5];
+    [leftBarButtonLayer setBorderColor:[[UIColor grayColor] CGColor]];
+    [self.navigationController.navigationBar addSubview:self.leftBarButton];
+    
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 5, 100, 30)];
+    [self.titleLabel setText:@"学生信息"];
+    [self.titleLabel setTextColor:kGreenForTabbaritem];
+    [self.titleLabel setBackgroundColor:[UIColor clearColor]];
+    [self.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:22]];
+    [self.navigationController.navigationBar addSubview:self.titleLabel];
+}
+-(void)backButtonPressed
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -34,6 +64,8 @@
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    [self.leftBarButton removeFromSuperview];
+    [self.titleLabel removeFromSuperview];
     [self.tabBarController.tabBar setHidden:YES];
 }
 

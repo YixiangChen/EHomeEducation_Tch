@@ -12,14 +12,14 @@
 #import "EHEOrder.h"
 #import "EHETchBookingCell.h"
 #import "EHETchBookingDetailViewController.h"
+#import "EHETchLoginViewController.h"
 @interface EHETchBookingManagerViewController ()
-
+@property(strong,nonatomic)UILabel * titleLabel;
 @end
 
 @implementation EHETchBookingManagerViewController
 
 - (void)viewDidLoad {
-    self.title=@"我的订单";
     [super viewDidLoad];
     
     self.ordersDictionary=[[NSMutableDictionary alloc]initWithCapacity:4];
@@ -36,7 +36,23 @@
 
 -(void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
     [self.orderTableView headerBeginRefreshing];
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(118,5, 150, 30)];
+    [self.titleLabel setText:@"我的订单"];
+    [self.titleLabel setTextColor:kGreenForTabbaritem];
+    [self.titleLabel setBackgroundColor:[UIColor clearColor]];
+    [self.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:22]];
+    [self.navigationController.navigationBar addSubview:self.titleLabel];
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.titleLabel removeFromSuperview];
 }
 -(void)fetchOrders
 {
@@ -59,7 +75,10 @@
 
 -(void) headerRefreshing {
     bool refreshSuccess;
-    refreshSuccess = [[EHETchCommunicationManager getInstance] loadOrdersWithTeacherId:135 andOrderStatus:-1];
+    NSUserDefaults * userDefauts=[NSUserDefaults standardUserDefaults];
+    NSString * teacherid=[userDefauts objectForKey:@"teacherid"];
+    NSLog(@"teacherid=%@",teacherid);
+    refreshSuccess = [[EHETchCommunicationManager getInstance] loadOrdersWithTeacherId:teacherid.intValue andOrderStatus:-1];
     [self fetchOrders];
     [self.orderTableView reloadData];
     [self.orderTableView headerEndRefreshing];

@@ -115,11 +115,11 @@
     
     [userDefaults setObject:self.name forKey:@"name"];
     [userDefaults setObject:self.brithday forKey:[self getKey:@"birthday" andTeacherid:teacheridNumber]];
-    [userDefaults setObject:self.gender forKey:[self getKey:@"gender" andTeacherid:teacheridNumber]];
+    [userDefaults setObject:self.gender forKey:@"gender"];
     [userDefaults setObject:self.identifier forKey:[self getKey:@"identifier" andTeacherid:teacheridNumber]];
-    [userDefaults setObject:self.qqNumber forKey:[self getKey:@"qqNumber" andTeacherid:teacheridNumber]];
+    [userDefaults setObject:self.qqNumber forKey:@"qqNumber"];
     [userDefaults setObject:@"12343454@sina.com" forKey:[self getKey:@"12343454@sina.com" andTeacherid:teacheridNumber]];
-    [userDefaults setObject:self.telephoneNumber forKey:[self getKey:@"telephoneNumber" andTeacherid:teacheridNumber]];
+    [userDefaults setObject:self.telephoneNumber forKey:@"telephone"];
     [userDefaults setObject:self.degree forKey:[self getKey:@"degree" andTeacherid:teacheridNumber]];
     [userDefaults setObject:self.timeperiod forKey:[self getKey:@"timeperiod" andTeacherid:teacheridNumber]];
     [userDefaults setObject:self.objectInfo forKey:[self getKey:@"objectInfo" andTeacherid:teacheridNumber]];
@@ -133,12 +133,14 @@
     NSNumber * teacheridNumber=[NSNumber numberWithInt:teacherid.intValue];
     NSData * teacherIconData=[userDefaults objectForKey:@"teacherIconImage"];
     
-    self.name=[userDefaults objectForKey:[self getKey:@"name" andTeacherid:teacheridNumber]];
+    self.name=[userDefaults objectForKey:@"name"];
+    NSLog(@"self.name=%@",self.name);
     self.brithday=[userDefaults objectForKey:[self getKey:@"birthday" andTeacherid:teacheridNumber]];
-    self.gender=[userDefaults objectForKey:[self getKey:@"gender" andTeacherid:teacheridNumber]];
+    NSLog(@"self.birthday=%@",self.brithday);
+    self.gender=[userDefaults objectForKey:@"gender"];
     self.identifier=[userDefaults objectForKey:[self getKey:@"identifier" andTeacherid:teacheridNumber]];
-    self.qqNumber=[userDefaults objectForKey:[self getKey:@"qqNumber" andTeacherid:teacheridNumber]];
-    self.telephoneNumber=[userDefaults objectForKey:[self getKey:@"telephoneNumber" andTeacherid:teacheridNumber]];
+    self.qqNumber=[userDefaults objectForKey:@"qqNumber"];
+    self.telephoneNumber=[userDefaults objectForKey:@"telephone"];
     self.degree=[userDefaults objectForKey:[self getKey:@"degree" andTeacherid:teacheridNumber]];
     self.timeperiod=[userDefaults objectForKey:[self getKey:@"timeperiod" andTeacherid:teacheridNumber]];
     self.objectInfo=[userDefaults objectForKey:[self getKey:@"objectInfo" andTeacherid:teacheridNumber]];
@@ -178,8 +180,14 @@
     [self.titleLabel setBackgroundColor:[UIColor clearColor]];
     [self.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:22]];
     [self.navigationController.navigationBar addSubview:self.titleLabel];
-    
+    if([self.type isEqualToString:@"1"])
+    {
+        [self.tableView reloadData];
+    }
+    else
+    {
     [self fetchInfomationFromUserDefault];
+    }
 }
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];

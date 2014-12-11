@@ -84,13 +84,22 @@
             NSLog(@"%@", dict[@"teacherinfo"]);
             NSString * teacherid=[[dict objectForKey:@"teacherinfo"] objectForKey:@"teacherid"];
             NSString * teacherName=[[dict objectForKey:@"teacherinfo"] objectForKey:@"name"];
-            NSString * teacherIcon=[[dict objectForKey:@"teacherinfo"] objectForKey:@"teachericon"];
+            NSString * gender=[[dict objectForKey:@"teacherinfo"] objectForKey:@"gender"];
+            NSString * qqNumber=[[dict objectForKey:@"teacherinfo"] objectForKey:@"qq"];
+            NSString * sinaweibo=[[dict objectForKey:@"teacherinfo"] objectForKey:@"sinaweibo"];
+            NSString * telephone=[[dict objectForKey:@"teacherinfo"] objectForKey:@"telephone"];
             
+            NSString * teacherIcon=[[dict objectForKey:@"teacherinfo"] objectForKey:@"teachericon"];
+            NSLog(@"teacherIcon=%@",teacherIcon);
             NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
             [userDefaults setObject:teacherid forKey:@"teacherid"];
             NSLog(@"teacherName=%@",teacherName);
             [userDefaults setObject:teacherName forKey:@"name"];
+            [userDefaults setObject:gender forKey:@"gender"];
             [userDefaults setObject:teacherIcon forKey:@"teacherIcon"];
+            [userDefaults setObject:qqNumber forKey:@"qqNumber"];
+            [userDefaults setObject:sinaweibo forKey:@"sinaWeibo"];
+            [userDefaults setObject:telephone forKey:@"telephone"];
             [userDefaults synchronize];
             return YES;
             
@@ -495,7 +504,7 @@
              {
                  UIImage *image = [[UIImage alloc] initWithData:data];
                  NSData * image_data = UIImagePNGRepresentation(image);
-                 
+                 NSLog(@"image=%@",image);
                  // save image to cache directory
                  [[NSUserDefaults standardUserDefaults] setObject:image_data forKey:@"teacherIconImage"];
                  [[NSUserDefaults standardUserDefaults] synchronize];
@@ -532,6 +541,36 @@
     }];
     NSLog(@"hahhaah-----------------");
     [operation start];//开始上传
+    return check;
+}
+-(BOOL)removeOrderFromServerWithOrderId:(int)orderId
+{
+    BOOL check;
+    NSString * postData = [NSString stringWithFormat:@"{\"orderid\":\"%d\"}",orderId];
+    
+    NSString *stringForURL = [NSString stringWithFormat:@"%@%@",kURLDomain,kURLDeleteOrder];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:stringForURL]];
+    NSString * data = [NSString stringWithFormat:@"info=%@",postData];
+    [request setHTTPMethod:@"POST"];
+    [request setHTTPBody:[data dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSError *error = nil;
+    NSData * responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:&error];
+    NSLog(@"responseData=%@",responseData);
+    NSMutableString * stringData=[[NSMutableString alloc]initWithData:responseData encoding:NSUTF8StringEncoding];
+    NSLog(@"ResponseString=%@",stringData);
+    if(responseData != nil && error == nil){
+        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableContainers error:&error];
+        NSLog(@"获取到的dict=%@",dict);
+        if([dict[@"code"] intValue] == 0){
+            NSLog(@"订单删除成功");
+            check=YES;
+        }else{
+            NSLog(@"订单删除失败");
+            check=NO;
+            NSLog(@"%@",dict[@"message"]);
+        }
+    }
     return check;
 }
 //-(void)loadDataWithTeacherID:(int) teacherId {

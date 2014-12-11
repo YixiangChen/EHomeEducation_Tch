@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     self.headImageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 150)];
-    self.headImageView.image=[UIImage imageNamed:@"loginpicture.jpg"];
+    self.headImageView.image=[UIImage imageNamed:@"loginHeader"];
     [self.view addSubview:self.headImageView];
     
     self.userNameTextField=[[UITextField alloc]initWithFrame:CGRectMake(60, 170, 230, 40)];

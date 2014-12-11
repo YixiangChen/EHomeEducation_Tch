@@ -22,6 +22,6 @@
 @property(strong,nonatomic)NSString * subjectInfo;
 @property(strong,nonatomic)NSString * timeperiod;
 @property(strong,nonatomic)NSString * objectInfo;
-
+@property(strong,nonatomic)NSString * type;
 @property(strong,nonatomic)EHETchSettingDetailViewController * settingDetail;
 @end

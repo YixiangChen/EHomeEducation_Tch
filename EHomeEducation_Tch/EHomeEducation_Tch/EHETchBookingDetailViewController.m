@@ -12,9 +12,14 @@
 #import "EHETchOrderRegularCell.h"
 #import "EHETchCommunicationManager.h"
 #import "Defines.h"
+#import "EHETchCoreDataManager.h"
 @interface EHETchBookingDetailViewController ()
 @property (strong, nonatomic) UIButton *cancel_btn;
 @property (strong, nonatomic) UIButton *confirm_btn;
+
+@property(strong,nonatomic)UIButton * leftBarButton;
+@property(strong,nonatomic)UILabel * titleLabel;
+
 @end
 
 @implementation EHETchBookingDetailViewController
@@ -30,6 +35,10 @@
     [self.tabBarController.tabBar setHidden:YES];
     
     [self configureTabbar];
+    
+    NSLog(@"self.orderID=%@",self.order.orderstatus);
+    self.navigationItem.hidesBackButton=YES;
+    self.navigationItem.leftBarButtonItem=nil;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -37,7 +46,33 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.leftBarButton = [[UIButton alloc] initWithFrame:CGRectMake(3, 8, 80, 30)];
+    [self.leftBarButton setTitle:@"< 我的" forState:UIControlStateNormal];
+    [self.leftBarButton.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:18]];
+    [self.leftBarButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.leftBarButton setBackgroundColor:kGreenForTabbaritem];
+    [self.leftBarButton addTarget:self action:@selector(backButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    CALayer * leftBarButtonLayer =  [self.leftBarButton layer];
+    [leftBarButtonLayer setMasksToBounds:YES];
+    [leftBarButtonLayer setCornerRadius:5.0];
+    [leftBarButtonLayer setBorderWidth:0.5];
+    [leftBarButtonLayer setBorderColor:[[UIColor grayColor] CGColor]];
+    [self.navigationController.navigationBar addSubview:self.leftBarButton];
+    
+    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 5, 100, 30)];
+    [self.titleLabel setText:@"订单详情"];
+    [self.titleLabel setTextColor:kGreenForTabbaritem];
+    [self.titleLabel setBackgroundColor:[UIColor clearColor]];
+    [self.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:22]];
+    [self.navigationController.navigationBar addSubview:self.titleLabel];
+}
+-(void)backButtonPressed
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 -(void) configureTabbar {
     UIImageView *imgView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"lightgreen.png"]];
     
@@ -65,10 +100,15 @@
          [btn_Confirm setTitle:@"删除订单" forState:UIControlStateNormal];
         [btn_Confirm addTarget:self action:@selector(deleteOrder) forControlEvents:UIControlEventTouchUpInside];
     }
-    else if([orderStatue isEqualToString:@"4"]||[orderStatue isEqualToString:@"5"])
+    else if([orderStatue isEqualToString:@"4"])
     {
-        [btn_Confirm setTitle:@"完成订单" forState:UIControlStateNormal];
-        [btn_Confirm addTarget:self action:@selector(finishOrder) forControlEvents:UIControlEventTouchUpInside];
+        [btn_Confirm setTitle:@"请您确认" forState:UIControlStateNormal];
+        [btn_Confirm setEnabled:NO];
+    }
+    else if([orderStatue isEqualToString:@"5"])
+    {
+        [btn_Confirm setTitle:@"等待确认" forState:UIControlStateNormal];
+        [btn_Confirm setEnabled:NO];
     }
     [btn_Confirm.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:20]];
     CALayer * layer_confirmBtn =  [btn_Confirm layer];
@@ -82,19 +122,85 @@
 }
 -(void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [self.titleLabel removeFromSuperview];
+    [self.leftBarButton removeFromSuperview];
     [self.tabBarController.tabBar setHidden:NO];
 }
 -(void) finishTeaching
 {
-  
+  EHETchCommunicationManager * commucationManager=[EHETchCommunicationManager getInstance];
+   BOOL check= [commucationManager completeOrderWithOrderId:self.order.orderid.intValue];
+    if(check)
+    {
+        
+        UIView * blackView=[[UIView alloc]init];
+        blackView.center=self.view.center;
+        blackView.backgroundColor=[UIColor blackColor];
+        blackView.alpha=0.0f;
+        blackView.frame=CGRectMake(120,180, 80, 80);
+        blackView.layer.cornerRadius=20.0f;
+        [self.view addSubview:blackView];
+        
+        UILabel * label1=[[UILabel alloc]initWithFrame:CGRectMake(11, 25, 130, 30)];
+        label1.textColor=[UIColor whiteColor];
+        label1.backgroundColor=[UIColor clearColor];
+        label1.text=@"确认成功";
+        label1.font=[UIFont fontWithName:kFangZhengKaTongFont size:15.0f];
+        [blackView addSubview:label1];
+        
+        [UIView animateWithDuration:1.0 animations:^{
+            blackView.alpha=0.8f;
+        }];
+        [UIView animateWithDuration:2.5 animations:^{
+            blackView.alpha=0.0f;
+        }];
+    }
+    else
+    {
+      NSLog(@"确认失败！");
+    }
 }
 -(void)deleteOrder
 {
-  
+    EHETchCommunicationManager * commucationManager=[EHETchCommunicationManager getInstance];
+    NSLog(@"orderId=%@,orderStatue=%@",self.order.orderid,self.order.orderstatus);
+    BOOL ifDeleteOrder= [commucationManager removeOrderFromServerWithOrderId:self.order.orderid.intValue];
+    if(ifDeleteOrder)
+    {
+        EHETchCoreDataManager *coreManager=[EHETchCoreDataManager getInstance];
+        [coreManager removeOrderWithOrderId:self.order.orderid.intValue];
+        
+        UIView * blackView=[[UIView alloc]init];
+        blackView.center=self.view.center;
+        blackView.backgroundColor=[UIColor blackColor];
+        blackView.alpha=0.0f;
+        blackView.frame=CGRectMake(120,180, 80, 80);
+        blackView.layer.cornerRadius=20.0f;
+        [self.view addSubview:blackView];
+        
+        UILabel * label1=[[UILabel alloc]initWithFrame:CGRectMake(11, 25, 130, 30)];
+        label1.textColor=[UIColor whiteColor];
+        label1.backgroundColor=[UIColor clearColor];
+        label1.text=@"删除成功";
+        label1.font=[UIFont fontWithName:kFangZhengKaTongFont size:15.0f];
+        [blackView addSubview:label1];
+        
+        [UIView animateWithDuration:1.0 animations:^{
+            blackView.alpha=0.8f;
+        }];
+        [UIView animateWithDuration:2.5 animations:^{
+            blackView.alpha=0.0f;
+        }];
+        
+    }
+    else
+    {
+        NSLog(@"删除失败！");
+    }
 }
 -(void)finishOrder
 {
-  
+
 }
 #pragma mark - TableView DataSource And Delegate Methods
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -30,6 +30,7 @@
 		527E0A371A381A3D000F60BB /* EHETchBookingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527E0A351A381A3D000F60BB /* EHETchBookingDetailViewController.xib */; };
 		527E0A401A382745000F60BB /* EHETchBookingHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 527E0A3E1A382745000F60BB /* EHETchBookingHeaderCell.m */; };
 		527E0A411A382745000F60BB /* EHETchBookingHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 527E0A3F1A382745000F60BB /* EHETchBookingHeaderCell.xib */; };
+		528E289C1A3861790079B371 /* loginHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 528E289B1A3861790079B371 /* loginHeader.png */; };
 		52A58E7C1A2ED2B60036E92F /* EHETchBookingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A58E7A1A2ED2B60036E92F /* EHETchBookingCell.m */; };
 		52A58E7D1A2ED2B60036E92F /* EHETchBookingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A58E7B1A2ED2B60036E92F /* EHETchBookingCell.xib */; };
 		52A58E811A2EF47B0036E92F /* EHETchSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A58E7F1A2EF47B0036E92F /* EHETchSettingCell.m */; };
@@ -249,6 +250,7 @@
 		527E0A3D1A382745000F60BB /* EHETchBookingHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchBookingHeaderCell.h; sourceTree = "<group>"; };
 		527E0A3E1A382745000F60BB /* EHETchBookingHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchBookingHeaderCell.m; sourceTree = "<group>"; };
 		527E0A3F1A382745000F60BB /* EHETchBookingHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchBookingHeaderCell.xib; sourceTree = "<group>"; };
+		528E289B1A3861790079B371 /* loginHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginHeader.png; sourceTree = "<group>"; };
 		52A58E791A2ED2B60036E92F /* EHETchBookingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchBookingCell.h; sourceTree = "<group>"; };
 		52A58E7A1A2ED2B60036E92F /* EHETchBookingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchBookingCell.m; sourceTree = "<group>"; };
 		52A58E7B1A2ED2B60036E92F /* EHETchBookingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchBookingCell.xib; sourceTree = "<group>"; };
@@ -904,6 +906,7 @@
 		798EF9101A2D9831002A8428 /* 图片 */ = {
 			isa = PBXGroup;
 			children = (
+				528E289B1A3861790079B371 /* loginHeader.png */,
 				52A732DE1A36F4390007F383 /* code.png */,
 				52A732DC1A36E35B0007F383 /* loginSpliteLine.png */,
 				52A732DA1A36E1C40007F383 /* L]NZ0([W6E`U~9CO{6NGI{L.jpg */,
@@ -1234,6 +1237,7 @@
 				52A58E7D1A2ED2B60036E92F /* EHETchBookingCell.xib in Resources */,
 				52A732911A36ACE10007F383 /* GooglePlus.bundle in Resources */,
 				52A732A61A36ACE20007F383 /* ShareSDKiPhoneDefaultShareViewUI.bundle in Resources */,
+				528E289C1A3861790079B371 /* loginHeader.png in Resources */,
 				52A732D91A36E1BF0007F383 /* loginpicture.jpg in Resources */,
 				527E0A411A382745000F60BB /* EHETchBookingHeaderCell.xib in Resources */,
 				79CF67F41A32F05000CD1CF0 /* EHETchFilterByGradeViewController.xib in Resources */,

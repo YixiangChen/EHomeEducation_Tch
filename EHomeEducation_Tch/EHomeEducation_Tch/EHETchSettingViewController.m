@@ -12,6 +12,7 @@
 #import <ShareSDK/ShareSDK.h>
 #import "EHETchLoginViewController.h"
 #import "Defines.h"
+#import "EHETchCommunicationManager.h"
 @interface EHETchSettingViewController ()
 @property(strong,nonatomic)UILabel * titleLabel;
 @end
@@ -44,28 +45,12 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
-    NSString * userName=[userDefaults objectForKey:@"userName"];
-    NSString * password=[userDefaults objectForKey:@"passWord"];
-    if(userName==nil||password==nil)
-    {
-        EHETchLoginViewController * loginViewController=[[EHETchLoginViewController alloc]initWithNibName:nil bundle:nil];
-        [[self navigationController] setNavigationBarHidden:YES animated:YES];//隐藏导航栏
-        [self.navigationController pushViewController:loginViewController animated:NO];
-        
-    }
-    else
-    {
-        NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
-        NSString * teacherid=[userDefaults objectForKey:@"teacherid"];
-        NSNumber * teacheridNumber=[[NSNumber alloc]initWithInt:teacherid.intValue];
-        NSLog(@"teacherNumber=%@",teacheridNumber);
-        self.teacherName=[userDefaults objectForKey:@"name"];
-       [[self navigationController] setNavigationBarHidden:NO animated:YES];//显示导航栏
-        
-        NSData * teacherIconData=[userDefaults objectForKey:@"teacherIconImage"];
-        self.teacherImage=[UIImage imageWithData:teacherIconData];
-        
-    }
+    NSString * teacherid=[userDefaults objectForKey:@"teacherid"];
+    NSNumber * teacheridNumber=[[NSNumber alloc]initWithInt:teacherid.intValue];
+    NSLog(@"teacherNumber=%@",teacheridNumber);
+    self.teacherName=[userDefaults objectForKey:@"name"];
+    NSData * teacherImageData=[userDefaults objectForKey:@"teacherIconImage"];
+    self.teacherImage=[UIImage imageWithData:teacherImageData];
     [self.settingTableView reloadData];
 
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 5, 100, 30)];
@@ -118,11 +103,12 @@
         [userDefaults removeObjectForKey:@"userName"];
         [userDefaults removeObjectForKey:@"passWord"];
         [userDefaults removeObjectForKey:@"name"];
+        [userDefaults removeObjectForKey:@"teacherIconImage"];
+        [userDefaults removeObjectForKey:@"teacherid"];
         [userDefaults synchronize];
         
         EHETchLoginViewController * loginViewController=[[EHETchLoginViewController alloc]initWithNibName:nil bundle:nil];
-        [[self navigationController] setNavigationBarHidden:YES animated:YES];//隐藏导航栏
-        [self.navigationController pushViewController:loginViewController animated:NO];
+        [self presentViewController:loginViewController animated:NO completion:nil];
     }
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -151,7 +137,27 @@
             }
             cell.nameLabel.text=self.teacherName;
             
-            cell.settingImageView.image=self.teacherImage;
+            cell.settingImageView.image=nil;
+            NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+            NSData * teacherImageData=[userDefaults objectForKey:@"teacherIconImage"];
+            UIImage * teacherImage=[UIImage imageWithData:teacherImageData];
+            NSString * teacherIcon=[userDefaults objectForKey:@"teacherIcon"];
+            if(teacherImage==nil)
+            {
+                cell.settingImageView.image=[UIImage imageNamed:@"male_tablecell"];
+                EHETchCommunicationManager * communicationManager= [EHETchCommunicationManager getInstance];
+                [communicationManager loadTeacherIconForTeacher:teacherIcon completionBlock:^(NSString * status) {
+                    if ([status isEqualToString:kConnectionSuccess])
+                    {
+                        NSData * teacherImageData=[userDefaults objectForKey:@"teacherIconImage"];
+                        cell.settingImageView.image=[UIImage imageWithData:teacherImageData];
+                    }
+                }];
+            }
+            else
+            {
+                cell.settingImageView.image=self.teacherImage;
+            }
             
             cell.settingImageView.layer.cornerRadius = 26;
             cell.settingImageView.layer.masksToBounds = YES;

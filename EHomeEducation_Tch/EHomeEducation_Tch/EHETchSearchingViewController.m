@@ -14,11 +14,11 @@
 #import "FPPopoverView.h"
 #import "FPPopoverController.h"
 #import "FPTouchView.h"
-
+#import "EHETchLoginViewController.h"
 #import "MJRefresh.h"
 
 @interface EHETchSearchingViewController ()
-
+@property(strong,nonatomic)UILabel * titleLabel;
 @end
 
 @implementation EHETchSearchingViewController
@@ -36,11 +36,15 @@
 }
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
     [self.tableView headerBeginRefreshing];
 }
 -(void) headerRefreshing {
     bool refreshSuccess;
-    refreshSuccess = [[EHETchCommunicationManager getInstance] loadOrdersWithTeacherId:135 andOrderStatus:-1];
+    NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+    NSString * teacherid=[userDefaults objectForKey:@"teacherid"];
+    NSLog(@"teacherid=%@",teacherid);
+    refreshSuccess = [[EHETchCommunicationManager getInstance] loadOrdersWithTeacherId:teacherid.intValue andOrderStatus:-1];
     [self.allOrders removeAllObjects];
     self.allOrders = [[NSMutableArray alloc] initWithArray:[self.coreDataManager fetchOrdersWithStatus:0]];
     for (EHEOrder *order in self.allOrders) {
@@ -53,9 +57,33 @@
     }else {
         NSLog(@"更新失败");
     }
-    
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+    NSString * userName=[userDefaults objectForKey:@"userName"];
+    NSString * password=[userDefaults objectForKey:@"passWord"];
+    if(userName==nil||password==nil)
+    {
+        EHETchLoginViewController * loginViewController=[[EHETchLoginViewController alloc]initWithNibName:nil bundle:nil];
+        [self presentViewController:loginViewController animated:NO completion:nil];
+    }
+    else
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(138, 5, 100, 30)];
+        [self.titleLabel setText:@"首页"];
+        [self.titleLabel setTextColor:kGreenForTabbaritem];
+        [self.titleLabel setBackgroundColor:[UIColor clearColor]];
+        [self.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:22]];
+        [self.navigationController.navigationBar addSubview:self.titleLabel];
+    }
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.titleLabel removeFromSuperview];
+}
 -(void) setupFilterView {
     UIButton *filterDistanceBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 79, 20)];
     [filterDistanceBtn setTitle:@"距离" forState:UIControlStateNormal];
@@ -89,11 +117,7 @@
     [self.filterView addSubview:filterDistanceBtn];
     [self.filterView addSubview:filterSubjectBtn];
     [self.filterView addSubview:filterGradeBtn];
-    [self.filterView addSubview:filterRankBtn];
-    
-
-
-    
+    [self.filterView addSubview:filterRankBtn]; 
 }
 
 - (void)setExtraCellLineHidden: (UITableView *)tableView{
@@ -166,14 +190,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) viewWillAppear:(BOOL)animated {
-    //    [super viewWillAppear:animated];
-    //    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    //    if ([defaults objectForKey:@"userName"] == nil || [defaults objectForKey:@"passWord"] == nil) {
-    //    EHEStdLoginViewController *loginViewController = [[EHEStdLoginViewController alloc] initWithNibName:nil bundle:nil];
-    //    [self presentViewController:loginViewController animated:NO completion:nil];
-    //    }
-}
 
 
 //-(void) selectedSegmentChanged:(UISegmentedControl *) seg {

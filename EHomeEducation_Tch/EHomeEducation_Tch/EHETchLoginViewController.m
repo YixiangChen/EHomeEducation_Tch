@@ -20,7 +20,7 @@
     [super viewDidLoad];
     
     UIImageView * headImageView=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 150)];
-    headImageView.image=[UIImage imageNamed:@"loginpicture.jpg"];
+    headImageView.image=[UIImage imageNamed:@"loginHeader"];
     [self.view addSubview:headImageView];
     
     self.userNameTextField=[[UITextField alloc]initWithFrame:CGRectMake(60, 170, 230, 40)];
@@ -106,13 +106,7 @@
     if(ifLogin)
     {
         [self saveUserNameAndPassword];
-        //登陆成功后，获取教师头像并且存到本地：
-        NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
-        NSString * teacherIcon=[userDefaults objectForKey:@"teacherIcon"];
-        
-        [communicationManager loadTeacherIconForTeacher:teacherIcon completionBlock:^(NSString * icon) {
-        }];
-        [self.navigationController popViewControllerAnimated:NO];
+        [self dismissViewControllerAnimated:NO completion:nil];
     }
     else
     {

@@ -14,7 +14,7 @@
 #import "EHETchBookingManagerViewController.h"
 #import "EHETchSettingViewController.h"
 #import "EHETchOrderDetailViewController.h"
-
+#import "EHETchLoginViewController.h"
 #import <ShareSDK/ShareSDK.h>
 #import "WeiboApi.h"
 #import "WeiboSDK.h"
@@ -55,7 +55,7 @@
 //    [dict setObject:@"39.957074" forKey:@"latitude"];
 //    [dict setObject:@"116.278766" forKey:@"longitude"];
 //    [[EHETchCommunicationManager getInstance] completeProfileWithInfodict:dict];
-    [[EHETchCommunicationManager getInstance] loadOrdersWithTeacherId:135 andOrderStatus:-1];
+    //[[EHETchCommunicationManager getInstance] loadOrdersWithTeacherId:135 andOrderStatus:-1];
 //    [[EHETchCommunicationManager getInstance] confirmOrderWithOrderId:358];
 //    [[EHETchCommunicationManager getInstance] cancelOrderWithOrderId:359 withReason:@"您太远了"];
 //    [[EHETchCommunicationManager getInstance] completeOrderWithOrderId:358];
@@ -90,10 +90,9 @@
     
     
     self.tab.tabBar.backgroundColor = [UIColor grayColor];
-    
     self.window.rootViewController = self.tab;
-    [self.window makeKeyAndVisible];
     
+    [self.window makeKeyAndVisible];
     if (SYSTEM_VERSION >= 8.0) {
         //ios8注册推送
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
