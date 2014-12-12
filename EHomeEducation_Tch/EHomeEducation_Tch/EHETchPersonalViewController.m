@@ -55,14 +55,90 @@
     
     self.navigationItem.hidesBackButton=YES;
     self.navigationItem.leftBarButtonItem=nil;
+    
+    self.locationManager = [[CLLocationManager alloc]init];
+    [self.locationManager requestWhenInUseAuthorization];
+    self.locationManager.delegate = self;
+    [self.locationManager startUpdatingLocation];
+    
 }
-
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    if(locations != nil){
+        
+        [self.locationManager stopUpdatingLocation];
+        CLLocation * location=[locations firstObject];
+        NSString * latitude=[NSString stringWithFormat:@"%f",location.coordinate.latitude];
+        NSString * longitude=[NSString stringWithFormat:@"%f",location.coordinate.longitude];
+        NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:latitude forKey:@"latitude"];
+        [userDefaults setObject:longitude forKey:@"longitude"];
+        [userDefaults synchronize];
+        NSString * address=[userDefaults objectForKey:@"address"];
+        NSLog(@"latitude.intValue=%d",latitude.intValue);
+        if([address isEqualToString:@""])
+        {
+            if(latitude.intValue!=0&&longitude.intValue!=0)
+            {
+            [self getStudentAddress];
+            }
+            else
+            {
+              self.majorAddress=@"请输入地址";
+                [self.tableView reloadData];
+            }
+        }
+        else
+        {
+            self.majorAddress=address;
+            [self.tableView reloadData];
+        }
+    }
+    
+    
+}
+-(void)getStudentAddress
+{
+    NSUserDefaults * userDefault=[NSUserDefaults standardUserDefaults];
+    NSString * latitude=[userDefault objectForKey:@"latitude"];
+    NSString * longitude=[userDefault objectForKey:@"longitude"];
+    
+    
+    CLLocation *c = [[CLLocation alloc] initWithLatitude:latitude.floatValue longitude:longitude.floatValue];
+    //创建位置
+    CLGeocoder *revGeo = [[CLGeocoder alloc] init];
+    [revGeo reverseGeocodeLocation:c
+                 completionHandler:^(NSArray *placemarks, NSError *error) {
+                     if (!error && [placemarks count] > 0)
+                     {
+                         NSDictionary *dict =
+                         [[placemarks objectAtIndex:0] addressDictionary];
+                         NSString * location=[[dict objectForKey:@"FormattedAddressLines"] objectAtIndex:0];
+                         location=[location substringFromIndex:2];
+                         self.majorAddress=location;
+                         [self.tableView reloadData];
+                         
+                     }
+                     else
+                     {
+                         NSLog(@"ERROR: %@", error);
+                     }
+                 }];
+}
 -(void)sendInfomation
 {
     NSMutableDictionary * teacherInfoDic=[[NSMutableDictionary alloc]initWithCapacity:0];
     NSUserDefaults * userDefaults=[NSUserDefaults standardUserDefaults];
+    NSString * latitude=[userDefaults objectForKey:@"latitude"];
+    NSString * longitude=[userDefaults objectForKey:@"longtitude"];
     NSString * teacherid=[userDefaults objectForKey:@"teacherid"];
     NSNumber * teacheridNumber=[NSNumber numberWithInt:teacherid.intValue];
+    
+    if(latitude==nil||longitude==nil)
+    {
+      latitude=@"";
+        longitude=@"";
+    }
     
     [teacherInfoDic setObject:teacheridNumber forKey:@"teacherid"];
     [teacherInfoDic setObject:self.name forKey:@"name"];
@@ -77,9 +153,9 @@
     [teacherInfoDic setObject:self.objectInfo forKey:@"objectinfo"];
     [teacherInfoDic setObject:self.subjectInfo forKey:@"subjectinfo"];
     [teacherInfoDic setObject:@"" forKey:@"memo"];
-    [teacherInfoDic setObject:@"北京石景山" forKey:@"majoraddress"];
-    [teacherInfoDic setObject:@(39.164828374) forKey:@"latitude"];
-    [teacherInfoDic setObject:@(116.37238379) forKey:@"longitude"];
+    [teacherInfoDic setObject:self.majorAddress forKey:@"majoraddress"];
+    [teacherInfoDic setObject:latitude forKey:@"latitude"];
+    [teacherInfoDic setObject:longitude forKey:@"longitude"];
     
     if([self.name isEqualToString:@""]||[self.brithday isEqualToString:@""]||[self.gender isEqualToString:@""]||[self.identifier isEqualToString:@""]||[self.qqNumber isEqualToString:@""]||[self.telephoneNumber isEqualToString:@""]||[self.degree isEqualToString:@""]||[self.timeperiod isEqualToString:@""]||[self.objectInfo isEqualToString:@""]||[self.subjectInfo isEqualToString:@""])
     {
@@ -136,6 +212,7 @@
     [userDefaults setObject:self.brithday forKey:[self getKey:@"birthday" andTeacherid:teacheridNumber]];
     [userDefaults setObject:self.gender forKey:@"gender"];
     [userDefaults setObject:self.identifier forKey:[self getKey:@"identifier" andTeacherid:teacheridNumber]];
+    [userDefaults setObject:self.majorAddress forKey:@"address"];
     [userDefaults setObject:self.qqNumber forKey:@"qqNumber"];
     [userDefaults setObject:@"12343454@sina.com" forKey:[self getKey:@"12343454@sina.com" andTeacherid:teacheridNumber]];
     [userDefaults setObject:self.telephoneNumber forKey:@"telephone"];
@@ -301,7 +378,8 @@
     {
         cell.settingLabel.text=@"地址:";
         cell.iconLabel.text=@"";
-        cell.contentLabel.text=@"北京石景山";
+        cell.contentLabel.text=self.majorAddress;
+        cell.contentLabel.font=[UIFont systemFontOfSize:12.0f];
     }
     if(row==5)
     {
@@ -391,7 +469,7 @@
     }
     else if(row==4)
     {
-        return;
+        self.settingDetail.address=self.majorAddress;
     }
     else if(row==5)
     {

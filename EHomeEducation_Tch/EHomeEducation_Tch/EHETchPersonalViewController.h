@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+
 @class EHETchSettingDetailViewController;
-@interface EHETchPersonalViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface EHETchPersonalViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,CLLocationManagerDelegate>
 @property(strong,nonatomic)UITableView * tableView;
 @property(strong,nonatomic)NSString * name;
 @property(strong,nonatomic)NSString * telephoneNumber;
@@ -23,5 +25,7 @@
 @property(strong,nonatomic)NSString * timeperiod;
 @property(strong,nonatomic)NSString * objectInfo;
 @property(strong,nonatomic)NSString * type;
+@property(strong,nonatomic)NSString * majorAddress;
+@property(strong,nonatomic)CLLocationManager * locationManager;
 @property(strong,nonatomic)EHETchSettingDetailViewController * settingDetail;
 @end

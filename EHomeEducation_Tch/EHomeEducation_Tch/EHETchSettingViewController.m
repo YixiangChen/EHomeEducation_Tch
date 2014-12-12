@@ -58,7 +58,6 @@
     
     self.navigationItem.hidesBackButton=YES;
     self.navigationItem.leftBarButtonItem=nil;
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -90,8 +89,6 @@
     {
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(185, 5, 100, 30)];
     }
-
-    
     [self.titleLabel setText:@"设置"];
     [self.titleLabel setTextColor:kGreenForTabbaritem];
     [self.titleLabel setBackgroundColor:[UIColor clearColor]];
@@ -143,6 +140,7 @@
         [userDefaults removeObjectForKey:@"name"];
         [userDefaults removeObjectForKey:@"teacherIconImage"];
         [userDefaults removeObjectForKey:@"teacherid"];
+        [userDefaults removeObjectForKey:@"address"];
         [userDefaults synchronize];
         
         EHETchCoreDataManager * coreData=[EHETchCoreDataManager getInstance];

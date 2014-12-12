@@ -88,6 +88,7 @@
             NSString * qqNumber=[[dict objectForKey:@"teacherinfo"] objectForKey:@"qq"];
             NSString * sinaweibo=[[dict objectForKey:@"teacherinfo"] objectForKey:@"sinaweibo"];
             NSString * telephone=[[dict objectForKey:@"teacherinfo"] objectForKey:@"telephone"];
+            NSString * address=[[dict objectForKey:@"teacherinfo"] objectForKey:@"majoraddress"];
             
             NSString * teacherIcon=[[dict objectForKey:@"teacherinfo"] objectForKey:@"teachericon"];
             NSLog(@"teacherIcon=%@",teacherIcon);
@@ -100,6 +101,7 @@
             [userDefaults setObject:qqNumber forKey:@"qqNumber"];
             [userDefaults setObject:sinaweibo forKey:@"sinaWeibo"];
             [userDefaults setObject:telephone forKey:@"telephone"];
+            [userDefaults setObject:address forKey:@"address"];
             [userDefaults synchronize];
             return YES;
             

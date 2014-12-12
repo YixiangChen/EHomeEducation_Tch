@@ -20,7 +20,6 @@
 #import "WeiboSDK.h"
 #import <QQConnection/QQConnection.h>
 #import "WXApi.h"
-
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
 

@@ -161,6 +161,27 @@
     if(ifLogin)
     {
         [self saveUserNameAndPassword];
+        UIView * blackView=[[UIView alloc]init];
+        blackView.center=self.view.center;
+        blackView.backgroundColor=[UIColor blackColor];
+        blackView.alpha=0.0f;
+        blackView.frame=CGRectMake(120,180, 80, 80);
+        blackView.layer.cornerRadius=20.0f;
+        [self.view addSubview:blackView];
+        
+        UILabel * label1=[[UILabel alloc]initWithFrame:CGRectMake(11, 25, 130, 30)];
+        label1.textColor=[UIColor whiteColor];
+        label1.backgroundColor=[UIColor clearColor];
+        label1.text=@"登陆成功";
+        label1.font=[UIFont fontWithName:kFangZhengKaTongFont size:15.0f];
+        [blackView addSubview:label1];
+        
+        [UIView animateWithDuration:1.0 animations:^{
+            blackView.alpha=0.8f;
+        }];
+        [UIView animateWithDuration:2.5 animations:^{
+            blackView.alpha=0.0f;
+        }];
         [self dismissViewControllerAnimated:NO completion:nil];
     }
     else

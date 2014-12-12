@@ -103,6 +103,10 @@
     {
         self.personView.gender=[self.sexArray objectAtIndex:self.currentIndexPath];
     }
+    else if([self.type isEqualToString:@"4"])
+    {
+        self.personView.majorAddress=nameText.text;
+    }
     else if([self.type isEqualToString:@"5"])
     {
         self.personView.brithday=nameText.text;
@@ -240,11 +244,19 @@
         }
         //cell.userInteractionEnabled=NO;
     }
+    
     else if([self.type isEqualToString:@"2"])
     {
         cell.detailTextsLabel.text=@"电话";
         cell.detailTextField.keyboardType=UIKeyboardTypeNumberPad;
         cell.detailTextField.text=self.telephoneNumber;
+        [cell.detailTextField becomeFirstResponder];
+        cell.userInteractionEnabled=NO;
+    }
+    else if([self.type isEqualToString:@"4"])
+    {
+        cell.detailTextsLabel.text=@"地址";
+        cell.detailTextField.text=self.address;
         [cell.detailTextField becomeFirstResponder];
         cell.userInteractionEnabled=NO;
     }
