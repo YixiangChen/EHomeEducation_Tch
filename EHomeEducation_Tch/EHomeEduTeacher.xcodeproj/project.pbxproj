@@ -59,6 +59,10 @@
 		52A58E7D1A2ED2B60036E92F /* EHETchBookingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A58E7B1A2ED2B60036E92F /* EHETchBookingCell.xib */; };
 		52A58E811A2EF47B0036E92F /* EHETchSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A58E7F1A2EF47B0036E92F /* EHETchSettingCell.m */; };
 		52A58E821A2EF47B0036E92F /* EHETchSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A58E801A2EF47B0036E92F /* EHETchSettingCell.xib */; };
+		52A6BADE1A3AD38B002ECC73 /* Default-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A6BADD1A3AD38B002ECC73 /* Default-568@2x.png */; };
+		52A6BAE01A3AD391002ECC73 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A6BADF1A3AD391002ECC73 /* Default-667h@2x.png */; };
+		52A6BAE21A3AD395002ECC73 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A6BAE11A3AD395002ECC73 /* Default@2x.png */; };
+		52A6BAE41A3AD39A002ECC73 /* Default-726h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A6BAE31A3AD39A002ECC73 /* Default-726h@3x.png */; };
 		52A732AC1A36AE490007F383 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A732AB1A36AE490007F383 /* SystemConfiguration.framework */; };
 		52A732AE1A36AE500007F383 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A732AD1A36AE500007F383 /* QuartzCore.framework */; };
 		52A732B01A36AE580007F383 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A732AF1A36AE580007F383 /* CoreTelephony.framework */; };
@@ -245,6 +249,10 @@
 		52A58E7E1A2EF47B0036E92F /* EHETchSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchSettingCell.h; sourceTree = "<group>"; };
 		52A58E7F1A2EF47B0036E92F /* EHETchSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchSettingCell.m; sourceTree = "<group>"; };
 		52A58E801A2EF47B0036E92F /* EHETchSettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchSettingCell.xib; sourceTree = "<group>"; };
+		52A6BADD1A3AD38B002ECC73 /* Default-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568@2x.png"; sourceTree = "<group>"; };
+		52A6BADF1A3AD391002ECC73 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
+		52A6BAE11A3AD395002ECC73 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		52A6BAE31A3AD39A002ECC73 /* Default-726h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-726h@3x.png"; sourceTree = "<group>"; };
 		52A732AB1A36AE490007F383 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		52A732AD1A36AE500007F383 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		52A732AF1A36AE580007F383 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -704,6 +712,10 @@
 		798EF9101A2D9831002A8428 /* 图片 */ = {
 			isa = PBXGroup;
 			children = (
+				52A6BAE31A3AD39A002ECC73 /* Default-726h@3x.png */,
+				52A6BAE11A3AD395002ECC73 /* Default@2x.png */,
+				52A6BADF1A3AD391002ECC73 /* Default-667h@2x.png */,
+				52A6BADD1A3AD38B002ECC73 /* Default-568@2x.png */,
 				528E289B1A3861790079B371 /* loginHeader.png */,
 				52A732DE1A36F4390007F383 /* code.png */,
 				52A732DC1A36E35B0007F383 /* loginSpliteLine.png */,
@@ -1033,6 +1045,7 @@
 			files = (
 				79288E371A2EA3F000492B02 /* EHECustomerImageCell.xib in Resources */,
 				52A58E7D1A2ED2B60036E92F /* EHETchBookingCell.xib in Resources */,
+				52A6BAE41A3AD39A002ECC73 /* Default-726h@3x.png in Resources */,
 				528E289C1A3861790079B371 /* loginHeader.png in Resources */,
 				52A732D91A36E1BF0007F383 /* loginpicture.jpg in Resources */,
 				527E0A411A382745000F60BB /* EHETchBookingHeaderCell.xib in Resources */,
@@ -1040,6 +1053,7 @@
 				527E0A371A381A3D000F60BB /* EHETchBookingDetailViewController.xib in Resources */,
 				79B26AC71A2D758D009BDD26 /* FZCATOONJ.ttf in Resources */,
 				799D15501A2F03CD00E68CBA /* distanceIcon.png in Resources */,
+				52A6BAE21A3AD395002ECC73 /* Default@2x.png in Resources */,
 				79B26AC81A2D758D009BDD26 /* MCuteHKS.otf in Resources */,
 				52AC053E1A2F06C100CAE5DA /* EHETchPersonalViewController.xib in Resources */,
 				79B26AC91A2D758D009BDD26 /* MFYueYuan_Noncommercial-Regular.otf in Resources */,
@@ -1050,8 +1064,10 @@
 				527E0A291A37F9D1000F60BB /* LICENSE in Resources */,
 				52A58E821A2EF47B0036E92F /* EHETchSettingCell.xib in Resources */,
 				79B26ACA1A2D758D009BDD26 /* MYoungHKS-Xbold.otf in Resources */,
+				52A6BAE01A3AD391002ECC73 /* Default-667h@2x.png in Resources */,
 				52A732DF1A36F4390007F383 /* code.png in Resources */,
 				798EF91D1A2DBFF0002A8428 /* lightgreen.png in Resources */,
+				52A6BADE1A3AD38B002ECC73 /* Default-568@2x.png in Resources */,
 				798EF91B1A2DBD09002A8428 /* little_student.png in Resources */,
 				52A732E51A36F6590007F383 /* EHETchRegisterViewController.xib in Resources */,
 				79B26AC61A2D73F1009BDD26 /* EHETchSettingViewController.xib in Resources */,
@@ -1277,6 +1293,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EHomeEducation_Tch/ShareSDK/Connection",
@@ -1321,6 +1338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/EHomeEducation_Tch/ShareSDK/Connection",
