@@ -20,8 +20,8 @@
 @interface EHETchSearchingViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 @property (strong,nonatomic) EHETchCoreDataManager *coreDataManager;
 @property (strong,nonatomic) NSMutableArray *allOrders;
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet UIView *filterView;
+@property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) UIView *filterView;
 
 @property (strong, nonatomic) EHETchFilterByDistanceViewController * filterByDistanceController;
 @property (strong, nonatomic) EHETchFilterBySubjectViewController * filterBySubjectsController;

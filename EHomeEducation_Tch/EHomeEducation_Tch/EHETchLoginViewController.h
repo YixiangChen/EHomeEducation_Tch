@@ -11,6 +11,11 @@
 @interface EHETchLoginViewController : UIViewController<UITextFieldDelegate>
 @property(strong,nonatomic)UILabel * userNameLabel;
 @property(strong,nonatomic)UILabel * passwordLabel;
+@property(strong,nonatomic)UIImageView * userNameAccessoryImage;
+@property(strong,nonatomic)UIImageView * headImageView;
+@property(strong,nonatomic)UIImageView * passwordAccessoryImage;
+@property(strong,nonatomic)UIImageView * spliteLine1;
+@property(strong,nonatomic)UIImageView * spliteLine2;
 @property(strong,nonatomic)UITextField * userNameTextField;
 @property(strong,nonatomic)UITextField * passwordTextField;
 @property(strong,nonatomic)UIButton * loginButton;

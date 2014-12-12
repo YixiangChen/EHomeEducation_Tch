@@ -11,7 +11,7 @@
 #import "EHECustomer.h"
 
 @interface EHETchOrderDetailViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) EHEOrder * order;
 @property (strong, nonatomic) EHECustomer * customer;
 

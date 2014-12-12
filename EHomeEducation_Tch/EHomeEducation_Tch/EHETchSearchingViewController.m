@@ -26,13 +26,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    if(screenWidth==320&&screenHeight==480)
+    {
+        self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 85, 320,335) style:UITableViewStylePlain];
+        self.filterView=[[UIView alloc]initWithFrame:CGRectMake(0, 65, 375, 20)];
+    }
+    else if(screenWidth==320&&screenHeight==568)
+    {
+        self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 85, 320,423) style:UITableViewStylePlain];
+        self.filterView=[[UIView alloc]initWithFrame:CGRectMake(0, 65, 375, 20)];
+    }
+    else if(screenWidth==375&&screenHeight==667)
+    {
+        self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 85, 375, 667-135) style:UITableViewStylePlain];
+        self.filterView=[[UIView alloc]initWithFrame:CGRectMake(0, 65, 375, 20)];
+    }
+    else if(screenWidth==414&&screenHeight==736)
+    {
+        self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 85, 414, 667-105) style:UITableViewStylePlain];
+        self.filterView=[[UIView alloc]initWithFrame:CGRectMake(0, 65, 375, 20)];
+    }
     
+    [self.tableView addSubview:self.filterView];
     self.coreDataManager = [EHETchCoreDataManager getInstance];
     self.allOrders = [[NSMutableArray alloc] initWithArray:[self.coreDataManager fetchOrdersWithStatus:0]];
     
     [self.tableView addHeaderWithTarget:self action:@selector(headerRefreshing)];
     [self setExtraCellLineHidden:self.tableView];
+    [self.view addSubview:self.filterView];
     [self setupFilterView];
+    
+    self.tableView.dataSource=self;
+    self.tableView.delegate=self;
+    [self.view addSubview:self.tableView];
 }
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -71,7 +99,24 @@
     }
     else
     {
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(138, 5, 100, 30)];
+        CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+        CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+        if(screenWidth==320&&screenHeight==480)
+        {
+            self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(138, 5, 100, 30)];
+        }
+        else if(screenWidth==320&&screenHeight==568)
+        {
+            self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(138, 5, 100, 30)];
+        }
+        else if(screenWidth==375&&screenHeight==667)
+        {
+            self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 5, 100, 30)];
+        }
+        else if(screenWidth==414&&screenHeight==736)
+        {
+             self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(185, 5, 100, 30)];
+        }
         [self.titleLabel setText:@"首页"];
         [self.titleLabel setTextColor:kGreenForTabbaritem];
         [self.titleLabel setBackgroundColor:[UIColor clearColor]];
@@ -85,21 +130,57 @@
     [self.titleLabel removeFromSuperview];
 }
 -(void) setupFilterView {
-    UIButton *filterDistanceBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 79, 20)];
+    
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    UIButton *filterDistanceBtn;
+    UIButton *filterSubjectBtn;
+    UIButton *filterGradeBtn;
+    UIButton *filterRankBtn;
+    if(screenWidth==320&&screenHeight==480)
+    {
+        filterDistanceBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 79, 20)];
+        filterSubjectBtn = [[UIButton alloc] initWithFrame:CGRectMake(80, 0, 79, 20)];
+        filterGradeBtn = [[UIButton alloc] initWithFrame:CGRectMake(160, 0, 79, 20)];
+        filterRankBtn = [[UIButton alloc] initWithFrame:CGRectMake(240, 0, 80, 20)];
+    }
+    else if(screenWidth==320&&screenHeight==568)
+    {
+        filterDistanceBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 79, 20)];
+        filterSubjectBtn = [[UIButton alloc] initWithFrame:CGRectMake(80, 0, 79, 20)];
+        filterGradeBtn = [[UIButton alloc] initWithFrame:CGRectMake(160, 0, 79, 20)];
+        filterRankBtn = [[UIButton alloc] initWithFrame:CGRectMake(240, 0, 80, 20)];
+    }
+    else if(screenWidth==375&&screenHeight==667)
+    {
+      filterDistanceBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 93, 20)];
+      filterSubjectBtn = [[UIButton alloc] initWithFrame:CGRectMake(94, 0, 93, 20)];
+      filterGradeBtn = [[UIButton alloc] initWithFrame:CGRectMake(188, 0, 93, 20)];
+      filterRankBtn = [[UIButton alloc] initWithFrame:CGRectMake(282, 0, 93, 20)];
+    }
+    else if(screenWidth==414&&screenHeight==736)
+    {
+        filterDistanceBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 102.5, 20)];
+        filterSubjectBtn = [[UIButton alloc] initWithFrame:CGRectMake(103.5, 0, 102.5, 20)];
+        filterGradeBtn = [[UIButton alloc] initWithFrame:CGRectMake(207, 0, 102.5, 20)];
+        filterRankBtn = [[UIButton alloc] initWithFrame:CGRectMake(310.5, 0, 102.5, 20)];
+    }
+    
+    
     [filterDistanceBtn setTitle:@"距离" forState:UIControlStateNormal];
     [filterDistanceBtn.titleLabel setFont:[UIFont fontWithName:@"MF YueYuan (Noncommercial)" size:15.0]];
     [filterDistanceBtn setBackgroundColor:kLightGreenForMainColor];
     [filterDistanceBtn addTarget:self action:@selector(popFilterView:) forControlEvents:UIControlEventTouchUpInside];
     [filterDistanceBtn setTag:0];
     
-    UIButton *filterSubjectBtn = [[UIButton alloc] initWithFrame:CGRectMake(80, 0, 79, 20)];
+   
     [filterSubjectBtn setTitle:@"科目" forState:UIControlStateNormal];
     [filterSubjectBtn.titleLabel setFont:[UIFont fontWithName:@"MF YueYuan (Noncommercial)" size:15.0]];
     [filterSubjectBtn setBackgroundColor:kLightGreenForMainColor];
     [filterSubjectBtn addTarget:self action:@selector(popFilterView:) forControlEvents:UIControlEventTouchUpInside];
     [filterSubjectBtn setTag:1];
     
-    UIButton *filterGradeBtn = [[UIButton alloc] initWithFrame:CGRectMake(160, 0, 79, 20)];
+    
     [filterGradeBtn setTitle:@"年级" forState:UIControlStateNormal];
     [filterGradeBtn.titleLabel setFont:[UIFont fontWithName:@"MF YueYuan (Noncommercial)" size:15.0]];
     [filterGradeBtn setBackgroundColor:kLightGreenForMainColor];
@@ -107,7 +188,7 @@
     [filterGradeBtn setTag:2];
     
     
-    UIButton *filterRankBtn = [[UIButton alloc] initWithFrame:CGRectMake(240, 0, 79, 20)];
+    
     [filterRankBtn setTitle:@"评价" forState:UIControlStateNormal];
     [filterRankBtn.titleLabel setFont:[UIFont fontWithName:@"MF YueYuan (Noncommercial)" size:15.0]];
     [filterRankBtn setBackgroundColor:kLightGreenForMainColor];

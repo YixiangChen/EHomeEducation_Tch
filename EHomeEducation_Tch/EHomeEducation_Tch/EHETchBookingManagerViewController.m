@@ -23,7 +23,24 @@
     [super viewDidLoad];
     
     [self fetchOrders];
-    self.orderTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height) style:UITableViewStyleGrouped];
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    if(screenWidth==320&&screenHeight==480)
+    {
+        self.orderTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height) style:UITableViewStyleGrouped];
+    }
+    else if(screenWidth==320&&screenHeight==568)
+    {
+        self.orderTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320,568) style:UITableViewStyleGrouped];
+    }
+    else if(screenWidth==375&&screenHeight==667)
+    {
+        self.orderTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 375,648) style:UITableViewStyleGrouped];
+    }
+    else if(screenWidth==414&&screenHeight==736)
+    {
+        self.orderTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 414,717) style:UITableViewStyleGrouped];
+    }
     self.orderTableView.dataSource=self;
     self.orderTableView.delegate=self;
     self.orderTableView.separatorStyle= UITableViewCellSeparatorStyleSingleLine;
@@ -52,7 +69,24 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(118,5, 150, 30)];
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    if(screenWidth==320&&screenHeight==480)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(118,5, 150, 30)];
+    }
+    else if(screenWidth==320&&screenHeight==568)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(118,5, 150, 30)];
+    }
+    else if(screenWidth==375&&screenHeight==667)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(140, 5, 100, 30)];
+    }
+    else if(screenWidth==414&&screenHeight==736)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 5, 100, 30)];
+    }
     [self.titleLabel setText:@"我的订单"];
     [self.titleLabel setTextColor:kGreenForTabbaritem];
     [self.titleLabel setBackgroundColor:[UIColor clearColor]];

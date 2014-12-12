@@ -27,10 +27,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    CGRect bounds = self.view.bounds;
     
-    self.tableView.backgroundView = nil;
-    self.tableView.frame = bounds;
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    if(screenWidth==320&&screenHeight==480)
+    {
+        self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 60, 320, 380) style:UITableViewStylePlain];
+    }
+    else if(screenWidth==320&&screenHeight==568)
+    {
+        self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 60, 320, 448) style:UITableViewStylePlain];
+    }
+    else if(screenWidth==375&&screenHeight==667)
+    {
+        self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 60, 375, 478) style:UITableViewStylePlain];
+    }
+    else if(screenWidth==414&&screenHeight==736)
+    {
+        self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 60, 414, 508) style:UITableViewStylePlain];
+    }
+    self.tableView.dataSource=self;
+    self.tableView.delegate=self;
     [self.tabBarController.tabBar setHidden:YES];
     
     [self configureTabbar];
@@ -39,7 +56,7 @@
     
     self.navigationItem.hidesBackButton=YES;
     self.navigationItem.leftBarButtonItem=nil;
-    
+    [self.view addSubview:self.tableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,7 +89,26 @@
     [leftBarButtonLayer setBorderColor:[[UIColor grayColor] CGColor]];
     [self.navigationController.navigationBar addSubview:self.leftBarButton];
     
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 5, 100, 30)];
+    
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    if(screenWidth==320&&screenHeight==480)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(119, 5, 100, 30)];
+    }
+    else if(screenWidth==320&&screenHeight==568)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(119, 5, 100, 30)];
+    }
+    else if(screenWidth==375&&screenHeight==667)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(145, 5, 100, 30)];
+    }
+    else if(screenWidth==414&&screenHeight==736)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 5, 100, 30)];
+    }
+    
     [self.titleLabel setText:@"订单详情"];
     [self.titleLabel setTextColor:kGreenForTabbaritem];
     [self.titleLabel setBackgroundColor:[UIColor clearColor]];
@@ -201,7 +237,36 @@
 -(void) configureTabbar {
     UIImageView *imgView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"lightgreen.png"]];
     
-    imgView.frame = CGRectMake(0, 425, imgView.image.size.width, 60);
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    UIButton *btn_Confirm = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIButton *btn_Cancel = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    if(screenWidth==320&&screenHeight==480)
+    {
+    imgView.frame = CGRectMake(0, 435, 320, 60);
+        btn_Confirm.frame = CGRectMake(190,10, 105 , 30);
+        btn_Cancel.frame = CGRectMake(30,10, 105 , 30);
+    }
+    else if(screenWidth==320&&screenHeight==568)
+    {
+       imgView.frame = CGRectMake(0, 513,320, 60);
+        btn_Confirm.frame = CGRectMake(190,10, 105 , 30);
+        btn_Cancel.frame = CGRectMake(30,10, 105 , 30);
+    }
+    else if(screenWidth==375&&screenHeight==667)
+    {
+        imgView.frame = CGRectMake(0, 607, 375, 60);
+        btn_Confirm.frame = CGRectMake(240,10, 105 , 30);
+        btn_Cancel.frame = CGRectMake(30,10, 105 , 30);
+    }
+    else if(screenWidth==414&&screenHeight==736)
+    {
+        imgView.frame = CGRectMake(0, 676, 414, 60);
+        btn_Confirm.frame = CGRectMake(270,10, 105 , 30);
+        btn_Cancel.frame = CGRectMake(30,10, 105 , 30);
+    }
+    
     
     imgView.userInteractionEnabled = YES;
     
@@ -210,8 +275,7 @@
     
     //创建按钮
         
-    UIButton *btn_Confirm = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn_Confirm.frame = CGRectMake(185,10, 105 , 30);
+    
     [btn_Confirm setBackgroundColor:kLightGreenForMainColor];
     [btn_Confirm setTitle:@"愉快接受" forState:UIControlStateNormal];
     [btn_Confirm.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:20]];
@@ -227,8 +291,7 @@
 
 
     
-    UIButton *btn_Cancel = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn_Cancel.frame = CGRectMake(30,10, 105 , 30);
+    
     [btn_Cancel setBackgroundColor:[UIColor redColor]];
     [btn_Cancel setTitle:@"残忍拒绝" forState:UIControlStateNormal];
     [btn_Cancel.titleLabel setFont:[UIFont fontWithName:kYueYuanFont size:20]];

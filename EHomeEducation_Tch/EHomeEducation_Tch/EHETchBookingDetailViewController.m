@@ -27,7 +27,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 440) style:UITableViewStylePlain];
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    if(screenWidth==320&&screenHeight==480)
+    {
+        self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 440) style:UITableViewStylePlain];
+    }
+    else if(screenWidth==320&&screenHeight==568)
+    {
+        self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 528) style:UITableViewStylePlain];
+    }
+    else if(screenWidth==375&&screenHeight==667)
+    {
+        self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 375, 528) style:UITableViewStylePlain];
+    }
+    else if(screenWidth==414&&screenHeight==736)
+    {
+        self.tableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 414, 558) style:UITableViewStylePlain];
+    }
+    
     self.tableView.dataSource=self;
     self.tableView.delegate=self;
     [self.view addSubview:self.tableView];
@@ -62,7 +80,26 @@
     [leftBarButtonLayer setBorderColor:[[UIColor grayColor] CGColor]];
     [self.navigationController.navigationBar addSubview:self.leftBarButton];
     
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 5, 100, 30)];
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    if(screenWidth==320&&screenHeight==480)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(119, 5, 100, 30)];
+    }
+    else if(screenWidth==320&&screenHeight==568)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(119, 5, 100, 30)];
+    }
+    else if(screenWidth==375&&screenHeight==667)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(145, 5, 100, 30)];
+    }
+    else if(screenWidth==414&&screenHeight==736)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 5, 100, 30)];
+    }
+
+    
     [self.titleLabel setText:@"订单详情"];
     [self.titleLabel setTextColor:kGreenForTabbaritem];
     [self.titleLabel setBackgroundColor:[UIColor clearColor]];
@@ -76,18 +113,40 @@
 -(void) configureTabbar {
     UIImageView *imgView = [[UIImageView alloc] initWithImage: [UIImage imageNamed:@"lightgreen.png"]];
     
-    imgView.frame = CGRectMake(0, 425, imgView.image.size.width, 60);
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    NSString * orderStatue=[NSString stringWithFormat:@"%@",self.order
+                            .orderstatus];
+    UIButton *btn_Confirm = [UIButton buttonWithType:UIButtonTypeCustom];
     
+    if(screenWidth==320&&screenHeight==480)
+    {
+        imgView.frame = CGRectMake(0, 435, imgView.image.size.width, 60);
+        btn_Confirm.frame = CGRectMake(110,10, 105 , 30);
+    }
+    else if(screenWidth==320&&screenHeight==568)
+    {
+       imgView.frame = CGRectMake(0, 513, imgView.image.size.width, 60);
+        btn_Confirm.frame = CGRectMake(110,10, 105 , 30);
+    }
+    else if(screenWidth==375&&screenHeight==667)
+    {
+        imgView.frame = CGRectMake(0, 607, 375, 60);
+        btn_Confirm.frame = CGRectMake(130,10, 105 , 30);
+    }
+    else if(screenWidth==414&&screenHeight==736)
+    {
+        imgView.frame = CGRectMake(0, 676, 414, 60);
+        btn_Confirm.frame = CGRectMake(160,15, 105 , 30);
+    }
+
     imgView.userInteractionEnabled = YES;
     
     [self.view addSubview:imgView];
     
     
     //创建按钮
-    NSString * orderStatue=[NSString stringWithFormat:@"%@",self.order
-                            .orderstatus];
-    UIButton *btn_Confirm = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn_Confirm.frame = CGRectMake(110,10, 105 , 30);
+    
     [btn_Confirm setBackgroundColor:kLightGreenForMainColor];
     //判断订单状态
     if([orderStatue isEqualToString:@"1"])

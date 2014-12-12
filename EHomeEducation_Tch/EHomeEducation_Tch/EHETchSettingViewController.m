@@ -23,7 +23,26 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    if(screenWidth==320&&screenHeight==480)
+    {
     self.settingTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, self.view.frame.size.height-120) style:UITableViewStyleGrouped];
+    }
+    else if(screenWidth==320&&screenHeight==568)
+    {
+       self.settingTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 320, 568) style:UITableViewStyleGrouped];
+    }
+    else if(screenWidth==375&&screenHeight==667)
+    {
+        self.settingTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 375, 667) style:UITableViewStyleGrouped];
+    }
+    else if(screenWidth==414&&screenHeight==736)
+    {
+        self.settingTableView=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, 414, 697) style:UITableViewStyleGrouped];
+    }
+    
+    
     self.settingTableView.dataSource=self;
     self.settingTableView.delegate=self;
     self.settingTableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
@@ -53,7 +72,26 @@
     self.teacherImage=[UIImage imageWithData:teacherImageData];
     [self.settingTableView reloadData];
 
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 5, 100, 30)];
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    if(screenWidth==320&&screenHeight==480)
+    {
+       self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 5, 100, 30)];
+    }
+    else if(screenWidth==320&&screenHeight==568)
+    {
+       self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 5, 100, 30)];
+    }
+    else if(screenWidth==375&&screenHeight==667)
+    {
+       self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 5, 100, 30)];
+    }
+    else if(screenWidth==414&&screenHeight==736)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(185, 5, 100, 30)];
+    }
+
+    
     [self.titleLabel setText:@"设置"];
     [self.titleLabel setTextColor:kGreenForTabbaritem];
     [self.titleLabel setBackgroundColor:[UIColor clearColor]];

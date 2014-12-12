@@ -43,7 +43,28 @@
     if([self.type isEqualToString:@"0"])
     {
         self.view.backgroundColor=[UIColor colorWithRed:239/255.0f green:239/255.0f blue:244/255.0f alpha:1.0f];
-        self.studentImageView=[[UIImageView alloc]initWithFrame:CGRectMake(85,90, 150, 150)];
+        
+        CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+        CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+        if(screenWidth==320&&screenHeight==480)
+        {
+            self.studentImageView=[[UIImageView alloc]initWithFrame:CGRectMake(85,90, 150, 150)];
+        }
+        else if(screenWidth==320&&screenHeight==568)
+        {
+            self.studentImageView=[[UIImageView alloc]initWithFrame:CGRectMake(85,90, 150, 150)];
+        }
+        else if(screenWidth==375&&screenHeight==667)
+        {
+            self.studentImageView=[[UIImageView alloc]initWithFrame:CGRectMake(115,90, 150, 150)];
+        }
+        else if(screenWidth==414&&screenHeight==736)
+        {
+            self.studentImageView=[[UIImageView alloc]initWithFrame:CGRectMake(145,90, 150, 150)];
+        }
+        
+        
+        
         self.studentImageView.image=self.image;
         
         [self.studentImageView.layer setBorderColor: [[UIColor grayColor] CGColor]];//边框灰色
@@ -133,7 +154,24 @@
     [leftBarButtonLayer setBorderColor:[[UIColor grayColor] CGColor]];
     [self.navigationController.navigationBar addSubview:self.leftBarButton];
     
-    self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(120, 5, 100, 30)];
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    if(screenWidth==320&&screenHeight==480)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 5, 100, 30)];
+    }
+    else if(screenWidth==320&&screenHeight==568)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(130, 5, 100, 30)];
+    }
+    else if(screenWidth==375&&screenHeight==667)
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(145, 5, 100, 30)];
+    }
+    else
+    {
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 5, 100, 30)];
+    }
     [self.titleLabel setText:@"详细资料"];
     [self.titleLabel setTextColor:kGreenForTabbaritem];
     [self.titleLabel setBackgroundColor:[UIColor clearColor]];

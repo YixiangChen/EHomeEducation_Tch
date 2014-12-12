@@ -33,7 +33,28 @@
         self.settingImageView.layer.cornerRadius=20;
         [self addSubview:self.settingImageView];
         
-        self.contentLabel=[[UILabel alloc]initWithFrame:CGRectMake(130, 8, 150, 30)];
+        CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+        CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+        if(screenWidth==320&&screenHeight==480)
+        {
+            self.contentLabel=[[UILabel alloc]initWithFrame:CGRectMake(130, 8, 150, 30)];
+            self.imageIcon=[[UIImageView alloc]initWithFrame:CGRectMake(230, 10, 50, 50)];
+        }
+        else if(screenWidth==320&&screenHeight==568)
+        {
+            self.contentLabel=[[UILabel alloc]initWithFrame:CGRectMake(130, 8, 150, 30)];
+            self.imageIcon=[[UIImageView alloc]initWithFrame:CGRectMake(230, 10, 50, 50)];
+        }
+        else if(screenWidth==375&&screenHeight==667)
+        {
+            self.contentLabel=[[UILabel alloc]initWithFrame:CGRectMake(160, 8, 150, 30)];
+            self.imageIcon=[[UIImageView alloc]initWithFrame:CGRectMake(270, 10, 50, 50)];
+        }
+        else if(screenWidth==414&&screenHeight==736)
+        {
+            self.contentLabel=[[UILabel alloc]initWithFrame:CGRectMake(190, 8, 150, 30)];
+            self.imageIcon=[[UIImageView alloc]initWithFrame:CGRectMake(320, 10, 50, 50)];
+        }
         self.contentLabel.textAlignment=UITextAlignmentRight;
         self.contentLabel.textColor=[UIColor grayColor];
         self.contentLabel.backgroundColor=[UIColor clearColor];
@@ -52,7 +73,7 @@
         self.iconLabel.font=[UIFont fontWithName:@"Helvetica-Bold" size:17.0f];
         [self addSubview:self.iconLabel];
         
-        self.imageIcon=[[UIImageView alloc]initWithFrame:CGRectMake(230, 10, 50, 50)];
+        
         self.imageIcon.layer.cornerRadius=20.0f;
         [self addSubview:self.imageIcon];
     }
