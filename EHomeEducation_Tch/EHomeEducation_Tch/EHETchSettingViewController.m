@@ -13,6 +13,7 @@
 #import "EHETchLoginViewController.h"
 #import "Defines.h"
 #import "EHETchCommunicationManager.h"
+#import "EHEContactViewController.h"
 @interface EHETchSettingViewController ()
 @property(strong,nonatomic)UILabel * titleLabel;
 @end
@@ -332,6 +333,10 @@
                                       }
                                   }];
       }
+        if (indexPath.row == 1) {
+            EHEContactViewController *contact = [[EHEContactViewController alloc] initWithNibName:nil bundle:nil];
+            [self.navigationController pushViewController:contact animated:YES];
+        }
     }
 }
 @end

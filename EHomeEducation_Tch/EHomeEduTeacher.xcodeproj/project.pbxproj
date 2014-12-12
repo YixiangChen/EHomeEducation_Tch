@@ -97,6 +97,9 @@
 		52AC05431A2F078500CAE5DA /* EHETchSettingDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AC05411A2F078500CAE5DA /* EHETchSettingDetailCell.xib */; };
 		52AC05471A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AC05451A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.m */; };
 		52AC05481A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52AC05461A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.xib */; };
+		790600461A3ADBA700FE811F /* EHEContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 790600441A3ADBA700FE811F /* EHEContactViewController.m */; };
+		790600471A3ADBA700FE811F /* EHEContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 790600451A3ADBA700FE811F /* EHEContactViewController.xib */; };
+		790600491A3AEDA500FE811F /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 790600481A3AEDA500FE811F /* line.png */; };
 		79288E311A2E0F9B00492B02 /* EHETchOrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79288E2F1A2E0F9B00492B02 /* EHETchOrderDetailViewController.m */; };
 		79288E321A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79288E301A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib */; };
 		79288E361A2EA3F000492B02 /* EHECustomerImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 79288E341A2EA3F000492B02 /* EHECustomerImageCell.m */; };
@@ -294,6 +297,10 @@
 		52AC05441A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchSettingDetailCell2.h; sourceTree = "<group>"; };
 		52AC05451A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchSettingDetailCell2.m; sourceTree = "<group>"; };
 		52AC05461A2F0C2D00CAE5DA /* EHETchSettingDetailCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchSettingDetailCell2.xib; sourceTree = "<group>"; };
+		790600431A3ADBA700FE811F /* EHEContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHEContactViewController.h; sourceTree = "<group>"; };
+		790600441A3ADBA700FE811F /* EHEContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHEContactViewController.m; sourceTree = "<group>"; };
+		790600451A3ADBA700FE811F /* EHEContactViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHEContactViewController.xib; sourceTree = "<group>"; };
+		790600481A3AEDA500FE811F /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		79288E2E1A2E0F9B00492B02 /* EHETchOrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHETchOrderDetailViewController.h; sourceTree = "<group>"; };
 		79288E2F1A2E0F9B00492B02 /* EHETchOrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHETchOrderDetailViewController.m; sourceTree = "<group>"; };
 		79288E301A2E0F9B00492B02 /* EHETchOrderDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EHETchOrderDetailViewController.xib; sourceTree = "<group>"; };
@@ -712,6 +719,7 @@
 		798EF9101A2D9831002A8428 /* 图片 */ = {
 			isa = PBXGroup;
 			children = (
+				790600481A3AEDA500FE811F /* line.png */,
 				52A6BAE31A3AD39A002ECC73 /* Default-726h@3x.png */,
 				52A6BAE11A3AD395002ECC73 /* Default@2x.png */,
 				52A6BADF1A3AD391002ECC73 /* Default-667h@2x.png */,
@@ -943,6 +951,9 @@
 				52AC053A1A2F06C100CAE5DA /* EHETchPersonalViewController.h */,
 				52AC053B1A2F06C100CAE5DA /* EHETchPersonalViewController.m */,
 				52AC053C1A2F06C100CAE5DA /* EHETchPersonalViewController.xib */,
+				790600431A3ADBA700FE811F /* EHEContactViewController.h */,
+				790600441A3ADBA700FE811F /* EHEContactViewController.m */,
+				790600451A3ADBA700FE811F /* EHEContactViewController.xib */,
 				52A58E841A2EF4A80036E92F /* CellForSetting */,
 			);
 			name = Setting;
@@ -1052,6 +1063,7 @@
 				79CF67F41A32F05000CD1CF0 /* EHETchFilterByGradeViewController.xib in Resources */,
 				527E0A371A381A3D000F60BB /* EHETchBookingDetailViewController.xib in Resources */,
 				79B26AC71A2D758D009BDD26 /* FZCATOONJ.ttf in Resources */,
+				790600471A3ADBA700FE811F /* EHEContactViewController.xib in Resources */,
 				799D15501A2F03CD00E68CBA /* distanceIcon.png in Resources */,
 				52A6BAE21A3AD395002ECC73 /* Default@2x.png in Resources */,
 				79B26AC81A2D758D009BDD26 /* MCuteHKS.otf in Resources */,
@@ -1071,6 +1083,7 @@
 				798EF91B1A2DBD09002A8428 /* little_student.png in Resources */,
 				52A732E51A36F6590007F383 /* EHETchRegisterViewController.xib in Resources */,
 				79B26AC61A2D73F1009BDD26 /* EHETchSettingViewController.xib in Resources */,
+				790600491A3AEDA500FE811F /* line.png in Resources */,
 				799D15521A2F0AFC00E68CBA /* timeIcon.png in Resources */,
 				79C28E421A2C577A000788F2 /* LaunchScreen.xib in Resources */,
 				529D70F01A39F20E00644B74 /* Resource.bundle in Resources */,
@@ -1158,6 +1171,7 @@
 				79B26AB11A2D5699009BDD26 /* EHETchSearchingViewController.m in Sources */,
 				79B26AB61A2D5B55009BDD26 /* EHEOrder.m in Sources */,
 				527E0A221A37F9D1000F60BB /* AFHTTPSessionManager.m in Sources */,
+				790600461A3ADBA700FE811F /* EHEContactViewController.m in Sources */,
 				527E0A2F1A37F9D1000F60BB /* UIImageView+AFNetworking.m in Sources */,
 				798E60531A31AFEF00776EC1 /* EHECustomerDetailTableViewController.m in Sources */,
 				52A732D61A36DBAD0007F383 /* EHETchLoginViewController.m in Sources */,
